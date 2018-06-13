@@ -98,7 +98,7 @@ public static class Constants
 
     public static int room_object_pointer = 0x874C; //Long pointer
 
-    public static int chests_length_pointer = 0xEBF6;
+    public static int chests_length_pointer = 0xEBF6; //nbr of bytes "Chests / 3"
     public static int chests_data_pointer1 = 0xEBFB;
 
     public static int room_objects_section1 = 0x50000;

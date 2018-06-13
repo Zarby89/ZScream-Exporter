@@ -15,16 +15,25 @@ public static class TextData
         int pos = 0xE0000;
         int msgid = 0;
 
-        while (msgid < 400)
+        while (msgid < 600)
         {
             messagesPos[msgid] = pos;
             messages[msgid] = "";
             byte byteRead = ROM.DATA[pos];
+            if (byteRead == 0xFF)
+            {
+                break;
+            }
             while (byteRead != 0x7F) //7F = end of string
             {
+                if (byteRead == 0x80)
+                {
+                    pos = 0x75F40;
+                    byteRead = ROM.DATA[pos];
+                }
 
                 if (getTextCharacter(byteRead, msgid))
-                    pos++;
+                pos++;
 
                 //Commands
                 else if (byteRead == 0x67) // $67[NextPic] command

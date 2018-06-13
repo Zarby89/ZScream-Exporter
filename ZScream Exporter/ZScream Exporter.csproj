@@ -59,6 +59,7 @@
     <Compile Include="Classes\Dungeon\ChestData.cs" />
     <Compile Include="Classes\Compression.cs" />
     <Compile Include="Classes\Constants.cs" />
+    <Compile Include="Classes\LoadedProjectStatistics.cs" />
     <Compile Include="Classes\NumberConversion.cs" />
     <Compile Include="Classes\Entrance.cs" />
     <Compile Include="Classes\Language.cs" />

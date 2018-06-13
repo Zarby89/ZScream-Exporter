@@ -237,7 +237,7 @@ public class Overworld
     public void Save32Tiles()
     {
         int index = 0;
-        int c = tiles32count;
+        int c = tiles32count+8; //Need to compare US and JP, JP Limit is 33C0, US is 33F0
         for (int i = 0; i < c - 4; i += 6)
         {
             if (i >= 0x33F0)
