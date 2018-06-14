@@ -1,0 +1,1716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data id="language1">English (US)</data>
+  <data id="language2">Français (FR)</data>
+  <data id="form_parent_loaded_rom_check_good">ROM loaded with a good checksum. </data>
+  <data id="form_parent_load_rom">Please load a ROM to have the above tabs enabled.</data>
+  <data id="form_monologue_help_chara">Character table</data>
+  <data id="form_monologue_help_dte">DTE</data>
+  <data id="form_monologue_help_help">{\rtf1\ansi
+Monologue editing requires some things to keep in mind. Note the table on the far left. This table contains all the characters for the monologues. It contains the alphabet and what's this? Characters surrounded by "$", "#", "[" and "]"?
+\line\line
+\b$...$: \b0Entries surrounded by "$" will be ignored by the graphic preview.
+\line\line
+\b[...]: \b0Entries surrounded by hard brackets are entries that affect how the dialogue is displayed in-game. These will not have a graphical display as characters. The character [\\n] is special in that it won't show up as "[\\n]" when editing the text entries but shows up as a line break.
+\line\line
+\b#...#: \b0Will show a graphical value corresponding to it's index in the table file ... with the exception of "#Name#" which will show "LINK" instead.
+\line\line
+The table on the right is the gameÓ³ DTE table and is used for compression.}</data>
+  <data id="form_monologue_tip_actions">These are buttons for various actions.</data>
+  <data id="form_monologue_tip_edit">Edit the monologue entry.</data>
+  <data id="form_monologue_tip_entry">Select a monologue line to edit.</data>
+  <data id="form_monologue_tip_location">Where in the ROM do you want to read.</data>
+  <data id="form_monologue_tip_preview">How the text would look like in the game. Use the arrow buttons to scroll.</data>
+  <data id="form_monologue_tip_search">Enter the size and location you want to read monologues. This is for advanced ROM hackers and won't be needed for regular users.</data>
+  <data id="form_monologue_help_weird_error">This entry is longer than a line. This error shouldn't really happen, but it's here juuuuust in case!</data>
+  <data id="form_monologue_preview">Preview</data>
+  <data id="error_hex">The inputs here need to be in hexadecimal.</data>
+  <data id="form_monologue_header">Monologue Editor</data>
+  <data id="form_parent_loaded_rom_check_bad">ROM loaded with a bad checksum. </data>
+  <data id="form_parent_about">About</data>
+  <data id="form_parent_notice">Zeldix Magic is an editor for the video game ALttP. This software is free and is produced with no intensions of monetary gain.  By using this software, you understand the authors are not responsible for any damage done to your computer, your software, or your ROM or any legal charges pressed against you.</data>
+  <data id="form_parent_saved_const_check">ROM saved. Checksum unchanged.</data>
+  <data id="form_parent_saved_fixed_check">ROM saved. Checksum changed.</data>
+  <data id="form_parent_notice_headered">This rom is headered.</data>
+  <data id="form_parent_notice_noheader">This rom has no copy header.</data>
+  <data id="dungeon_error_block_overload">Too many blocks.</data>
+  <data id="error_block_insert_different_rooms">You are inserting blocks for the wrong room. This is a sanity check.</data>
+  <data id="error_edit_lock">The desired action cannot be preformed. You must either confirm or deny changes done to the game to procede.</data>
+  <data id="error_move_error">Trying to move data to a place that contains bytes that aren't the same. This data will not be overwritten for repointing because it's probably used.</data>
+  <data id="dungeon_error_grid_mal-align">The object's coordinates you are attempting to assign are not aligned by the {0}x{0} grid. The coordinate was {1} with a value of {2}.</data>
+  <data id="dungeon_torch_insert_error">Even in the best case storage scenrario, you are above the limit of the amount of torches you can have in the game. You are {0} bytes over the limit. Will you override this issue temporarily to manage your dungeon design?</data>
+  <data id="dungeon_torch_insert_error_override">You chose to override this issue temporarily. You are {0} bytes over the limit. To have one torch in a room, that's {1} bytes of storage and every torch after that is {2}. Keep this in mind when managing the space to write to the ROM.</data>
+  <data id="dungeon_error_pit_size">Pit data too big. Please remove at least {0} pit(s).</data>
+  <data id="form_dungeon_editor_properties_BG2_op0">Off</data>
+  <data id="form_dungeon_editor_properties_BG2_op1">Parallaxing(1)</data>
+  <data id="form_dungeon_editor_properties_BG2_op2">Dark</data>
+  <data id="form_dungeon_editor_properties_BG2_op3">On Top</data>
+  <data id="form_dungeon_editor_properties_BG2_op4">Translucent</data>
+  <data id="form_dungeon_editor_properties_BG2_op5">Parallaxing(2)</data>
+  <data id="form_dungeon_editor_properties_BG2_op6">Normal</data>
+  <data id="form_dungeon_editor_properties_BG2_op7">Addition</data>
+  <data id="form_dungeon_editor_properties_BG2_op8">Dark room</data>
+  <data id="form_dungeon_editor_properties_collision_op0">One</data>
+  <data id="form_dungeon_editor_properties_collision_op1">Both</data>
+  <data id="form_dungeon_editor_properties_collision_op2">Both w/ scroll</data>
+  <data id="form_dungeon_editor_properties_collision_op3">Moving floor</data>
+  <data id="form_dungeon_editor_properties_collision_op4">Moving water</data>
+  <data id="error_initialize_compo">Initialize components then read from the resource file.</data>
+  <data id="form_dungeon_editor_tag_op00">Nothing</data>
+  <data id="form_dungeon_editor_tag_op01">NW Kill enemy to open</data>
+  <data id="form_dungeon_editor_tag_op02">NE Kill enemy to open</data>
+  <data id="form_dungeon_editor_tag_op03">SW Kill enemy to open</data>
+  <data id="form_dungeon_editor_tag_op04">SE Kill enemy to ope</data>
+  <data id="form_dungeon_editor_tag_op05">W Kill enemy to open</data>
+  <data id="form_dungeon_editor_tag_op06">E Kill enemy to open</data>
+  <data id="form_dungeon_editor_tag_op07">N Kill enemy to open</data>
+  <data id="form_dungeon_editor_tag_op08">S Kill enemy to open</data>
+  <data id="form_dungeon_editor_tag_op09">Clear quadrant to open</data>
+  <data id="form_dungeon_editor_tag_op10">Clear room to open</data>
+  <data id="form_dungeon_editor_tag_op11">NW Move block to open</data>
+  <data id="form_dungeon_editor_tag_op12">NE Move block to open</data>
+  <data id="form_dungeon_editor_tag_op13">SW Move block to open</data>
+  <data id="form_dungeon_editor_tag_op14">SE Move block to open</data>
+  <data id="form_dungeon_editor_tag_op15">W Move block to open</data>
+  <data id="form_dungeon_editor_tag_op16">E Move block to open</data>
+  <data id="form_dungeon_editor_tag_op17">N Move block to open</data>
+  <data id="form_dungeon_editor_tag_op18">S Move block to open</data>
+  <data id="form_dungeon_editor_tag_op19">Move block to open</data>
+  <data id="form_dungeon_editor_tag_op20">Pull lever to open</data>
+  <data id="form_dungeon_editor_tag_op21">Clear level to open door</data>
+  <data id="form_dungeon_editor_tag_op22">Switch opens door(Hold)</data>
+  <data id="form_dungeon_editor_tag_op23">Switch opens door(Toggle)</data>
+  <data id="form_dungeon_editor_tag_op24">Turn off water</data>
+  <data id="form_dungeon_editor_tag_op25">Turn on water</data>
+  <data id="form_dungeon_editor_tag_op26">Water gate</data>
+  <data id="form_dungeon_editor_tag_op27">Water twin</data>
+  <data id="form_dungeon_editor_tag_op28">Secret wall (Right)</data>
+  <data id="form_dungeon_editor_tag_op29">Secret wall (Left)</data>
+  <data id="form_dungeon_editor_tag_op30">Crash</data>
+  <data id="form_dungeon_editor_tag_op31">Crash</data>
+  <data id="form_dungeon_editor_tag_op32">Use switch to bomb wall</data>
+  <data id="form_dungeon_editor_tag_op33">Holes(0)</data>
+  <data id="form_dungeon_editor_tag_op34">Open chest for holes(0)</data>
+  <data id="form_dungeon_editor_tag_op35">Holes(1)</data>
+  <data id="form_dungeon_editor_tag_op36">Holes(2)</data>
+  <data id="form_dungeon_editor_tag_op37">Kill enemy to clear level</data>
+  <data id="form_dungeon_editor_tag_op38">SE Kill enemy to move block</data>
+  <data id="form_dungeon_editor_tag_op39">Trigger activated chest</data>
+  <data id="form_dungeon_editor_tag_op40">Use lever to bomb wall</data>
+  <data id="form_dungeon_editor_tag_op41">NW Kill enemy for chest</data>
+  <data id="form_dungeon_editor_tag_op42">NE Kill enemy for chest</data>
+  <data id="form_dungeon_editor_tag_op43">SW Kill enemies for chest</data>
+  <data id="form_dungeon_editor_tag_op44">SE Kill enemy for chest</data>
+  <data id="form_dungeon_editor_tag_op45">W Kill enemy for chest</data>
+  <data id="form_dungeon_editor_tag_op46">E Kill enemy for chest</data>
+  <data id="form_dungeon_editor_tag_op47">N Kill enemy for chest</data>
+  <data id="form_dungeon_editor_tag_op48">S Kill enemy for chest</data>
+  <data id="form_dungeon_editor_tag_op49">Clear quadrant for chest</data>
+  <data id="form_dungeon_editor_tag_op50">Clear room for chest</data>
+  <data id="form_dungeon_editor_tag_op51">Light torches to open</data>
+  <data id="form_dungeon_editor_tag_op52">Holes(3)</data>
+  <data id="form_dungeon_editor_tag_op53">Holes(4)</data>
+  <data id="form_dungeon_editor_tag_op54">Holes(5)</data>
+  <data id="form_dungeon_editor_tag_op55">Holes(6)</data>
+  <data id="form_dungeon_editor_tag_op56">Agahnim's room</data>
+  <data id="form_dungeon_editor_tag_op57">Holes(7)</data>
+  <data id="form_dungeon_editor_tag_op58">Holes(8)</data>
+  <data id="form_dungeon_editor_tag_op59">Open chest for holes(8)</data>
+  <data id="form_dungeon_editor_tag_op60">Move block to get chest</data>
+  <data id="form_dungeon_editor_tag_op61">Kill to open Ganon's door</data>
+  <data id="form_dungeon_editor_tag_op62">Light torches to get chest</data>
+  <data id="form_dungeon_editor_tag_op63">Kill boss again</data>
+  <data id="form_dungeon_editor_room_name_op005">Empty</data>
+  <data id="form_dungeon_editor_room_name_op015">Empty</data>
+  <data id="form_dungeon_editor_room_name_op022">TIC</data>
+  <data id="form_dungeon_editor_room_name_op023">
+  </data>
+  <data id="form_dungeon_editor_room_name_op024">
+  </data>
+  <data id="form_dungeon_editor_room_name_op025">
+  </data>
+  <data id="form_dungeon_editor_room_name_op026">
+  </data>
+  <data id="form_dungeon_editor_room_name_op027">
+  </data>
+  <data id="form_dungeon_editor_room_name_op028">
+  </data>
+  <data id="form_dungeon_editor_room_name_op029">Hyrule Castle Boss Entrance</data>
+  <data id="form_dungeon_editor_room_name_op030">
+  </data>
+  <data id="form_dungeon_editor_room_name_op031">
+  </data>
+  <data id="form_dungeon_editor_room_name_op032">Agahnim Boss Room (2)</data>
+  <data id="form_dungeon_editor_room_name_op033">Hyrule Castle's Sewer's</data>
+  <data id="form_dungeon_editor_room_name_op034">
+  </data>
+  <data id="form_dungeon_editor_room_name_op035">
+  </data>
+  <data id="form_dungeon_editor_room_name_op036">
+  </data>
+  <data id="form_dungeon_editor_room_name_op037">
+  </data>
+  <data id="form_dungeon_editor_room_name_op038">
+  </data>
+  <data id="form_dungeon_editor_room_name_op039">
+  </data>
+  <data id="form_dungeon_editor_room_name_op040">
+  </data>
+  <data id="form_dungeon_editor_room_name_op041">Mothula Boss Room</data>
+  <data id="form_dungeon_editor_room_name_op042">
+  </data>
+  <data id="form_dungeon_editor_room_name_op043">
+  </data>
+  <data id="form_dungeon_editor_room_name_op044">
+  </data>
+  <data id="form_dungeon_editor_room_name_op045">
+  </data>
+  <data id="form_dungeon_editor_room_name_op046">
+  </data>
+  <data id="form_dungeon_editor_room_name_op047">
+  </data>
+  <data id="form_dungeon_editor_room_name_op048">Agahnim Chamber</data>
+  <data id="form_dungeon_editor_room_name_op049">
+  </data>
+  <data id="form_dungeon_editor_room_name_op050">
+  </data>
+  <data id="form_dungeon_editor_room_name_op051">Lanmolas Boss Room</data>
+  <data id="form_dungeon_editor_room_name_op052">
+  </data>
+  <data id="form_dungeon_editor_room_name_op053">
+  </data>
+  <data id="form_dungeon_editor_room_name_op054">
+  </data>
+  <data id="form_dungeon_editor_room_name_op055">
+  </data>
+  <data id="form_dungeon_editor_room_name_op056">
+  </data>
+  <data id="form_dungeon_editor_room_name_op057">
+  </data>
+  <data id="form_dungeon_editor_room_name_op058">
+  </data>
+  <data id="form_dungeon_editor_room_name_op059">
+  </data>
+  <data id="form_dungeon_editor_room_name_op060">
+  </data>
+  <data id="form_dungeon_editor_room_name_op061">
+  </data>
+  <data id="form_dungeon_editor_room_name_op062">
+  </data>
+  <data id="form_dungeon_editor_room_name_op063">
+  </data>
+  <data id="form_dungeon_editor_room_name_op064">
+  </data>
+  <data id="form_dungeon_editor_room_name_op065">
+  </data>
+  <data id="form_dungeon_editor_room_name_op066">
+  </data>
+  <data id="form_dungeon_editor_room_name_op067">
+  </data>
+  <data id="form_dungeon_editor_room_name_op068">
+  </data>
+  <data id="form_dungeon_editor_room_name_op069">
+  </data>
+  <data id="form_dungeon_editor_room_name_op070">
+  </data>
+  <data id="form_dungeon_editor_room_name_op071">
+  </data>
+  <data id="form_dungeon_editor_room_name_op072">
+  </data>
+  <data id="form_dungeon_editor_room_name_op073">
+  </data>
+  <data id="form_dungeon_editor_room_name_op074">
+  </data>
+  <data id="form_dungeon_editor_room_name_op075">
+  </data>
+  <data id="form_dungeon_editor_room_name_op076">
+  </data>
+  <data id="form_dungeon_editor_room_name_op077">Mouldrum Boss Room</data>
+  <data id="form_dungeon_editor_room_name_op078">
+  </data>
+  <data id="form_dungeon_editor_room_name_op079">
+  </data>
+  <data id="form_dungeon_editor_room_name_op080">
+  </data>
+  <data id="form_dungeon_editor_room_name_op081">Hyrule Castle King's Throne</data>
+  <data id="form_dungeon_editor_room_name_op082">
+  </data>
+  <data id="form_dungeon_editor_room_name_op083">
+  </data>
+  <data id="form_dungeon_editor_room_name_op084">
+  </data>
+  <data id="form_dungeon_editor_room_name_op085">R.I.P. Link's Uncle</data>
+  <data id="form_dungeon_editor_room_name_op086">
+  </data>
+  <data id="form_dungeon_editor_room_name_op087">
+  </data>
+  <data id="form_dungeon_editor_room_name_op088">
+  </data>
+  <data id="form_dungeon_editor_room_name_op089">
+  </data>
+  <data id="form_dungeon_editor_room_name_op090">Helmasaur's Boss Room</data>
+  <data id="form_dungeon_editor_room_name_op091">
+  </data>
+  <data id="form_dungeon_editor_room_name_op092">
+  </data>
+  <data id="form_dungeon_editor_room_name_op093">
+  </data>
+  <data id="form_dungeon_editor_room_name_op094">
+  </data>
+  <data id="form_dungeon_editor_room_name_op095">
+  </data>
+  <data id="form_dungeon_editor_room_name_op096">Hyrule Castle's Entrance</data>
+  <data id="form_dungeon_editor_room_name_op097">Hyrule Castle's Entrance</data>
+  <data id="form_dungeon_editor_room_name_op098">Hyrule Castle's Entrance</data>
+  <data id="form_dungeon_editor_room_name_op099">
+  </data>
+  <data id="form_dungeon_editor_room_name_op100">Blind's Hideout</data>
+  <data id="form_dungeon_editor_room_name_op101">Blind's Hideout</data>
+  <data id="form_dungeon_editor_room_name_op102">
+  </data>
+  <data id="form_dungeon_editor_room_name_op103">
+  </data>
+  <data id="form_dungeon_editor_room_name_op104">
+  </data>
+  <data id="form_dungeon_editor_room_name_op105">
+  </data>
+  <data id="form_dungeon_editor_room_name_op106">
+  </data>
+  <data id="form_dungeon_editor_room_name_op107">
+  </data>
+  <data id="form_dungeon_editor_room_name_op108">
+  </data>
+  <data id="form_dungeon_editor_room_name_op109">
+  </data>
+  <data id="form_dungeon_editor_room_name_op110">Ice Temple</data>
+  <data id="form_dungeon_editor_room_name_op111">
+  </data>
+  <data id="form_dungeon_editor_room_name_op112">
+  </data>
+  <data id="form_dungeon_editor_room_name_op113">
+  </data>
+  <data id="form_dungeon_editor_room_name_op114">
+  </data>
+  <data id="form_dungeon_editor_room_name_op115">Sand Temple</data>
+  <data id="form_dungeon_editor_room_name_op116">
+  </data>
+  <data id="form_dungeon_editor_room_name_op117">
+  </data>
+  <data id="form_dungeon_editor_room_name_op118">
+  </data>
+  <data id="form_dungeon_editor_room_name_op119">
+  </data>
+  <data id="form_dungeon_editor_room_name_op120">
+  </data>
+  <data id="form_dungeon_editor_room_name_op121">
+  </data>
+  <data id="form_dungeon_editor_room_name_op122">
+  </data>
+  <data id="form_dungeon_editor_room_name_op123">
+  </data>
+  <data id="form_dungeon_editor_room_name_op124">
+  </data>
+  <data id="form_dungeon_editor_room_name_op125">
+  </data>
+  <data id="form_dungeon_editor_room_name_op126">
+  </data>
+  <data id="form_dungeon_editor_room_name_op127">
+  </data>
+  <data id="form_dungeon_editor_room_name_op128">Zelda's Prison Cell</data>
+  <data id="form_dungeon_editor_room_name_op129">
+  </data>
+  <data id="form_dungeon_editor_room_name_op130">
+  </data>
+  <data id="form_dungeon_editor_room_name_op131">Entrance to Sand Temple</data>
+  <data id="form_dungeon_editor_room_name_op132">Entrance to Sand Temple</data>
+  <data id="form_dungeon_editor_room_name_op133">Entrance to Sand Temple</data>
+  <data id="form_dungeon_editor_room_name_op134">
+  </data>
+  <data id="form_dungeon_editor_room_name_op135">
+  </data>
+  <data id="form_dungeon_editor_room_name_op136">
+  </data>
+  <data id="form_dungeon_editor_room_name_op137">
+  </data>
+  <data id="form_dungeon_editor_room_name_op138">
+  </data>
+  <data id="form_dungeon_editor_room_name_op139">
+  </data>
+  <data id="form_dungeon_editor_room_name_op140">
+  </data>
+  <data id="form_dungeon_editor_room_name_op141">
+  </data>
+  <data id="form_dungeon_editor_room_name_op142">
+  </data>
+  <data id="form_dungeon_editor_room_name_op143">
+  </data>
+  <data id="form_dungeon_editor_room_name_op144">Viterous's Boss Room</data>
+  <data id="form_dungeon_editor_room_name_op145">
+  </data>
+  <data id="form_dungeon_editor_room_name_op146">
+  </data>
+  <data id="form_dungeon_editor_room_name_op147">
+  </data>
+  <data id="form_dungeon_editor_room_name_op148">
+  </data>
+  <data id="form_dungeon_editor_room_name_op149">
+  </data>
+  <data id="form_dungeon_editor_room_name_op150">
+  </data>
+  <data id="form_dungeon_editor_room_name_op151">
+  </data>
+  <data id="form_dungeon_editor_room_name_op152">
+  </data>
+  <data id="form_dungeon_editor_room_name_op153">
+  </data>
+  <data id="form_dungeon_editor_room_name_op154">
+  </data>
+  <data id="form_dungeon_editor_room_name_op155">
+  </data>
+  <data id="form_dungeon_editor_room_name_op156">
+  </data>
+  <data id="form_dungeon_editor_room_name_op157">
+  </data>
+  <data id="form_dungeon_editor_room_name_op158">Ice Temple Big Chest Location</data>
+  <data id="form_dungeon_editor_room_name_op159">
+  </data>
+  <data id="form_dungeon_editor_room_name_op160">
+  </data>
+  <data id="form_dungeon_editor_room_name_op161">
+  </data>
+  <data id="form_dungeon_editor_room_name_op162">
+  </data>
+  <data id="form_dungeon_editor_room_name_op163">
+  </data>
+  <data id="form_dungeon_editor_room_name_op164">TriNexxB's Boss Room</data>
+  <data id="form_dungeon_editor_room_name_op165">
+  </data>
+  <data id="form_dungeon_editor_room_name_op166">
+  </data>
+  <data id="form_dungeon_editor_room_name_op167">
+  </data>
+  <data id="form_dungeon_editor_room_name_op168">
+  </data>
+  <data id="form_dungeon_editor_room_name_op169">Green Temple Big Chest Room</data>
+  <data id="form_dungeon_editor_room_name_op170">
+  </data>
+  <data id="form_dungeon_editor_room_name_op171">
+  </data>
+  <data id="form_dungeon_editor_room_name_op172">Blind's Boss Room</data>
+  <data id="form_dungeon_editor_room_name_op173">
+  </data>
+  <data id="form_dungeon_editor_room_name_op174">
+  </data>
+  <data id="form_dungeon_editor_room_name_op175">
+  </data>
+  <data id="form_dungeon_editor_room_name_op176">
+  </data>
+  <data id="form_dungeon_editor_room_name_op177">
+  </data>
+  <data id="form_dungeon_editor_room_name_op178">
+  </data>
+  <data id="form_dungeon_editor_room_name_op179">
+  </data>
+  <data id="form_dungeon_editor_room_name_op180">
+  </data>
+  <data id="form_dungeon_editor_room_name_op181">
+  </data>
+  <data id="form_dungeon_editor_room_name_op182">
+  </data>
+  <data id="form_dungeon_editor_room_name_op183">
+  </data>
+  <data id="form_dungeon_editor_room_name_op184">
+  </data>
+  <data id="form_dungeon_editor_room_name_op185">
+  </data>
+  <data id="form_dungeon_editor_room_name_op186">
+  </data>
+  <data id="form_dungeon_editor_room_name_op187">
+  </data>
+  <data id="form_dungeon_editor_room_name_op188">
+  </data>
+  <data id="form_dungeon_editor_room_name_op189">
+  </data>
+  <data id="form_dungeon_editor_room_name_op190">
+  </data>
+  <data id="form_dungeon_editor_room_name_op191">
+  </data>
+  <data id="form_dungeon_editor_room_name_op192">
+  </data>
+  <data id="form_dungeon_editor_room_name_op193">
+  </data>
+  <data id="form_dungeon_editor_room_name_op194">
+  </data>
+  <data id="form_dungeon_editor_room_name_op195">Green Temple Big Chest Room</data>
+  <data id="form_dungeon_editor_room_name_op196">
+  </data>
+  <data id="form_dungeon_editor_room_name_op197">
+  </data>
+  <data id="form_dungeon_editor_room_name_op198">
+  </data>
+  <data id="form_dungeon_editor_room_name_op199">
+  </data>
+  <data id="form_dungeon_editor_room_name_op200">
+  </data>
+  <data id="form_dungeon_editor_room_name_op201">Green Temple Entrance</data>
+  <data id="form_dungeon_editor_room_name_op203">
+  </data>
+  <data id="form_dungeon_editor_room_name_op204">
+  </data>
+  <data id="form_dungeon_editor_room_name_op205">
+  </data>
+  <data id="form_dungeon_editor_room_name_op206">
+  </data>
+  <data id="form_dungeon_editor_room_name_op207">
+  </data>
+  <data id="form_dungeon_editor_room_name_op208">
+  </data>
+  <data id="form_dungeon_editor_room_name_op209">
+  </data>
+  <data id="form_dungeon_editor_room_name_op210">
+  </data>
+  <data id="form_dungeon_editor_room_name_op211">
+  </data>
+  <data id="form_dungeon_editor_room_name_op212">
+  </data>
+  <data id="form_dungeon_editor_room_name_op213">
+  </data>
+  <data id="form_dungeon_editor_room_name_op214">
+  </data>
+  <data id="form_dungeon_editor_room_name_op215">
+  </data>
+  <data id="form_dungeon_editor_room_name_op216">
+  </data>
+  <data id="form_dungeon_editor_room_name_op217">
+  </data>
+  <data id="form_dungeon_editor_room_name_op218">
+  </data>
+  <data id="form_dungeon_editor_room_name_op219">
+  </data>
+  <data id="form_dungeon_editor_room_name_op220">
+  </data>
+  <data id="form_dungeon_editor_room_name_op221">
+  </data>
+  <data id="form_dungeon_editor_room_name_op222">KholdStare's Boss Room</data>
+  <data id="form_dungeon_editor_room_name_op223">
+  </data>
+  <data id="form_dungeon_editor_room_name_op224">
+  </data>
+  <data id="form_dungeon_editor_room_name_op225">
+  </data>
+  <data id="form_dungeon_editor_room_name_op226">
+  </data>
+  <data id="form_dungeon_editor_room_name_op227">
+  </data>
+  <data id="form_dungeon_editor_room_name_op228">
+  </data>
+  <data id="form_dungeon_editor_room_name_op229">
+  </data>
+  <data id="form_dungeon_editor_room_name_op230">
+  </data>
+  <data id="form_dungeon_editor_room_name_op231">
+  </data>
+  <data id="form_dungeon_editor_room_name_op232">
+  </data>
+  <data id="form_dungeon_editor_room_name_op233">
+  </data>
+  <data id="form_dungeon_editor_room_name_op234">
+  </data>
+  <data id="form_dungeon_editor_room_name_op235">
+  </data>
+  <data id="form_dungeon_editor_room_name_op236">
+  </data>
+  <data id="form_dungeon_editor_room_name_op237">
+  </data>
+  <data id="form_dungeon_editor_room_name_op238">
+  </data>
+  <data id="form_dungeon_editor_room_name_op239">
+  </data>
+  <data id="form_dungeon_editor_room_name_op240">Cave Entrance</data>
+  <data id="form_dungeon_editor_room_name_op241">Cave</data>
+  <data id="form_dungeon_editor_room_name_op242">
+  </data>
+  <data id="form_dungeon_editor_room_name_op243">
+  </data>
+  <data id="form_dungeon_editor_room_name_op244">
+  </data>
+  <data id="form_dungeon_editor_room_name_op245">
+  </data>
+  <data id="form_dungeon_editor_room_name_op246">
+  </data>
+  <data id="form_dungeon_editor_room_name_op247">
+  </data>
+  <data id="form_dungeon_editor_room_name_op248">
+  </data>
+  <data id="form_dungeon_editor_room_name_op249">
+  </data>
+  <data id="form_dungeon_editor_room_name_op250">
+  </data>
+  <data id="form_dungeon_editor_room_name_op251">
+  </data>
+  <data id="form_dungeon_editor_room_name_op252">
+  </data>
+  <data id="form_dungeon_editor_room_name_op253">
+  </data>
+  <data id="form_dungeon_editor_room_name_op254">
+  </data>
+  <data id="form_dungeon_editor_room_name_op255">
+  </data>
+  <data id="form_dungeon_editor_room_name_op256">
+  </data>
+  <data id="form_dungeon_editor_room_name_op257">
+  </data>
+  <data id="form_dungeon_editor_room_name_op258">
+  </data>
+  <data id="form_dungeon_editor_room_name_op259">
+  </data>
+  <data id="form_dungeon_editor_room_name_op260">Link's House</data>
+  <data id="form_dungeon_editor_room_name_op261">
+  </data>
+  <data id="form_dungeon_editor_room_name_op262">
+  </data>
+  <data id="form_dungeon_editor_room_name_op263">
+  </data>
+  <data id="form_dungeon_editor_room_name_op264">
+  </data>
+  <data id="form_dungeon_editor_room_name_op265">
+  </data>
+  <data id="form_dungeon_editor_room_name_op266">
+  </data>
+  <data id="form_dungeon_editor_room_name_op267">
+  </data>
+  <data id="form_dungeon_editor_room_name_op268">
+  </data>
+  <data id="form_dungeon_editor_room_name_op269">
+  </data>
+  <data id="form_dungeon_editor_room_name_op270">
+  </data>
+  <data id="form_dungeon_editor_room_name_op271">
+  </data>
+  <data id="form_dungeon_editor_room_name_op272">
+  </data>
+  <data id="form_dungeon_editor_room_name_op273">
+  </data>
+  <data id="form_dungeon_editor_room_name_op274">
+  </data>
+  <data id="form_dungeon_editor_room_name_op275">
+  </data>
+  <data id="form_dungeon_editor_room_name_op276">
+  </data>
+  <data id="form_dungeon_editor_room_name_op277">
+  </data>
+  <data id="form_dungeon_editor_room_name_op278">
+  </data>
+  <data id="form_dungeon_editor_room_name_op279">
+  </data>
+  <data id="form_dungeon_editor_room_name_op280">
+  </data>
+  <data id="form_dungeon_editor_room_name_op281">
+  </data>
+  <data id="form_dungeon_editor_room_name_op282">
+  </data>
+  <data id="form_dungeon_editor_room_name_op283">
+  </data>
+  <data id="form_dungeon_editor_room_name_op284">
+  </data>
+  <data id="form_dungeon_editor_room_name_op285">
+  </data>
+  <data id="form_dungeon_editor_room_name_op286">
+  </data>
+  <data id="form_dungeon_editor_room_name_op287">
+  </data>
+  <data id="form_dungeon_editor_room_name_op288">Fountain</data>
+  <data id="form_dungeon_editor_room_name_op289">
+  </data>
+  <data id="form_dungeon_editor_room_name_op290">
+  </data>
+  <data id="form_dungeon_editor_room_name_op291">
+  </data>
+  <data id="form_dungeon_editor_room_name_op292">
+  </data>
+  <data id="form_dungeon_editor_room_name_op293">
+  </data>
+  <data id="form_dungeon_editor_room_name_op294">
+  </data>
+  <data id="form_dungeon_editor_room_name_op295">
+  </data>
+  <data id="form_dungeon_editor_effects_op0">Nothing</data>
+  <data id="form_dungeon_editor_effects_op1">01</data>
+  <data id="form_dungeon_editor_effects_op2">Moving floor</data>
+  <data id="form_dungeon_editor_effects_op3">Moving water</data>
+  <data id="form_dungeon_editor_effects_op4">04</data>
+  <data id="form_dungeon_editor_effects_op5">Red flashes</data>
+  <data id="form_dungeon_editor_effects_op6">Light torches to see floor</data>
+  <data id="form_dungeon_editor_effects_op7">Ganon room</data>
+  <data id="form_dungeon_editor_properties_exit_op0">Hole/Warp</data>
+  <data id="form_dungeon_editor_properties_exit_op1">Staircase #1</data>
+  <data id="form_dungeon_editor_properties_exit_op2">Staircase #2</data>
+  <data id="form_dungeon_editor_properties_exit_op3">Staircase #3 / Door #1</data>
+  <data id="form_dungeon_editor_properties_exit_op4">Staircase #4 / Door #2</data>
+  <data id="Closing">Closing</data>
+  <data id="Closing_text">Are you sure you want to close?</data>
+  <data id="form_dungeon_editor_panel1_dropdown_add_block">Add block</data>
+  <data id="form_dungeon_editor_panel1_dropdown_add_torch">Add torch</data>
+  <data id="Save">Save progress?</data>
+  <data id="form_dungeon_editor_panel1_dropdown_delete">Delete me</data>
+  <data id="dungeon_error_sprite_patch">Conn's prite patch is incorrect.</data>
+  <data id="sprite_names_op000">Raven</data>
+  <data id="sprite_names_op001">Vulture</data>
+  <data id="sprite_names_op002">Flying Stalfos Head</data>
+  <data id="sprite_names_op003">Empty</data>
+  <data id="sprite_names_op004">Pull Switch (Good)</data>
+  <data id="sprite_names_op005">Pull Switch (Unused)</data>
+  <data id="sprite_names_op006">Pull Switch (Bad)</data>
+  <data id="sprite_names_op007">Pull Switch (Unused)</data>
+  <data id="sprite_names_op008">Octorok (One Way)</data>
+  <data id="sprite_names_op009">Moldorm (Boss)</data>
+  <data id="sprite_names_op010">Octorok (Four Way)</data>
+  <data id="sprite_names_op011">Chicken</data>
+  <data id="sprite_names_op012">Octorok (Unused)</data>
+  <data id="sprite_names_op013">Buzzblob</data>
+  <data id="sprite_names_op014">Snapdragon</data>
+  <data id="sprite_names_op015">Octoballoon</data>
+  <data id="sprite_names_op016">Octoballoon Hatchlings</data>
+  <data id="sprite_names_op017">Hinox</data>
+  <data id="sprite_names_op018">Moblin</data>
+  <data id="sprite_names_op019">Mini Helmasaur</data>
+  <data id="sprite_names_op020">Gargoyle's Domain Gate</data>
+  <data id="sprite_names_op021">Antifairy</data>
+  <data id="sprite_names_op022">Sahasrahla / Aginah</data>
+  <data id="sprite_names_op023">Bush Hoarder</data>
+  <data id="sprite_names_op024">Mini Moldorm</data>
+  <data id="sprite_names_op025">Poe</data>
+  <data id="sprite_names_op026">Dwarves</data>
+  <data id="sprite_names_op027">Arrow in wall (?)</data>
+  <data id="sprite_names_op028">Statue</data>
+  <data id="sprite_names_op029">Weathervane</data>
+  <data id="sprite_names_op030">Crystal Switch</data>
+  <data id="sprite_names_op031">Bug-Catching Kid</data>
+  <data id="sprite_names_op032">Sluggula</data>
+  <data id="sprite_names_op033">Push Switch</data>
+  <data id="sprite_names_op034">Ropa</data>
+  <data id="sprite_names_op035">Red Bari</data>
+  <data id="sprite_names_op036">Blue Bari</data>
+  <data id="sprite_names_op037">Talking Tree</data>
+  <data id="sprite_names_op038">Hardhat Beetle</data>
+  <data id="sprite_names_op039">Deadrock</data>
+  <data id="sprite_names_op040">Storytellers</data>
+  <data id="sprite_names_op041">Blind Hideout Attendant</data>
+  <data id="sprite_names_op042">Sweeping Lady</data>
+  <data id="sprite_names_op043">Multipurpose Sprite</data>
+  <data id="sprite_names_op044">Lumberjacks</data>
+  <data id="sprite_names_op045">Telepathic stones? (No idea what this actually is, likely unused)</data>
+  <data id="sprite_names_op046">Flute Boy's Notes</data>
+  <data id="sprite_names_op047">Race HP NPCs</data>
+  <data id="sprite_names_op048">Person (?)</data>
+  <data id="sprite_names_op049">Fortune Teller</data>
+  <data id="sprite_names_op050">Angry Brothers</data>
+  <data id="sprite_names_op051">Pull For Rupees Sprite</data>
+  <data id="sprite_names_op052">Scared Girl 2</data>
+  <data id="sprite_names_op053">Innkeeper</data>
+  <data id="sprite_names_op054">Witch</data>
+  <data id="sprite_names_op055">Waterfall</data>
+  <data id="sprite_names_op056">Arrow Target</data>
+  <data id="sprite_names_op057">Average Middle-Aged Man</data>
+  <data id="sprite_names_op058">Half Magic Bat</data>
+  <data id="sprite_names_op059">Dash Item</data>
+  <data id="sprite_names_op060">Village Kid</data>
+  <data id="sprite_names_op061">Scared Girl 1</data>
+  <data id="sprite_names_op062">Rock Hoarder</data>
+  <data id="sprite_names_op063">Tutorial Soldier</data>
+  <data id="sprite_names_op064">Lightning Lock</data>
+  <data id="sprite_names_op065">Blue Sword Soldier / Used by guards to detect player</data>
+  <data id="sprite_names_op066">Green Sword Soldier</data>
+  <data id="sprite_names_op067">Red Spear Soldier</data>
+  <data id="sprite_names_op068">Assault Sword Soldier</data>
+  <data id="sprite_names_op069">Green Spear Soldier</data>
+  <data id="sprite_names_op070">Blue Archer</data>
+  <data id="sprite_names_op071">Green Archer</data>
+  <data id="sprite_names_op072">Red Javelin Soldier</data>
+  <data id="sprite_names_op073">Red Javelin Soldier 2</data>
+  <data id="sprite_names_op074">Red Bomb Soldiers</data>
+  <data id="sprite_names_op075">Green Soldier Recruits</data>
+  <data id="sprite_names_op076">Geldman</data>
+  <data id="sprite_names_op077">Rabbit</data>
+  <data id="sprite_names_op078">Popo</data>
+  <data id="sprite_names_op079">Popo 2</data>
+  <data id="sprite_names_op080">Cannon Balls</data>
+  <data id="sprite_names_op081">Armos</data>
+  <data id="sprite_names_op082">Giant Zora</data>
+  <data id="sprite_names_op083">Armos Knights (Boss)</data>
+  <data id="sprite_names_op084">Lanmolas (Boss)</data>
+  <data id="sprite_names_op085">Fireball Zora</data>
+  <data id="sprite_names_op086">Walking Zora</data>
+  <data id="sprite_names_op087">Desert Palace Barriers</data>
+  <data id="sprite_names_op088">Crab</data>
+  <data id="sprite_names_op089">Bird</data>
+  <data id="sprite_names_op090">Squirrel</data>
+  <data id="sprite_names_op091">Spark (Left to Right)</data>
+  <data id="sprite_names_op092">Spark (Right to Left)</data>
+  <data id="sprite_names_op093">Roller (Vertical Moving)</data>
+  <data id="sprite_names_op094">Roller (Vertical Moving)</data>
+  <data id="sprite_names_op095">Roller (Horizontal Moving)</data>
+  <data id="sprite_names_op096">Roller (Horizontal Moving)</data>
+  <data id="sprite_names_op097">Beamos</data>
+  <data id="sprite_names_op098">Master Sword</data>
+  <data id="sprite_names_op099">Devalant (Non-shooter)</data>
+  <data id="sprite_names_op100">Devalant (Shooter)</data>
+  <data id="sprite_names_op101">Shooting Gallery Proprietor</data>
+  <data id="sprite_names_op102">Moving Cannon Ball Shooters (Right)</data>
+  <data id="sprite_names_op103">Moving Cannon Ball Shooters (Left)</data>
+  <data id="sprite_names_op104">Moving Cannon Ball Shooters (Down)</data>
+  <data id="sprite_names_op105">Moving Cannon Ball Shooters (Up)</data>
+  <data id="sprite_names_op106">Ball N' Chain Trooper</data>
+  <data id="sprite_names_op107">Cannon Soldier</data>
+  <data id="sprite_names_op108">Mirror Portal</data>
+  <data id="sprite_names_op109">Rat</data>
+  <data id="sprite_names_op110">Rope</data>
+  <data id="sprite_names_op111">Keese</data>
+  <data id="sprite_names_op112">Helmasaur King Fireball</data>
+  <data id="sprite_names_op113">Leever</data>
+  <data id="sprite_names_op114">Activator for the Ponds (Where You Throw in Items)</data>
+  <data id="sprite_names_op115">Uncle / Priest</data>
+  <data id="sprite_names_op116">Running Man</data>
+  <data id="sprite_names_op117">Bottle Salesman</data>
+  <data id="sprite_names_op118">Princess Zelda</data>
+  <data id="sprite_names_op119">Antifairy (Alternate)</data>
+  <data id="sprite_names_op120">Village Elder</data>
+  <data id="sprite_names_op121">Bee</data>
+  <data id="sprite_names_op122">Agahnim 1 and 2 (Boss)</data>
+  <data id="sprite_names_op123">Agahnim Energy Ball</data>
+  <data id="sprite_names_op124">Hyu</data>
+  <data id="sprite_names_op125">Big Spike Trap</data>
+  <data id="sprite_names_op126">Guruguru Bar (Clockwise)</data>
+  <data id="sprite_names_op127">Guruguru Bar (Counter Clockwise)</data>
+  <data id="sprite_names_op128">Winder</data>
+  <data id="sprite_names_op129">Water Tektite</data>
+  <data id="sprite_names_op130">Antifairy Circle</data>
+  <data id="sprite_names_op131">Green Eyegore</data>
+  <data id="sprite_names_op132">Red Eyegore</data>
+  <data id="sprite_names_op133">Yellow Stalfos</data>
+  <data id="sprite_names_op134">Kodongo</data>
+  <data id="sprite_names_op135">Flames</data>
+  <data id="sprite_names_op136">Mothula (Boss)</data>
+  <data id="sprite_names_op137">Mothula's Beam</data>
+  <data id="sprite_names_op138">Spike Trap</data>
+  <data id="sprite_names_op139">Gibdo</data>
+  <data id="sprite_names_op140">Arrghus (Boss)</data>
+  <data id="sprite_names_op141">Arrghus Spawn</data>
+  <data id="sprite_names_op142">Terrorpin</data>
+  <data id="sprite_names_op143">Zol / Slime</data>
+  <data id="sprite_names_op144">Wallmaster</data>
+  <data id="sprite_names_op145">Stalfos Knight</data>
+  <data id="sprite_names_op146">Helmasaur King (Boss)</data>
+  <data id="sprite_names_op147">Bumper</data>
+  <data id="sprite_names_op148">Swimmers (?)</data>
+  <data id="sprite_names_op149">Eye Laser (Right)</data>
+  <data id="sprite_names_op150">Eye Laser (Left)</data>
+  <data id="sprite_names_op151">Eye Laser (Down)</data>
+  <data id="sprite_names_op152">Eye Laser (Up)</data>
+  <data id="sprite_names_op153">Pengator</data>
+  <data id="sprite_names_op154">Kyameron</data>
+  <data id="sprite_names_op155">Wizzrobe</data>
+  <data id="sprite_names_op156">Tadpoles (?)</data>
+  <data id="sprite_names_op157">Zoro / Babusu</data>
+  <data id="sprite_names_op158">Ostrich (Haunted Grove)</data>
+  <data id="sprite_names_op159">Flute</data>
+  <data id="sprite_names_op160">Birds (Haunted Grove)</data>
+  <data id="sprite_names_op161">Freezor</data>
+  <data id="sprite_names_op162">Kholdstare (Boss)</data>
+  <data id="sprite_names_op163">Kholdstare's Shell</data>
+  <data id="sprite_names_op164">Falling Ice</data>
+  <data id="sprite_names_op165">Blue Zazak</data>
+  <data id="sprite_names_op166">Red Zazak</data>
+  <data id="sprite_names_op167">Stalfos</data>
+  <data id="sprite_names_op168">Green Flying Bomber</data>
+  <data id="sprite_names_op169">Blue Flying Bomber</data>
+  <data id="sprite_names_op170">Pikit</data>
+  <data id="sprite_names_op171">Maiden</data>
+  <data id="sprite_names_op172">Apple</data>
+  <data id="sprite_names_op173">Lost Old Man</data>
+  <data id="sprite_names_op174">Down Pipe</data>
+  <data id="sprite_names_op175">Up Pipe</data>
+  <data id="sprite_names_op176">Right Pip</data>
+  <data id="sprite_names_op177">Left Pipe</data>
+  <data id="sprite_names_op178">Good Bee</data>
+  <data id="sprite_names_op179">Hylian Inscription</data>
+  <data id="sprite_names_op180">Thief's Chest</data>
+  <data id="sprite_names_op181">Bomb Salesman</data>
+  <data id="sprite_names_op182">Kiki</data>
+  <data id="sprite_names_op183">Blind Disguised as Maiden</data>
+  <data id="sprite_names_op184">Monologue Testing Sprite</data>
+  <data id="sprite_names_op185">Feuding Friends on Death Mountain</data>
+  <data id="sprite_names_op186">Whirlpool</data>
+  <data id="sprite_names_op187">Salesman / Chestgame Guy / 300 Rupee Giver Guy / Chest Game Thief</data>
+  <data id="sprite_names_op188">Drunk Guy in Bar</data>
+  <data id="sprite_names_op189">Vitreous (Large Eyeball) (Boss)</data>
+  <data id="sprite_names_op190">Vitreous (Small Eyeball)</data>
+  <data id="sprite_names_op191">Vitreous' Lightning</data>
+  <data id="sprite_names_op192">Monster in Lake of Ill Omen / Quake Medallion</data>
+  <data id="sprite_names_op193">Agahnim Teleporting Zelda to Dark World</data>
+  <data id="sprite_names_op194">Boulders</data>
+  <data id="sprite_names_op195">Gibo</data>
+  <data id="sprite_names_op196">Thief</data>
+  <data id="sprite_names_op197">Medusa</data>
+  <data id="sprite_names_op198">Four Way Fireball Shooters</data>
+  <data id="sprite_names_op199">Hokku-Bokku</data>
+  <data id="sprite_names_op200">Big Healing Fairy + Dust</data>
+  <data id="sprite_names_op201">Tektite</data>
+  <data id="sprite_names_op202">Chain Chomp</data>
+  <data id="sprite_names_op203">Trinexx (Boss)</data>
+  <data id="sprite_names_op204">Another Part of Trinexx</data>
+  <data id="sprite_names_op205">Another Part of Trinexx</data>
+  <data id="sprite_names_op206">Blind The Thief (Boss)</data>
+  <data id="sprite_names_op207">Swamola</data>
+  <data id="sprite_names_op208">Lynel</data>
+  <data id="sprite_names_op209">Bunny Beam</data>
+  <data id="sprite_names_op210">Flopping Fish</data>
+  <data id="sprite_names_op211">Stal</data>
+  <data id="sprite_names_op212">Landmine</data>
+  <data id="sprite_names_op213">Digging Game Proprietor</data>
+  <data id="sprite_names_op214">Ganon</data>
+  <data id="sprite_names_op215">Copy of Ganon, Invincible</data>
+  <data id="sprite_names_op216">Heart</data>
+  <data id="sprite_names_op217">Green Rupee</data>
+  <data id="sprite_names_op218">Blue Rupee</data>
+  <data id="sprite_names_op219">Red Rupee</data>
+  <data id="sprite_names_op220">Bomb Refill (1)</data>
+  <data id="sprite_names_op221">Bomb Refill (4)</data>
+  <data id="sprite_names_op222">Bomb Refill (8)</data>
+  <data id="sprite_names_op223">Small Magic Refill</data>
+  <data id="sprite_names_op224">Full Magic Refill</data>
+  <data id="sprite_names_op225">Arrow Refill (5)</data>
+  <data id="sprite_names_op226">Arrow Refill (10)</data>
+  <data id="sprite_names_op227">Fairy</data>
+  <data id="sprite_names_op228">Key</data>
+  <data id="sprite_names_op229">Big Key</data>
+  <data id="sprite_names_op230">Shield</data>
+  <data id="sprite_names_op231">Mushroom</data>
+  <data id="sprite_names_op232">Fake Master Sword</data>
+  <data id="sprite_names_op233">Witch Assistant / His Items, Including Magic Powder</data>
+  <data id="sprite_names_op234">Heart Container</data>
+  <data id="sprite_names_op235">Heart Piece</data>
+  <data id="sprite_names_op236">Bush</data>
+  <data id="sprite_names_op237">Cane Of Somaria Platform</data>
+  <data id="sprite_names_op238">Mantle</data>
+  <data id="sprite_names_op239">Cane of Somaria Platform (Unused)</data>
+  <data id="sprite_names_op240">Cane of Somaria Platform (Unused)</data>
+  <data id="sprite_names_op241">Cane of Somaria Platform (Unused)</data>
+  <data id="sprite_names_op242">Medallion Tablet</data>
+  <data id="form_dungeon_editor_panel1_dropdown_send_back">Send back</data>
+  <data id="form_dungeon_editor_panel1_dropdown_send_forward">Send forward</data>
+  <data id="form_dungeon_editor_room_name_op202">Unused</data>
+  <data id="item_names_op000">Swd&amp;&amp;Sh1</data>
+  <data id="item_names_op001">Sword 2</data>
+  <data id="item_names_op002">Sword 3</data>
+  <data id="item_names_op003">Sword 4</data>
+  <data id="item_names_op004">Shield 1</data>
+  <data id="item_names_op005">Shield 2</data>
+  <data id="item_names_op006">Shield 3</data>
+  <data id="item_names_op007">Firerod</data>
+  <data id="item_names_op008">Icerod</data>
+  <data id="item_names_op009">Hammer</data>
+  <data id="item_names_op010">Hookshot</data>
+  <data id="item_names_op011">Bow</data>
+  <data id="item_names_op012">Boomerang</data>
+  <data id="item_names_op013">Powder</data>
+  <data id="item_names_op014">Bee</data>
+  <data id="item_names_op015">Bombos</data>
+  <data id="item_names_op016">Ether</data>
+  <data id="item_names_op017">Quake</data>
+  <data id="item_names_op018">Lamp</data>
+  <data id="item_names_op019">Shovel</data>
+  <data id="item_names_op020">Flute</data>
+  <data id="item_names_op021">Red cane</data>
+  <data id="item_names_op022">Bottle</data>
+  <data id="item_names_op023">Heart piece</data>
+  <data id="item_names_op024">Blue cane</data>
+  <data id="item_names_op025">Cape</data>
+  <data id="item_names_op026">Mirror</data>
+  <data id="item_names_op027">Power glove</data>
+  <data id="item_names_op028">Titan glove</data>
+  <data id="item_names_op029">Wordbook</data>
+  <data id="item_names_op030">Flippers</data>
+  <data id="item_names_op031">Pearl</data>
+  <data id="item_names_op032">Crystal</data>
+  <data id="item_names_op033">Net</data>
+  <data id="item_names_op034">Armor 2</data>
+  <data id="item_names_op035">Armor 3</data>
+  <data id="item_names_op036">Key</data>
+  <data id="item_names_op037">Compass</data>
+  <data id="item_names_op038">LiarHeart</data>
+  <data id="item_names_op039">Bomb</data>
+  <data id="item_names_op040">3 bombs</data>
+  <data id="item_names_op041">Mushroom</data>
+  <data id="item_names_op042">Red boom.</data>
+  <data id="item_names_op043">Red pot</data>
+  <data id="item_names_op044">Green pot (Zelda 420, Play it)</data>
+  <data id="item_names_op045">Blue pot</data>
+  <data id="item_names_op046">Red pot</data>
+  <data id="item_names_op047">Green pot</data>
+  <data id="item_names_op048">Blue pot</data>
+  <data id="item_names_op049">10 bombs</data>
+  <data id="item_names_op050">Big key</data>
+  <data id="item_names_op051">Map</data>
+  <data id="item_names_op052">1 rupee</data>
+  <data id="item_names_op053">5 rupees</data>
+  <data id="item_names_op054">20 rupees</data>
+  <data id="item_names_op055">Pendant 1</data>
+  <data id="item_names_op056">Pendant 2</data>
+  <data id="item_names_op057">Pendant 3</data>
+  <data id="item_names_op058">Bow&amp;&amp;Arrows</data>
+  <data id="item_names_op059">Bow&amp;&amp;S.Arr</data>
+  <data id="item_names_op060">Bee</data>
+  <data id="item_names_op061">Fairy</data>
+  <data id="item_names_op062">MuteHeart</data>
+  <data id="item_names_op063">HeartCont.</data>
+  <data id="item_names_op064">100 rupees</data>
+  <data id="item_names_op065">50 rupees</data>
+  <data id="item_names_op066">Heart</data>
+  <data id="item_names_op067">Arrow</data>
+  <data id="item_names_op068">10 arrows</data>
+  <data id="item_names_op069">Magic</data>
+  <data id="item_names_op070">300 rupees</data>
+  <data id="item_names_op071">20 rupees</data>
+  <data id="item_names_op072">Bee</data>
+  <data id="item_names_op073">Sword 1</data>
+  <data id="item_names_op074">Flute</data>
+  <data id="item_names_op075">Boots</data>
+  <data id="item_names_op076">No alternate</data>
+  <data id="form_dungeon_editor_room_name_op000">Ganon's Room</data>
+  <data id="item_names_op136">Switch</data>
+  <data id="pot_item_op000">Empty</data>
+  <data id="pot_item_op001">Rupee</data>
+  <data id="pot_item_op002">Crab</data>
+  <data id="pot_item_op003">Bee</data>
+  <data id="pot_item_op004">Random</data>
+  <data id="pot_item_op005">3 Bombs</data>
+  <data id="pot_item_op006">Heart</data>
+  <data id="pot_item_op007">5 Rupee</data>
+  <data id="pot_item_op008">Key</data>
+  <data id="pot_item_op009">Arrow</data>
+  <data id="pot_item_op010">Bomb</data>
+  <data id="pot_item_op011">Heart</data>
+  <data id="pot_item_op012">Magic</data>
+  <data id="pot_item_op013">Big Magic</data>
+  <data id="pot_item_op014">Chicken</data>
+  <data id="pot_item_op015">Green Soldier</data>
+  <data id="pot_item_op016">Rock</data>
+  <data id="pot_item_op017">Blue Soldier</data>
+  <data id="pot_item_op018">Landmine</data>
+  <data id="pot_item_op019">Heart?</data>
+  <data id="pot_item_op020">Fairy</data>
+  <data id="pot_item_op021">Heart</data>
+  <data id="pot_item_special_op0">Hole</data>
+  <data id="pot_item_special_op1">Warp</data>
+  <data id="pot_item_special_op2">Staircase</data>
+  <data id="pot_item_special_op3">Bombable</data>
+  <data id="pot_item_special_op4">Switch</data>
+  <data id="form_dungeon_editor_room_name_op001">Hyrule Castle (North Corridor)</data>
+  <data id="form_dungeon_editor_room_name_op002">Behind Sanctuary (Switch)</data>
+  <data id="form_dungeon_editor_room_name_op003">Chris Houlihan's Room</data>
+  <data id="form_dungeon_editor_room_name_op004">Turtle Rock (Crysta-Roller)</data>
+  <data id="form_dungeon_editor_room_name_op006">Swamp Palace (Arrghus[Boss])</data>
+  <data id="form_dungeon_editor_room_name_op007">Tower of Hera (Moldorm[Boss])</data>
+  <data id="form_dungeon_editor_room_name_op008">Cave (Healing Fairy)</data>
+  <data id="form_dungeon_editor_room_name_op009">Palace of Darkness</data>
+  <data id="form_dungeon_editor_room_name_op010">Palace of Darkness (Stalfos Trap)</data>
+  <data id="form_dungeon_editor_room_name_op011">Palace of Darkness (Turtle)</data>
+  <data id="form_dungeon_editor_room_name_op012">Ganon's Tower (Entrance)</data>
+  <data id="form_dungeon_editor_room_name_op013">Ganon's Tower (Agahnim2[Boss])</data>
+  <data id="form_dungeon_editor_room_name_op014">Ice Palace (Entrance)</data>
+  <data id="form_dungeon_editor_room_name_op016">Ganon Evacuation Route</data>
+  <data id="form_dungeon_editor_room_name_op017">Hyrule Castle (Bombable Stock)</data>
+  <data id="form_dungeon_editor_room_name_op018">Sanctuary</data>
+  <data id="form_dungeon_editor_room_name_op019">Turtle Rock (Hokku-Bokku Key 2)</data>
+  <data id="form_dungeon_editor_room_name_op020">Turtle Rock (Big Key)</data>
+  <data id="form_dungeon_editor_room_name_op021">Turtle Rock</data>
+  <data id="form_monologue_op017">
+  </data>
+  <data id="form_monologue_op018">
+  </data>
+  <data id="form_monologue_op019">
+  </data>
+  <data id="form_monologue_op020">
+  </data>
+  <data id="form_monologue_op021">
+  </data>
+  <data id="form_monologue_op022">
+  </data>
+  <data id="form_monologue_op023">
+  </data>
+  <data id="form_monologue_op024">
+  </data>
+  <data id="form_monologue_op025">
+  </data>
+  <data id="form_monologue_op026">
+  </data>
+  <data id="form_monologue_op027">
+  </data>
+  <data id="form_monologue_op028">
+  </data>
+  <data id="form_monologue_op029">
+  </data>
+  <data id="form_monologue_op030">
+  </data>
+  <data id="form_monologue_op032">
+  </data>
+  <data id="form_monologue_op033">
+  </data>
+  <data id="form_monologue_op034">
+  </data>
+  <data id="form_monologue_op035">
+  </data>
+  <data id="form_monologue_op036">
+  </data>
+  <data id="form_monologue_op037">
+  </data>
+  <data id="form_monologue_op038">
+  </data>
+  <data id="form_monologue_op039">
+  </data>
+  <data id="form_monologue_op040">
+  </data>
+  <data id="form_monologue_op041">
+  </data>
+  <data id="form_monologue_op042">
+  </data>
+  <data id="form_monologue_op043">
+  </data>
+  <data id="form_monologue_op044">
+  </data>
+  <data id="form_monologue_op045">
+  </data>
+  <data id="form_monologue_op046">
+  </data>
+  <data id="form_monologue_op047">
+  </data>
+  <data id="form_monologue_op048">
+  </data>
+  <data id="form_monologue_op049">
+  </data>
+  <data id="form_monologue_op050">
+  </data>
+  <data id="form_monologue_op051">
+  </data>
+  <data id="form_monologue_op052">
+  </data>
+  <data id="form_monologue_op053">
+  </data>
+  <data id="form_monologue_op054">
+  </data>
+  <data id="form_monologue_op055">
+  </data>
+  <data id="form_monologue_op056">
+  </data>
+  <data id="form_monologue_op057">
+  </data>
+  <data id="form_monologue_op058">
+  </data>
+  <data id="form_monologue_op059">
+  </data>
+  <data id="form_monologue_op060">
+  </data>
+  <data id="form_monologue_op061">
+  </data>
+  <data id="form_monologue_op062">
+  </data>
+  <data id="form_monologue_op063">
+  </data>
+  <data id="form_monologue_op064">
+  </data>
+  <data id="form_monologue_op065">
+  </data>
+  <data id="form_monologue_op066">
+  </data>
+  <data id="form_monologue_op067">
+  </data>
+  <data id="form_monologue_op068">
+  </data>
+  <data id="form_monologue_op069">
+  </data>
+  <data id="form_monologue_op070">
+  </data>
+  <data id="form_monologue_op071">
+  </data>
+  <data id="form_monologue_op072">
+  </data>
+  <data id="form_monologue_op122">
+  </data>
+  <data id="form_monologue_op123">
+  </data>
+  <data id="form_monologue_op124">
+  </data>
+  <data id="form_monologue_op125">
+  </data>
+  <data id="form_monologue_op126">
+  </data>
+  <data id="form_monologue_op127">
+  </data>
+  <data id="form_monologue_op128">
+  </data>
+  <data id="form_monologue_op129">
+  </data>
+  <data id="form_monologue_op130">
+  </data>
+  <data id="form_monologue_op131">
+  </data>
+  <data id="form_monologue_op132">
+  </data>
+  <data id="form_monologue_op133">
+  </data>
+  <data id="form_monologue_op134">
+  </data>
+  <data id="form_monologue_op135">
+  </data>
+  <data id="form_monologue_op136">
+  </data>
+  <data id="form_monologue_op137">
+  </data>
+  <data id="form_monologue_op138">
+  </data>
+  <data id="form_monologue_op139">
+  </data>
+  <data id="form_monologue_op140">
+  </data>
+  <data id="form_monologue_op141">
+  </data>
+  <data id="form_monologue_op142">
+  </data>
+  <data id="form_monologue_op143">
+  </data>
+  <data id="form_monologue_op144">
+  </data>
+  <data id="form_monologue_op145">
+  </data>
+  <data id="form_monologue_op146">
+  </data>
+  <data id="form_monologue_op147">
+  </data>
+  <data id="form_monologue_op148">
+  </data>
+  <data id="form_monologue_op149">
+  </data>
+  <data id="form_monologue_op150">
+  </data>
+  <data id="form_monologue_op151">
+  </data>
+  <data id="form_monologue_op152">
+  </data>
+  <data id="form_monologue_op153">
+  </data>
+  <data id="form_monologue_op154">
+  </data>
+  <data id="form_monologue_op155">
+  </data>
+  <data id="form_monologue_op156">
+  </data>
+  <data id="form_monologue_op157">
+  </data>
+  <data id="form_monologue_op158">
+  </data>
+  <data id="form_monologue_op159">
+  </data>
+  <data id="form_monologue_op160">
+  </data>
+  <data id="form_monologue_op161">
+  </data>
+  <data id="form_monologue_op162">
+  </data>
+  <data id="form_monologue_op163">
+  </data>
+  <data id="form_monologue_op164">
+  </data>
+  <data id="form_monologue_op165">
+  </data>
+  <data id="form_monologue_op166">
+  </data>
+  <data id="form_monologue_op167">
+  </data>
+  <data id="form_monologue_op168">
+  </data>
+  <data id="form_monologue_op169">
+  </data>
+  <data id="form_monologue_op170">
+  </data>
+  <data id="form_monologue_op171">
+  </data>
+  <data id="form_monologue_op172">
+  </data>
+  <data id="form_monologue_op173">
+  </data>
+  <data id="form_monologue_op174">
+  </data>
+  <data id="form_monologue_op175">
+  </data>
+  <data id="form_monologue_op176">
+  </data>
+  <data id="form_monologue_op177">
+  </data>
+  <data id="form_monologue_op178">
+  </data>
+  <data id="form_monologue_op179">
+  </data>
+  <data id="form_monologue_op180">
+  </data>
+  <data id="form_monologue_op181">
+  </data>
+  <data id="form_monologue_op182">
+  </data>
+  <data id="form_monologue_op183">
+  </data>
+  <data id="form_monologue_op184">
+  </data>
+  <data id="form_monologue_op185">
+  </data>
+  <data id="form_monologue_op186">
+  </data>
+  <data id="form_monologue_op187">
+  </data>
+  <data id="form_monologue_op188">
+  </data>
+  <data id="form_monologue_op189">
+  </data>
+  <data id="form_monologue_op190">
+  </data>
+  <data id="form_monologue_op191">
+  </data>
+  <data id="form_monologue_op192">
+  </data>
+  <data id="form_monologue_op193">
+  </data>
+  <data id="form_monologue_op194">
+  </data>
+  <data id="form_monologue_op195">
+  </data>
+  <data id="form_monologue_op196">
+  </data>
+  <data id="form_monologue_op197">
+  </data>
+  <data id="form_monologue_op198">
+  </data>
+  <data id="form_monologue_op199">
+  </data>
+  <data id="form_monologue_op200">
+  </data>
+  <data id="form_monologue_op201">
+  </data>
+  <data id="form_monologue_op202">
+  </data>
+  <data id="form_monologue_op203">
+  </data>
+  <data id="form_monologue_op204">
+  </data>
+  <data id="form_monologue_op205">
+  </data>
+  <data id="form_monologue_op206">
+  </data>
+  <data id="form_monologue_op207">
+  </data>
+  <data id="form_monologue_op208">
+  </data>
+  <data id="form_monologue_op209">
+  </data>
+  <data id="form_monologue_op210">
+  </data>
+  <data id="form_monologue_op211">
+  </data>
+  <data id="form_monologue_op212">
+  </data>
+  <data id="form_monologue_op213">
+  </data>
+  <data id="form_monologue_op214">
+  </data>
+  <data id="form_monologue_op215">
+  </data>
+  <data id="form_monologue_op216">
+  </data>
+  <data id="form_monologue_op217">
+  </data>
+  <data id="form_monologue_op218">
+  </data>
+  <data id="form_monologue_op219">
+  </data>
+  <data id="form_monologue_op220">
+  </data>
+  <data id="form_monologue_op221">
+  </data>
+  <data id="form_monologue_op222">
+  </data>
+  <data id="form_monologue_op226">
+  </data>
+  <data id="form_monologue_op227">
+  </data>
+  <data id="form_monologue_op228">
+  </data>
+  <data id="form_monologue_op254">
+  </data>
+  <data id="form_monologue_op255">
+  </data>
+  <data id="form_monologue_op256">
+  </data>
+  <data id="form_monologue_op257">
+  </data>
+  <data id="form_monologue_op258">
+  </data>
+  <data id="form_monologue_op259">
+  </data>
+  <data id="form_monologue_op260">
+  </data>
+  <data id="form_monologue_op261">
+  </data>
+  <data id="form_monologue_op262">
+  </data>
+  <data id="form_monologue_op263">
+  </data>
+  <data id="form_monologue_op264">
+  </data>
+  <data id="form_monologue_op265">
+  </data>
+  <data id="form_monologue_op266">
+  </data>
+  <data id="form_monologue_op267">
+  </data>
+  <data id="form_monologue_op268">
+  </data>
+  <data id="form_monologue_op269">
+  </data>
+  <data id="form_monologue_op270">
+  </data>
+  <data id="form_monologue_op271">
+  </data>
+  <data id="form_monologue_op272">
+  </data>
+  <data id="form_monologue_op273">
+  </data>
+  <data id="form_monologue_op274">
+  </data>
+  <data id="form_monologue_op275">
+  </data>
+  <data id="form_monologue_op276">
+  </data>
+  <data id="form_monologue_op277">
+  </data>
+  <data id="form_monologue_op278">
+  </data>
+  <data id="form_monologue_op279">
+  </data>
+  <data id="form_monologue_op280">
+  </data>
+  <data id="form_monologue_op281">
+  </data>
+  <data id="form_monologue_op282">
+  </data>
+  <data id="form_monologue_op283">
+  </data>
+  <data id="form_monologue_op284">
+  </data>
+  <data id="form_monologue_op285">
+  </data>
+  <data id="form_monologue_op286">
+  </data>
+  <data id="form_monologue_op287">
+  </data>
+  <data id="form_monologue_op288">
+  </data>
+  <data id="form_monologue_op289">
+  </data>
+  <data id="form_monologue_op290">
+  </data>
+  <data id="form_monologue_op291">
+  </data>
+  <data id="form_monologue_op292">
+  </data>
+  <data id="form_monologue_op293">
+  </data>
+  <data id="form_monologue_op294">
+  </data>
+  <data id="form_monologue_op295">
+  </data>
+  <data id="form_monologue_op296">
+  </data>
+  <data id="form_monologue_op297">
+  </data>
+  <data id="form_monologue_op298">
+  </data>
+  <data id="form_monologue_op299">
+  </data>
+  <data id="form_monologue_op300">
+  </data>
+  <data id="form_monologue_op301">
+  </data>
+  <data id="form_monologue_op302">
+  </data>
+  <data id="form_monologue_op303">
+  </data>
+  <data id="form_monologue_op304">
+  </data>
+  <data id="form_monologue_op305">
+  </data>
+  <data id="form_monologue_op306">
+  </data>
+  <data id="form_monologue_op307">
+  </data>
+  <data id="form_monologue_op308">
+  </data>
+  <data id="form_monologue_op309">
+  </data>
+  <data id="form_monologue_op310">
+  </data>
+  <data id="form_monologue_op311">
+  </data>
+  <data id="form_monologue_op312">
+  </data>
+  <data id="form_monologue_op313">
+  </data>
+  <data id="form_monologue_op314">
+  </data>
+  <data id="form_monologue_op315">
+  </data>
+  <data id="form_monologue_op316">
+  </data>
+  <data id="form_monologue_op317">
+  </data>
+  <data id="form_monologue_op318">
+  </data>
+  <data id="form_monologue_op319">
+  </data>
+  <data id="form_monologue_op320">
+  </data>
+  <data id="form_monologue_op321">
+  </data>
+  <data id="form_monologue_op322">
+  </data>
+  <data id="form_monologue_op323">
+  </data>
+  <data id="form_monologue_op324">
+  </data>
+  <data id="form_monologue_op325">
+  </data>
+  <data id="form_monologue_op326">
+  </data>
+  <data id="form_monologue_op327">
+  </data>
+  <data id="form_monologue_op328">
+  </data>
+  <data id="form_monologue_op329">
+  </data>
+  <data id="form_monologue_op330">
+  </data>
+  <data id="form_monologue_op331">
+  </data>
+  <data id="form_monologue_op332">
+  </data>
+  <data id="form_monologue_op333">
+  </data>
+  <data id="form_monologue_op334">
+  </data>
+  <data id="form_monologue_op335">
+  </data>
+  <data id="form_monologue_op336">
+  </data>
+  <data id="form_monologue_op337">
+  </data>
+  <data id="form_monologue_op338">
+  </data>
+  <data id="form_monologue_op339">
+  </data>
+  <data id="form_monologue_op340">
+  </data>
+  <data id="form_monologue_op347">
+  </data>
+  <data id="form_monologue_op348">
+  </data>
+  <data id="form_monologue_op349">
+  </data>
+  <data id="form_monologue_op350">
+  </data>
+  <data id="form_monologue_op351">
+  </data>
+  <data id="form_monologue_op352">
+  </data>
+  <data id="form_monologue_op353">
+  </data>
+  <data id="form_monologue_op354">
+  </data>
+  <data id="form_monologue_op355">
+  </data>
+  <data id="form_monologue_op356">
+  </data>
+  <data id="form_monologue_op357">
+  </data>
+  <data id="form_monologue_op358">
+  </data>
+  <data id="form_monologue_op359">
+  </data>
+  <data id="form_monologue_op360">
+  </data>
+  <data id="form_monologue_op361">
+  </data>
+  <data id="form_monologue_op362">
+  </data>
+  <data id="form_monologue_op363">
+  </data>
+  <data id="form_monologue_op364">
+  </data>
+  <data id="form_monologue_op365">
+  </data>
+  <data id="form_monologue_op366">
+  </data>
+  <data id="form_monologue_op367">
+  </data>
+  <data id="form_monologue_op368">
+  </data>
+  <data id="form_monologue_op369">
+  </data>
+  <data id="form_monologue_op370">
+  </data>
+  <data id="form_monologue_op371">
+  </data>
+  <data id="form_monologue_op372">
+  </data>
+  <data id="form_monologue_op373">
+  </data>
+  <data id="form_monologue_op374">
+  </data>
+  <data id="form_monologue_op375">
+  </data>
+  <data id="form_monologue_op376">
+  </data>
+  <data id="form_monologue_op377">
+  </data>
+  <data id="form_monologue_op378">
+  </data>
+  <data id="form_monologue_op379">
+  </data>
+  <data id="form_monologue_op380">
+  </data>
+  <data id="form_monologue_op381">
+  </data>
+  <data id="form_monologue_op382">
+  </data>
+  <data id="form_monologue_op383">
+  </data>
+  <data id="form_monologue_op384">
+  </data>
+  <data id="form_monologue_op385">
+  </data>
+  <data id="form_monologue_op386">
+  </data>
+  <data id="form_monologue_op387">
+  </data>
+  <data id="form_monologue_op393">
+  </data>
+  <data id="form_monologue_op394">
+  </data>
+  <data id="form_monologue_op395">
+  </data>
+  <data id="form_monologue_op396">
+  </data>
+  <data id="form_monologue_op000">Empty</data>
+  <data id="form_monologue_op074">Witch</data>
+  <data id="form_monologue_op094">Moon Pearl</data>
+  <data id="form_monologue_op099">Ether Medallion</data>
+  <data id="form_monologue_op100">Bombos Medallion</data>
+  <data id="form_monologue_op101">Quake Medallion</data>
+  <data id="form_monologue_op102">Magic Hammer</data>
+  <data id="form_monologue_op103">Flute</data>
+  <data id="form_monologue_op104">Cane Of Somaria</data>
+  <data id="form_monologue_op105">Hook Shot</data>
+  <data id="form_monologue_op106">Bombs</data>
+  <data id="form_monologue_op098">Fire Rod</data>
+  <data id="form_monologue_op097">Ice Rod</data>
+  <data id="form_monologue_op096">Map</data>
+  <data id="form_monologue_op095">Compass</data>
+  <data id="form_monologue_op093">Book of Mudora</data>
+  <data id="form_monologue_op092">Mushroom </data>
+  <data id="form_monologue_op091">Pendant Of Wisdom</data>
+  <data id="form_monologue_op001">Choose</data>
+  <data id="form_monologue_op002">Choose</data>
+  <data id="form_monologue_op003">Game Over</data>
+  <data id="form_monologue_op005">Someone following you</data>
+  <data id="form_monologue_op006">Choose</data>
+  <data id="form_monologue_op007">Choose</data>
+  <data id="form_monologue_op008">Choose</data>
+  <data id="form_monologue_op009">Choose</data>
+  <data id="form_monologue_op010">Choose</data>
+  <data id="form_monologue_op011">Choose</data>
+  <data id="form_monologue_op012">Choose</data>
+  <data id="form_monologue_op013">Dad leaving</data>
+  <data id="form_monologue_op014">Dad dead</data>
+  <data id="form_monologue_op015">Soldier in rain</data>
+  <data id="form_monologue_op016">Map</data>
+  <data id="form_monologue_op392">Shovel</data>
+  <data id="form_monologue_op391">Treasure Field</data>
+  <data id="form_monologue_op004">No idea</data>
+  <data id="form_monologue_op031">Zelda's cry for help</data>
+  <data id="form_monologue_op223">Blacksmith</data>
+  <data id="form_monologue_op224">Blacksmith got partner</data>
+  <data id="form_monologue_op225">Partner lost</data>
+  <data id="form_monologue_op229">Flute player</data>
+  <data id="form_monologue_op230">Flute player</data>
+  <data id="form_monologue_op231">Flute player</data>
+  <data id="form_monologue_op232">Flute player</data>
+  <data id="form_monologue_op233">Flute player</data>
+  <data id="form_monologue_op234">Psychic</data>
+  <data id="form_monologue_op240">Psychic</data>
+  <data id="form_monologue_op239">Psychic</data>
+  <data id="form_monologue_op238">Psychic</data>
+  <data id="form_monologue_op237">Psychic</data>
+  <data id="form_monologue_op236">Psychic</data>
+  <data id="form_monologue_op235">Psychic</data>
+  <data id="form_monologue_op241">Psychic</data>
+  <data id="form_monologue_op247">Psychic</data>
+  <data id="form_monologue_op246">Psychic</data>
+  <data id="form_monologue_op245">Psychic</data>
+  <data id="form_monologue_op244">Psychic</data>
+  <data id="form_monologue_op243">Psychic</data>
+  <data id="form_monologue_op242">Psychic</data>
+  <data id="form_monologue_op248">Psychic</data>
+  <data id="form_monologue_op253">Psychic</data>
+  <data id="form_monologue_op252">Psychic</data>
+  <data id="form_monologue_op251">Psychic</data>
+  <data id="form_monologue_op250">Psychic</data>
+  <data id="form_monologue_op249">Psychic</data>
+  <data id="form_monologue_op389">Start</data>
+  <data id="form_monologue_op388">Start</data>
+  <data id="form_monologue_op345">Heart Container</data>
+  <data id="form_monologue_op346">Fairy</data>
+  <data id="form_monologue_op107">Magic Bottle</data>
+  <data id="form_monologue_op121">Cane Of Byrna</data>
+  <data id="form_monologue_op120">Mirror Shield</data>
+  <data id="form_monologue_op119">Stronger sword</data>
+  <data id="form_monologue_op118">Red Mail</data>
+  <data id="form_monologue_op117">Blue Mail</data>
+  <data id="form_monologue_op116">Bug Catching</data>
+  <data id="form_monologue_op115">Medicine of Life and Magic</data>
+  <data id="form_monologue_op114">Medicine of Magic</data>
+  <data id="form_monologue_op113">Medicine of Life</data>
+  <data id="form_monologue_op112">Telepath stone</data>
+  <data id="form_monologue_op111">Master Sword ... NOT!</data>
+  <data id="form_monologue_op110">Magic Mirror</data>
+  <data id="form_monologue_op109">Titan's Mitt</data>
+  <data id="form_monologue_op108">Big Key</data>
+  <data id="form_monologue_op090">Pendant Of Power</data>
+  <data id="form_monologue_op089">Pendant Of Courage</data>
+  <data id="form_monologue_op088">Power Glove</data>
+  <data id="form_monologue_op087">Zora's Flippers</data>
+  <data id="form_monologue_op086">Magic Powder</data>
+  <data id="form_monologue_op085">Magic Cape</data>
+  <data id="form_monologue_op084">Shovel</data>
+  <data id="form_monologue_op083">Bow</data>
+  <data id="form_monologue_op082">Boomerang</data>
+  <data id="form_monologue_op081">Lamp</data>
+  <data id="form_monologue_op080">Full bottle error</data>
+  <data id="form_monologue_op079">No magic bottle</data>
+  <data id="form_monologue_op078">Witch</data>
+  <data id="form_monologue_op077">Witch</data>
+  <data id="form_monologue_op076">Witch</data>
+  <data id="form_monologue_op075">Witch</data>
+  <data id="form_monologue_op073">Sign</data>
+  <data id="form_monologue_op344">Heart Piece</data>
+  <data id="form_monologue_op343">Heart Piece</data>
+  <data id="form_monologue_op342">Heart Piece</data>
+  <data id="form_monologue_op341">Heart Piece</data>
+  <data id="form_monologue_op390">Quit game?</data>
+</root>
