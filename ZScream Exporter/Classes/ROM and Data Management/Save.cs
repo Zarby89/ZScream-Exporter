@@ -219,7 +219,7 @@ class SaveJson
             Directory.CreateDirectory(path + "Texts");
         }
 
-        TextSave ts = new TextSave(TextData.messages);
+        TextSave ts = new TextSave(TextData.messages.ToArray());
         File.WriteAllText(path + "Texts//AllTexts.json", JsonConvert.SerializeObject(ts));
     }
 

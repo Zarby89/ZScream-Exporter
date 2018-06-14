@@ -54,9 +54,9 @@ public static class Constants
     public static int overlayPointersBank = 0x0E;
     public static int overworldTilesType = 0x71459;
     public static int overworldMessages = 0x3F51D; //short value
-                                                   //===========================================================================================
-                                                   //Overworld Exits/Entrances Variables
-                                                   //===========================================================================================
+    //===========================================================================================
+    //Overworld Exits/Entrances Variables
+    //===========================================================================================
     public static int OWExitRoomId = 0x15D8A;
     public static int OWExitMapId = 0x15E28;
     public static int OWExitVram = 0x15E77;

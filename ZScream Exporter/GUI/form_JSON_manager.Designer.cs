@@ -32,25 +32,33 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fromROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fromJsonFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportLoadedProjectToROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toJsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.clearlogsButton = new System.Windows.Forms.Button();
             this.logTextbox = new System.Windows.Forms.RichTextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
-            this.exportLoadedProjectToROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logPanel = new System.Windows.Forms.Panel();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectPanel = new System.Windows.Forms.Panel();
-            this.projectinfoLabel = new System.Windows.Forms.Label();
-            this.fromROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromJsonFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toJsonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelbytesInfos = new System.Windows.Forms.Label();
             this.labelInfos = new System.Windows.Forms.Label();
+            this.projectinfoLabel = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.propertyGridexportSetting = new System.Windows.Forms.PropertyGrid();
             this.menuStrip1.SuspendLayout();
             this.logPanel.SuspendLayout();
             this.projectPanel.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -80,9 +88,56 @@
             this.fromROMToolStripMenuItem,
             this.fromJsonFilesToolStripMenuItem});
             this.openROMToolStripMenuItem.Name = "openROMToolStripMenuItem";
-            this.openROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openROMToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.openROMToolStripMenuItem.Text = "Load Project";
             this.openROMToolStripMenuItem.Click += new System.EventHandler(this.openROMToolStripMenuItem_Click);
+            // 
+            // fromROMToolStripMenuItem
+            // 
+            this.fromROMToolStripMenuItem.Name = "fromROMToolStripMenuItem";
+            this.fromROMToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.fromROMToolStripMenuItem.Text = "From ROM";
+            this.fromROMToolStripMenuItem.Click += new System.EventHandler(this.fromROMToolStripMenuItem_Click);
+            // 
+            // fromJsonFilesToolStripMenuItem
+            // 
+            this.fromJsonFilesToolStripMenuItem.Name = "fromJsonFilesToolStripMenuItem";
+            this.fromJsonFilesToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.fromJsonFilesToolStripMenuItem.Text = "From Json Files";
+            this.fromJsonFilesToolStripMenuItem.Click += new System.EventHandler(this.fromJsonFilesToolStripMenuItem_Click);
+            // 
+            // exportLoadedProjectToROMToolStripMenuItem
+            // 
+            this.exportLoadedProjectToROMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toJsonToolStripMenuItem,
+            this.toROMToolStripMenuItem});
+            this.exportLoadedProjectToROMToolStripMenuItem.Name = "exportLoadedProjectToROMToolStripMenuItem";
+            this.exportLoadedProjectToROMToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.exportLoadedProjectToROMToolStripMenuItem.Text = "Export Project";
+            // 
+            // toJsonToolStripMenuItem
+            // 
+            this.toJsonToolStripMenuItem.Name = "toJsonToolStripMenuItem";
+            this.toJsonToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.toJsonToolStripMenuItem.Text = "To Json Files";
+            // 
+            // toROMToolStripMenuItem
+            // 
+            this.toROMToolStripMenuItem.Name = "toROMToolStripMenuItem";
+            this.toROMToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.toROMToolStripMenuItem.Text = "To ROM";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
             // label1
             // 
@@ -134,15 +189,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Loaded Project :";
             // 
-            // exportLoadedProjectToROMToolStripMenuItem
-            // 
-            this.exportLoadedProjectToROMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toJsonToolStripMenuItem,
-            this.toROMToolStripMenuItem});
-            this.exportLoadedProjectToROMToolStripMenuItem.Name = "exportLoadedProjectToROMToolStripMenuItem";
-            this.exportLoadedProjectToROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportLoadedProjectToROMToolStripMenuItem.Text = "Export Project";
-            // 
             // logPanel
             // 
             this.logPanel.Controls.Add(this.logTextbox);
@@ -153,23 +199,9 @@
             this.logPanel.Size = new System.Drawing.Size(372, 291);
             this.logPanel.TabIndex = 6;
             // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
             // projectPanel
             // 
-            this.projectPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.projectPanel.Controls.Add(this.labelInfos);
-            this.projectPanel.Controls.Add(this.projectinfoLabel);
+            this.projectPanel.Controls.Add(this.tabControl1);
             this.projectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.projectPanel.Enabled = false;
             this.projectPanel.Location = new System.Drawing.Point(372, 37);
@@ -177,51 +209,82 @@
             this.projectPanel.Size = new System.Drawing.Size(312, 278);
             this.projectPanel.TabIndex = 7;
             // 
-            // projectinfoLabel
+            // labelbytesInfos
             // 
-            this.projectinfoLabel.AutoSize = true;
-            this.projectinfoLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.projectinfoLabel.Location = new System.Drawing.Point(0, 0);
-            this.projectinfoLabel.Name = "projectinfoLabel";
-            this.projectinfoLabel.Size = new System.Drawing.Size(103, 273);
-            this.projectinfoLabel.TabIndex = 6;
-            this.projectinfoLabel.Text = resources.GetString("projectinfoLabel.Text");
-            // 
-            // fromROMToolStripMenuItem
-            // 
-            this.fromROMToolStripMenuItem.Name = "fromROMToolStripMenuItem";
-            this.fromROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fromROMToolStripMenuItem.Text = "From ROM";
-            this.fromROMToolStripMenuItem.Click += new System.EventHandler(this.fromROMToolStripMenuItem_Click);
-            // 
-            // fromJsonFilesToolStripMenuItem
-            // 
-            this.fromJsonFilesToolStripMenuItem.Name = "fromJsonFilesToolStripMenuItem";
-            this.fromJsonFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fromJsonFilesToolStripMenuItem.Text = "From Json Files";
-            this.fromJsonFilesToolStripMenuItem.Click += new System.EventHandler(this.fromJsonFilesToolStripMenuItem_Click);
-            // 
-            // toJsonToolStripMenuItem
-            // 
-            this.toJsonToolStripMenuItem.Name = "toJsonToolStripMenuItem";
-            this.toJsonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.toJsonToolStripMenuItem.Text = "To Json Files";
-            // 
-            // toROMToolStripMenuItem
-            // 
-            this.toROMToolStripMenuItem.Name = "toROMToolStripMenuItem";
-            this.toROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.toROMToolStripMenuItem.Text = "To ROM";
+            this.labelbytesInfos.AutoSize = true;
+            this.labelbytesInfos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelbytesInfos.Location = new System.Drawing.Point(107, 3);
+            this.labelbytesInfos.Name = "labelbytesInfos";
+            this.labelbytesInfos.Size = new System.Drawing.Size(13, 273);
+            this.labelbytesInfos.TabIndex = 8;
+            this.labelbytesInfos.Text = "0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n\r\n0";
             // 
             // labelInfos
             // 
             this.labelInfos.AutoSize = true;
             this.labelInfos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelInfos.Location = new System.Drawing.Point(103, 0);
+            this.labelInfos.Location = new System.Drawing.Point(94, 3);
             this.labelInfos.Name = "labelInfos";
             this.labelInfos.Size = new System.Drawing.Size(13, 273);
             this.labelInfos.TabIndex = 7;
             this.labelInfos.Text = "0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n\r\n0";
+            // 
+            // projectinfoLabel
+            // 
+            this.projectinfoLabel.AutoSize = true;
+            this.projectinfoLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.projectinfoLabel.Location = new System.Drawing.Point(3, 3);
+            this.projectinfoLabel.Name = "projectinfoLabel";
+            this.projectinfoLabel.Size = new System.Drawing.Size(91, 273);
+            this.projectinfoLabel.TabIndex = 6;
+            this.projectinfoLabel.Text = resources.GetString("projectinfoLabel.Text");
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(312, 278);
+            this.tabControl1.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.AutoScrollMinSize = new System.Drawing.Size(0, 280);
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.labelbytesInfos);
+            this.tabPage1.Controls.Add(this.labelInfos);
+            this.tabPage1.Controls.Add(this.projectinfoLabel);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(304, 252);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Project Infos.";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage2.Controls.Add(this.propertyGridexportSetting);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(304, 252);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Export Settings";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // propertyGridexportSetting
+            // 
+            this.propertyGridexportSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGridexportSetting.Location = new System.Drawing.Point(3, 3);
+            this.propertyGridexportSetting.Name = "propertyGridexportSetting";
+            this.propertyGridexportSetting.Size = new System.Drawing.Size(294, 242);
+            this.propertyGridexportSetting.TabIndex = 0;
             // 
             // zscreamForm
             // 
@@ -246,7 +309,10 @@
             this.logPanel.ResumeLayout(false);
             this.logPanel.PerformLayout();
             this.projectPanel.ResumeLayout(false);
-            this.projectPanel.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,6 +340,11 @@
         private System.Windows.Forms.ToolStripMenuItem toJsonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toROMToolStripMenuItem;
         private System.Windows.Forms.Label labelInfos;
+        private System.Windows.Forms.Label labelbytesInfos;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.PropertyGrid propertyGridexportSetting;
     }
 }
 

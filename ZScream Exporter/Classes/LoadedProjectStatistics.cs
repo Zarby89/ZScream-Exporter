@@ -32,4 +32,28 @@ public static class LoadedProjectStatistics
     public static int exitsMaps = 9999;
     public static int holesMaps = 9999;
     public static int whirlpoolMaps = 9999;
+
+
+
+    public static int textsBytes = 9999;
+    public static int usedRoomsBytes = 9999;
+    public static int objectsRoomsBytes = 9999;
+    public static int chestsRoomsBytes = 9999;
+
+    public static int spritesRoomsBytes = 9999;
+    public static int itemsRoomsBytes = 9999;
+    public static int blocksRoomsBytes = 9999;
+    public static int torchesRoomsBytes = 9999;
+    public static int pitsRoomsBytes = 9999;
+    public static int entrancesRoomsBytes = 9999;
+
+    public static int usedMapsBytes = 9999;
+    public static int tiles32MapsBytes = 9999;
+    public static int itemsMapsBytes = 9999;
+    public static int spritesMapsBytes = 9999;
+    public static int overlaysMapsBytes = 9999;
+    public static int entrancesMapsBytes = 9999;
+    public static int exitsMapsBytes = 9999;
+    public static int holesMapsBytes = 9999;
+    public static int whirlpoolMapsBytes = 9999;
 }

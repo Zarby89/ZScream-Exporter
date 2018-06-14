@@ -110,31 +110,62 @@ namespace ZScream_Exporter.GUI
         public void updateStatistics()
         {
             labelInfos.Text = "";
-            labelInfos.Text += LoadedProjectStatistics.usedRooms +" / 296\r\n";
-            labelInfos.Text += "("+LoadedProjectStatistics.objectsRooms+ " Objects) " + "000000" + " / 000000 bytes\r\n";
-            labelInfos.Text += LoadedProjectStatistics.chestsRooms +" / "+ LoadedProjectStatistics.chestsRoomsLength+ "\r\n";
-            labelInfos.Text += "("+LoadedProjectStatistics.spritesRooms + " Sprites) " + "000000" + " / 000000 bytes\r\n";
-            labelInfos.Text += "(" + LoadedProjectStatistics.itemsRooms + " Items) " + "000000" + " / 000000 bytes\r\n";
-            labelInfos.Text += LoadedProjectStatistics.blocksRooms + " / " + LoadedProjectStatistics.blocksRoomsLength + "\r\n";
-            labelInfos.Text += LoadedProjectStatistics.torchesRooms + " / " + LoadedProjectStatistics.torchesRoomsLength + "\r\n";
-            labelInfos.Text += LoadedProjectStatistics.pitsRooms + " / " + LoadedProjectStatistics.pitsRoomsLength + "\r\n";
-            labelInfos.Text += LoadedProjectStatistics.entrancesRooms + " / " + LoadedProjectStatistics.entrancesRoomsLength + "\r\n";
+            
+            labelInfos.Text += String.Format("{0} / 296\r\n", LoadedProjectStatistics.usedRooms);
+            labelInfos.Text += String.Format("{0}\r\n", LoadedProjectStatistics.objectsRooms);
+            labelInfos.Text += String.Format("{0} / {1}\r\n", LoadedProjectStatistics.chestsRooms, LoadedProjectStatistics.chestsRoomsLength);
+            labelInfos.Text += String.Format("{0}\r\n", LoadedProjectStatistics.spritesRooms);
+            labelInfos.Text += String.Format("{0}\r\n", LoadedProjectStatistics.itemsRooms);
+            labelInfos.Text += String.Format("{0} / {1}\r\n", LoadedProjectStatistics.blocksRooms, LoadedProjectStatistics.blocksRoomsLength);
+            labelInfos.Text += String.Format("{0} / {1}\r\n", LoadedProjectStatistics.torchesRooms, LoadedProjectStatistics.torchesRoomsLength);
+            labelInfos.Text += String.Format("{0} / {1}\r\n", LoadedProjectStatistics.pitsRooms, LoadedProjectStatistics.pitsRoomsLength);
+            labelInfos.Text += String.Format("{0} / {1}\r\n", LoadedProjectStatistics.entrancesRooms, LoadedProjectStatistics.entrancesRoomsLength);
 
             labelInfos.Text += "\r\n";
 
-            labelInfos.Text += LoadedProjectStatistics.usedMaps + " / " + 160 + "\r\n";
-            labelInfos.Text += LoadedProjectStatistics.tiles32Maps + " / " + 8864 + "\r\n";
-            labelInfos.Text += "(" + LoadedProjectStatistics.itemsMaps + " Items) " + "000000" + " / 000000 bytes\r\n";
-            labelInfos.Text += "(" + LoadedProjectStatistics.spritesMaps + " Sprites) " + "000000" + " / 000000 bytes\r\n";
-            labelInfos.Text += LoadedProjectStatistics.overlaysMaps +  " / ?????? bytes\r\n";
-            labelInfos.Text += LoadedProjectStatistics.entrancesMaps + " / 129\r\n";
-            labelInfos.Text += LoadedProjectStatistics.exitsMaps + " / 79\r\n";
-            labelInfos.Text += LoadedProjectStatistics.holesMaps + " / 19\r\n";
-            labelInfos.Text += LoadedProjectStatistics.whirlpoolMaps + " / 16\r\n";
+            labelInfos.Text += String.Format("{0} / 160\r\n", LoadedProjectStatistics.usedMaps);
+            labelInfos.Text += String.Format("{0} / 8864\r\n", LoadedProjectStatistics.tiles32Maps);
+            labelInfos.Text += String.Format("{0}\r\n", LoadedProjectStatistics.itemsMaps);
+            labelInfos.Text += String.Format("{0}\r\n", LoadedProjectStatistics.spritesMaps);
+            labelInfos.Text += String.Format("{0}\r\n", LoadedProjectStatistics.overlaysMaps);
+            labelInfos.Text += String.Format("{0} / 129\r\n", LoadedProjectStatistics.entrancesMaps);
+            labelInfos.Text += String.Format("{0} / 79\r\n", LoadedProjectStatistics.exitsMaps);
+            labelInfos.Text += String.Format("{0} / 19\r\n", LoadedProjectStatistics.holesMaps);
+            labelInfos.Text += String.Format("{0} / 16\r\n", LoadedProjectStatistics.whirlpoolMaps);
 
             labelInfos.Text += "\r\n";
 
-            labelInfos.Text += LoadedProjectStatistics.texts + " / " + "???" +"\r\n";
+            labelInfos.Text += String.Format("{0}\r\n", LoadedProjectStatistics.texts);
+
+
+           labelbytesInfos.Text = "";
+
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.usedRoomsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.objectsRoomsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.chestsRoomsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.spritesRoomsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.itemsRoomsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.blocksRoomsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.torchesRoomsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.pitsRoomsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.entrancesRoomsBytes);
+
+           labelbytesInfos.Text += "\r\n";
+
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.usedMapsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.tiles32MapsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.itemsMapsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.spritesMapsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.overlaysMapsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.entrancesMapsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.exitsMapsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.holesMapsBytes);
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.whirlpoolMapsBytes);
+
+           labelbytesInfos.Text += "\r\n";
+
+           labelbytesInfos.Text += String.Format(" {0} / 9999 Bytes\r\n", LoadedProjectStatistics.textsBytes);
+
 
             projectPanel.Enabled = true;
         }

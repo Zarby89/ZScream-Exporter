@@ -41,10 +41,11 @@ public class Exporter
         LoadOverworldMaps();
         progressBar.Value++;
         TextData.readAllText();
+        LoadedProjectStatistics.texts = TextData.messages.Count;
         progressBar.Value++;
         writeLog("All data loaded successfuly.", Color.Green, FontStyle.Bold);
 
-        SaveJson s = new SaveJson(all_rooms, all_maps, null, TextData.messages, overworld);
+        SaveJson s = new SaveJson(all_rooms, all_maps, null, TextData.messages.ToArray(), overworld);
         progressBar.Value = progressBar.Maximum;
         writeLog("All data exported successfuly.", Color.Green, FontStyle.Bold);
     }

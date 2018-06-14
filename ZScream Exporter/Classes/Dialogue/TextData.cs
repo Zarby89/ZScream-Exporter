@@ -2,12 +2,13 @@
  * Author:  Zarby89
  */
 
- /// <summary>
- /// 
- /// </summary>
+using System.Collections.Generic;
+/// <summary>
+/// 
+/// </summary>
 public static class TextData
 {
-    public static string[] messages = new string[400];
+    public static List<string> messages = new List<string>();
     public static int[] messagesPos = new int[400];
     public static void readAllText()
     {
@@ -15,8 +16,9 @@ public static class TextData
         int pos = 0xE0000;
         int msgid = 0;
 
-        while (msgid < 600)
+        while (true)
         {
+            messages.Add("");
             messagesPos[msgid] = pos;
             messages[msgid] = "";
             byte byteRead = ROM.DATA[pos];
