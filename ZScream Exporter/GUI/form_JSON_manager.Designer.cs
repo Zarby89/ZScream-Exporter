@@ -1,6 +1,6 @@
 ﻿namespace ZScream_Exporter.GUI
 {
-    partial class zscreamForm
+    partial class ZscreamForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(zscreamForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZscreamForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,21 +90,21 @@
             this.openROMToolStripMenuItem.Name = "openROMToolStripMenuItem";
             this.openROMToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.openROMToolStripMenuItem.Text = "Load Project";
-            this.openROMToolStripMenuItem.Click += new System.EventHandler(this.openROMToolStripMenuItem_Click);
+            this.openROMToolStripMenuItem.Click += new System.EventHandler(this.OpenROMToolStripMenuItem_Click);
             // 
             // fromROMToolStripMenuItem
             // 
             this.fromROMToolStripMenuItem.Name = "fromROMToolStripMenuItem";
             this.fromROMToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.fromROMToolStripMenuItem.Text = "From ROM";
-            this.fromROMToolStripMenuItem.Click += new System.EventHandler(this.fromROMToolStripMenuItem_Click);
+            this.fromROMToolStripMenuItem.Click += new System.EventHandler(this.FromROMToolStripMenuItem_Click);
             // 
             // fromJsonFilesToolStripMenuItem
             // 
             this.fromJsonFilesToolStripMenuItem.Name = "fromJsonFilesToolStripMenuItem";
             this.fromJsonFilesToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.fromJsonFilesToolStripMenuItem.Text = "From Json Files";
-            this.fromJsonFilesToolStripMenuItem.Click += new System.EventHandler(this.fromJsonFilesToolStripMenuItem_Click);
+            this.fromJsonFilesToolStripMenuItem.Click += new System.EventHandler(this.FromJsonFilesToolStripMenuItem_Click);
             // 
             // exportLoadedProjectToROMToolStripMenuItem
             // 
@@ -118,19 +118,19 @@
             // toJsonToolStripMenuItem
             // 
             this.toJsonToolStripMenuItem.Name = "toJsonToolStripMenuItem";
-            this.toJsonToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.toJsonToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.toJsonToolStripMenuItem.Text = "To Json Files";
             // 
             // toROMToolStripMenuItem
             // 
             this.toROMToolStripMenuItem.Name = "toROMToolStripMenuItem";
-            this.toROMToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.toROMToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.toROMToolStripMenuItem.Text = "To ROM";
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // helpToolStripMenuItem
@@ -152,7 +152,7 @@
             // clearlogsButton
             // 
             this.clearlogsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.clearlogsButton.Location = new System.Drawing.Point(0, 338);
+            this.clearlogsButton.Location = new System.Drawing.Point(0, 339);
             this.clearlogsButton.Name = "clearlogsButton";
             this.clearlogsButton.Size = new System.Drawing.Size(684, 23);
             this.clearlogsButton.TabIndex = 2;
@@ -165,14 +165,14 @@
             this.logTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logTextbox.Location = new System.Drawing.Point(0, 13);
             this.logTextbox.Name = "logTextbox";
-            this.logTextbox.Size = new System.Drawing.Size(372, 278);
+            this.logTextbox.Size = new System.Drawing.Size(372, 279);
             this.logTextbox.TabIndex = 3;
             this.logTextbox.Text = "";
             // 
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 315);
+            this.progressBar1.Location = new System.Drawing.Point(0, 316);
             this.progressBar1.Maximum = 10;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(684, 23);
@@ -196,7 +196,7 @@
             this.logPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.logPanel.Location = new System.Drawing.Point(0, 24);
             this.logPanel.Name = "logPanel";
-            this.logPanel.Size = new System.Drawing.Size(372, 291);
+            this.logPanel.Size = new System.Drawing.Size(372, 292);
             this.logPanel.TabIndex = 6;
             // 
             // projectPanel
@@ -206,7 +206,7 @@
             this.projectPanel.Enabled = false;
             this.projectPanel.Location = new System.Drawing.Point(372, 37);
             this.projectPanel.Name = "projectPanel";
-            this.projectPanel.Size = new System.Drawing.Size(312, 278);
+            this.projectPanel.Size = new System.Drawing.Size(312, 279);
             this.projectPanel.TabIndex = 7;
             // 
             // tabControl1
@@ -217,7 +217,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(312, 278);
+            this.tabControl1.Size = new System.Drawing.Size(312, 279);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -231,7 +231,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(304, 252);
+            this.tabPage1.Size = new System.Drawing.Size(304, 253);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Project Infos.";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(304, 252);
+            this.tabPage2.Size = new System.Drawing.Size(304, 253);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Export Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -283,15 +283,15 @@
             this.propertyGridexportSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGridexportSetting.Location = new System.Drawing.Point(3, 3);
             this.propertyGridexportSetting.Name = "propertyGridexportSetting";
-            this.propertyGridexportSetting.Size = new System.Drawing.Size(294, 242);
+            this.propertyGridexportSetting.Size = new System.Drawing.Size(294, 243);
             this.propertyGridexportSetting.TabIndex = 0;
             // 
-            // zscreamForm
+            // ZscreamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(684, 361);
+            this.ClientSize = new System.Drawing.Size(684, 362);
             this.Controls.Add(this.projectPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.logPanel);
@@ -301,7 +301,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(700, 400);
-            this.Name = "zscreamForm";
+            this.Name = "ZscreamForm";
             this.Text = "ZScream Magic - No project loaded";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

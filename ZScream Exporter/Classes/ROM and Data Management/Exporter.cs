@@ -5,17 +5,16 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Linq;
 /// <summary>
 /// 
 /// </summary>
 public class Exporter
 {
-    
-    RichTextBox logTextbox;
-    ProgressBar progressBar;
-    Overworld overworld = new Overworld();
-    byte[] romData;
+
+    private RichTextBox logTextbox;
+    private ProgressBar progressBar;
+    private Overworld overworld = new Overworld();
+    private byte[] romData;
     public Exporter(byte[] romData, ProgressBar progressBar, RichTextBox logTextbox)
     {
         this.logTextbox = logTextbox;
@@ -25,7 +24,6 @@ public class Exporter
         ROMStructure.loadDefaultProject();
         Export();
     }
-
 
     public RoomSave[] all_rooms = new RoomSave[296];
     public MapSave[] all_maps = new MapSave[160];
@@ -53,14 +51,15 @@ public class Exporter
 
     public void LoadDungeonsRooms()
     {
-        int objCount = 0;
-        int chestCount = 0;
-        int itemCount = 0;
-        int blockCount = 0;
-        int torchCount = 0;
-        int pitsCount = 0;
-        int spritesCount = 0;
-        int roomCount = 0;
+        int objCount = 0,
+            chestCount = 0,
+            itemCount = 0,
+            blockCount = 0,
+            torchCount = 0,
+            pitsCount = 0,
+            spritesCount = 0,
+            roomCount = 0;
+
         for (int i = 0; i < 296; i++)
         {
             try
@@ -75,7 +74,7 @@ public class Exporter
                 spritesCount += all_rooms[i].sprites.Count;
                 if (all_rooms[i].tilesObjects.Count != 0)
                 {
-                    roomCount ++;
+                    roomCount++;
                 }
                 if (i == 5)
                 {
@@ -91,7 +90,7 @@ public class Exporter
         LoadedProjectStatistics.blocksRooms = blockCount;
         LoadedProjectStatistics.chestsRooms = chestCount;
         LoadedProjectStatistics.chestsRoomsLength = ((ROM.DATA[Constants.chests_length_pointer + 1] << 8) + (ROM.DATA[Constants.chests_length_pointer])) / 3;
-        LoadedProjectStatistics.blocksRoomsLength = ((short)((ROM.DATA[Constants.blocks_length + 1] << 8) + ROM.DATA[Constants.blocks_length])) /4 ;
+        LoadedProjectStatistics.blocksRoomsLength = ((short)((ROM.DATA[Constants.blocks_length + 1] << 8) + ROM.DATA[Constants.blocks_length])) / 4;
         LoadedProjectStatistics.torchesRoomsLength = 86;//(ROM.DATA[Constants.torches_length_pointer + 1] << 8) + ROM.DATA[Constants.torches_length_pointer];
         LoadedProjectStatistics.entrancesRooms = 132;
         LoadedProjectStatistics.itemsRooms = itemCount;
@@ -114,13 +113,12 @@ public class Exporter
 
             overworld.DecompressAllMapTiles(); //need to change
             overworld.createMap32TilesFrom16(); //need to change
+            writeLog("Overworld tiles data loaded properly", Color.Green);
         }
         catch (Exception e)
         {
             writeLog("Error : " + e.Message.ToString(), Color.Red);
-            return;
         }
-        writeLog("Overworld tiles data loaded properly", Color.Green);
     }
 
     public void LoadOverworldMaps()
@@ -133,10 +131,8 @@ public class Exporter
             {
                 all_maps[i] = new MapSave((short)i, overworld);
                 //TODO: Remove that and find a way to compare the tiles arrays
-                if (i >= 131 && i<=146)
-                {
+                if (i >= 131 && i <= 146)
                     continue;
-                }
                 mapCount++;
 
             }
@@ -181,7 +177,6 @@ public class Exporter
         progressBar.Value++;
     }
 
-
     public void writeLog(string line, Color col, FontStyle fs = FontStyle.Regular)
     {
         Font f = new Font(logTextbox.Font, fs);
@@ -196,12 +191,8 @@ public class Exporter
     public bool compareBytes(int location, byte[] array)
     {
         for (int i = 0; i < array.Length; i++)
-        {
             if (romData[location + i] != array[i])
-            {
                 return false;
-            }
-        }
         return true;
     }
 }

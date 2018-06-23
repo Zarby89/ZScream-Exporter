@@ -1,5 +1,5 @@
 ﻿/*
- * Author:  Trovsky, qwertymodo (Consultant)
+ * Author:  Trovsky, qwertymodo (Consultant), Superskuj
  */
 
 using System;
@@ -23,7 +23,7 @@ public static class RomIO
         checksumOffset = 0x3244,
         checkSumLength = 4;
 
-    public static int getHeaderOffset()
+    public static int GetHeaderOffset()
     { return header_offset; }
 
     /// <summary>
@@ -33,23 +33,23 @@ public static class RomIO
     /// <exception cref="FileNotFoundException"></exception>
     /// <exception cref="FileLoadException"></exception>
     /// 
-    public static void constructor(string filePath)
+    public static void Constructor(string filePath)
     {
         RomIO.filePath = filePath;
         allofROM = File.ReadAllBytes(filePath);
         header_offset = (IsHeaderless()) ? 0x00 : 0x0200;
     }
 
-    public static bool isChecksumGood()
+    public static bool IsChecksumGood()
     { return !SNESChecksum.isHeaderBad(allofROM); }
 
-    private static void changePos(ref int pos)
+    private static void ChangePos(ref int pos)
     { pos += header_offset; }
 
     /// <summary>
     /// Returns the size of the ROM
     /// </summary>
-    public static int size
+    public static int Size
     { get { return allofROM.Length; } }
 
     /// <summary>
@@ -60,15 +60,15 @@ public static class RomIO
     /// <param name="isByteSwap"></param>
     /// <returns></returns>
     /// <exception cref="IndexOutOfRangeException"></exception>
-    public static byte[] read(int pos, int size, bool isByteSwap = false)
+    public static byte[] Read(int pos, int size, bool isByteSwap = false)
     {
-        changePos(ref pos);
+        ChangePos(ref pos);
         if (pos < 0 || (size + pos > allofROM.Length) || (pos < 0 && size <= 0))
             throw new IndexOutOfRangeException();
         byte[] byteArray = new byte[size];
         for (int i = 0; i < size; i++)
             byteArray[i] = allofROM[pos + i];
-        return (isByteSwap ? byteSwap(byteArray) : byteArray);
+        return (isByteSwap ? ByteSwap(byteArray) : byteArray);
     }
 
     /// <summary>
@@ -77,10 +77,10 @@ public static class RomIO
     /// <param name="pos"></param>
     /// <returns></returns>
     /// <exception cref="IndexOutOfRangeException"></exception>
-    public static byte read(int pos)
+    public static byte Read(int pos)
     {
-        changePos(ref pos);
-        if (pos < size)
+        ChangePos(ref pos);
+        if (pos < Size)
             return allofROM[pos];
         else throw new IndexOutOfRangeException();
     }
@@ -91,9 +91,9 @@ public static class RomIO
     /// <param name="pos"></param>
     /// <param name="delim"></param>
     /// <returns></returns>
-    public static List<byte> readWithDelim(int pos, int delim)
+    public static List<byte> ReadWithDelim(int pos, int delim)
     {
-        changePos(ref pos);
+        ChangePos(ref pos);
         List<byte> list = new List<byte>();
         int i = 0;
         while (allofROM[pos + i] != delim)
@@ -109,10 +109,10 @@ public static class RomIO
     /// <param name="length"></param>
     /// <param name="seperator">Optional seperator</param>
     /// <returns></returns>
-    public static string readWithDelimAsHex(int pos, int delim, ref int length, string seperator = "")
+    public static string ReadWithDelimAsHex(int pos, int delim, ref int length, string seperator = "")
     {
-        changePos(ref pos);
-        List<byte> b = readWithDelim(pos, delim);
+        ChangePos(ref pos);
+        List<byte> b = ReadWithDelim(pos, delim);
         string output = "";
         foreach (byte bb in b)
             output += DecHexCalc.decToHex(bb) + seperator;
@@ -128,10 +128,10 @@ public static class RomIO
     /// <param name="seperator"></param>
     /// <returns></returns>
 
-    public static string readWithDelimAsHex(int pos, int delim, string seperator = "")
+    public static string ReadWithDelimAsHex(int pos, int delim, string seperator = "")
     {
         int end = 0;
-        return readWithDelimAsHex(pos, delim, ref end, seperator);
+        return ReadWithDelimAsHex(pos, delim, ref end, seperator);
     }
 
     /// <summary>
@@ -141,9 +141,9 @@ public static class RomIO
     /// <param name="size"></param>
     /// <param name="seperator"></param>
     /// <returns></returns>
-    public static string readInHex(int startPosition, int size = 1, string seperator = "")
+    public static string ReadInHex(int startPosition, int size = 1, string seperator = "")
     {
-        changePos(ref startPosition);
+        ChangePos(ref startPosition);
         string output = "";
         for (int i = 0; i < size; i++)
             output += DecHexCalc.decToHex(allofROM[startPosition + i]) + seperator;
@@ -157,13 +157,13 @@ public static class RomIO
     /// <param name="size"></param>
     /// <param name="isByteSwap"></param>
     /// <returns></returns>
-    public static byte[] readInBinary(int pos, int size = 0, bool isByteSwap = false)
+    public static byte[] ReadInBinary(int pos, int size = 0, bool isByteSwap = false)
     {
-        return read(pos, size, isByteSwap).SelectMany(
+        return Read(pos, size, isByteSwap).SelectMany(
             Conversion.GetBitsAsByte).ToArray();
     }
 
-    private static byte[] byteSwap(byte[] b)
+    private static byte[] ByteSwap(byte[] b)
     {
         //make sure the swapping range is even
         for (int i = 0; i < (b.Length - 1) * 2 / 2; i += 2)
@@ -181,8 +181,8 @@ public static class RomIO
     /// <param name="pos"></param>
     /// <param name="b"></param>
     /// <returns></returns>
-    public static bool writeToArray(int pos, byte b)
-    { return writeToArray(pos, 1, new byte[1] { b }); }
+    public static bool WriteToArray(int pos, byte b)
+    { return WriteToArray(pos, 1, new byte[1] { b }); }
 
     /// <summary>
     /// Write to the ROM array
@@ -192,9 +192,9 @@ public static class RomIO
     /// <param name="b"></param>
     /// <returns></returns>
     /// <exception cref="IndexOutOfRangeException"></exception>
-    public static bool writeToArray(int pos, int size, byte[] b)
+    public static bool WriteToArray(int pos, int size, byte[] b)
     {
-        changePos(ref pos);
+        ChangePos(ref pos);
         bool pass = false;
         if (!((size + pos > allofROM.Length) || (pos < 0 && size <= 0)))
         {
@@ -214,20 +214,20 @@ public static class RomIO
     /// <param name="size"></param>
     /// <param name="b"></param>
     /// <returns></returns>
-    public static bool writeToArray(int pos, int size, List<byte> b)
+    public static bool WriteToArray(int pos, int size, List<byte> b)
     {
         if (size != b.Count)
             throw new Exception();
         byte[] barr = b.ToArray();
-        return writeToArray(pos, size, barr);
+        return WriteToArray(pos, size, barr);
     }
 
     /// <summary>
     /// Write to ROM file
     /// </summary>
-    public static bool writeToROM()
+    public static bool WriteToROM()
     {
-        bool goodCheck = isChecksumGood();
+        bool goodCheck = IsChecksumGood();
         if (!goodCheck)
             allofROM = SNESChecksum.FixROM(allofROM);
         File.WriteAllBytes(filePath, allofROM);
@@ -241,10 +241,10 @@ public static class RomIO
     /// <param name="size"></param>
     /// <returns></returns>
     /// <exception cref="IndexOutOfRangeException"></exception>
-    public static bool isEmpty(int address, int size)
+    public static bool IsEmpty(int address, int size)
     {
-        changePos(ref address);
-        byte[] b = read(address, size);
+        ChangePos(ref address);
+        byte[] b = Read(address, size);
         bool pass = true;
         for (int i = 1, initialByte = b[i++]; i < b.Length && pass == true; i++)
             pass = b[i] == initialByte;
@@ -258,10 +258,10 @@ public static class RomIO
     /// <param name="address2"></param>
     /// <param name="size"></param>
     /// <exception cref="IndexOutOfRangeException"></exception>
-    public static void swapBytes(int address1, int address2, int size)
+    public static void SwapBytes(int address1, int address2, int size)
     {
         for (int i = 0; i < size; i++)
-            swapByte(address1 + i, address2 + i);
+            SwapByte(address1 + i, address2 + i);
     }
 
     /// <summary>
@@ -270,26 +270,13 @@ public static class RomIO
     /// <param name="address1"></param>
     /// <param name="address2"></param>
     /// <exception cref="IndexOutOfRangeException"></exception>
-    public static void swapByte(int address1, int address2)
+    public static void SwapByte(int address1, int address2)
     {
-        changePos(ref address1);
-        changePos(ref address2);
-        byte temp = read(address1);
-        writeToArray(address1, read(address2));
-        writeToArray(address2, temp);
-    }
-
-    ///Superskuj
-    /// <Summary>
-    /// This method confirms if the rom is alttp, and checks the region
-    /// returns: 0 = not alttp, 1 = US , 2 = JP
-    /// </Summary>
-
-    private enum region
-    {
-        NotAlttp,
-        US,
-        JP
+        ChangePos(ref address1);
+        ChangePos(ref address2);
+        byte temp = Read(address1);
+        WriteToArray(address1, Read(address2));
+        WriteToArray(address2, temp);
     }
 
     /// Superskuj

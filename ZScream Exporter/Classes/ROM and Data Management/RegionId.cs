@@ -62,7 +62,7 @@ public static class RegionId
         myRegion = (int)region.Invalid;
         for (int i = 0; i < dialogueCode.Length; i++)
         {
-            byte[] b = RomIO.read(location[i], dialogueCode.Length);
+            byte[] b = RomIO.Read(location[i], dialogueCode.Length);
             if (b.SequenceEqual(dialogueCode))
             {
                 //The region was found! Assign the variable and exit.

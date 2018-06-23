@@ -96,7 +96,6 @@ public class Overworld
             br = (ushort)(ROM.DATA[Constants.map32TilesBR + 3 + (i)] + (((ROM.DATA[Constants.map32TilesBR + (i) + 5]) & 0x0f) * 256));
             tiles32.Add(new Tile32(tl, tr, bl, br));
         }
-
     }
 
 
@@ -107,7 +106,6 @@ public class Overworld
         int npos = 0;
         for (int i = 0; i < 160; i++)
         {
-
             int p1 =
             (ROM.DATA[(Constants.compressedAllMap32PointersHigh) + 2 + (int)(3 * i)] << 16) +
             (ROM.DATA[(Constants.compressedAllMap32PointersHigh) + 1 + (int)(3 * i)] << 8) +
@@ -147,6 +145,7 @@ public class Overworld
                     }
                     npos++;
                     ttpos += 1;
+                    Thread.Yield();
 
                 }
             }
@@ -285,6 +284,8 @@ public class Overworld
 
             index += 4;
             c += 2;
+            Thread.Yield();
+
         }
 
     }
