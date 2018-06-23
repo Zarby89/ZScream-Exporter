@@ -27,7 +27,8 @@ public static class Constants
     //===========================================================================================
     public static int compressedAllMap32PointersHigh = 0x1794D;
     public static int compressedAllMap32PointersLow = 0x17B2D;
-    public static int overworldgfxGroups = 0x05D97;
+    public static int overworldgfxGroups = 0x05D97; //contain 4blockset by id
+    public static int overworldgfxGroups2 = 0x6073;//contain 8 blockset by id (lw is 0x20,dw is 0x21)
     public static int map16Tiles = 0x78000;
     public static int map32TilesTL = 0x18000;
     public static int map32TilesTR = 0x1B400;

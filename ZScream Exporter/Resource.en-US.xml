@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <data id="language1">English (US)</data>
   <data id="language2">Français (FR)</data>
@@ -123,517 +123,278 @@ The table on the right is the gameÓ³ DTE table and is used for compression.}</
   <data id="form_dungeon_editor_room_name_op005">Empty</data>
   <data id="form_dungeon_editor_room_name_op015">Empty</data>
   <data id="form_dungeon_editor_room_name_op022">TIC</data>
-  <data id="form_dungeon_editor_room_name_op023">
-  </data>
-  <data id="form_dungeon_editor_room_name_op024">
-  </data>
-  <data id="form_dungeon_editor_room_name_op025">
-  </data>
-  <data id="form_dungeon_editor_room_name_op026">
-  </data>
-  <data id="form_dungeon_editor_room_name_op027">
-  </data>
-  <data id="form_dungeon_editor_room_name_op028">
-  </data>
+  <data id="form_dungeon_editor_room_name_op023"></data>
+  <data id="form_dungeon_editor_room_name_op024"></data>
+  <data id="form_dungeon_editor_room_name_op025"></data>
+  <data id="form_dungeon_editor_room_name_op026"></data>
+  <data id="form_dungeon_editor_room_name_op027"></data>
+  <data id="form_dungeon_editor_room_name_op028"></data>
   <data id="form_dungeon_editor_room_name_op029">Hyrule Castle Boss Entrance</data>
-  <data id="form_dungeon_editor_room_name_op030">
-  </data>
-  <data id="form_dungeon_editor_room_name_op031">
-  </data>
+  <data id="form_dungeon_editor_room_name_op030"></data>
+  <data id="form_dungeon_editor_room_name_op031"></data>
   <data id="form_dungeon_editor_room_name_op032">Agahnim Boss Room (2)</data>
   <data id="form_dungeon_editor_room_name_op033">Hyrule Castle's Sewer's</data>
-  <data id="form_dungeon_editor_room_name_op034">
-  </data>
-  <data id="form_dungeon_editor_room_name_op035">
-  </data>
-  <data id="form_dungeon_editor_room_name_op036">
-  </data>
-  <data id="form_dungeon_editor_room_name_op037">
-  </data>
-  <data id="form_dungeon_editor_room_name_op038">
-  </data>
-  <data id="form_dungeon_editor_room_name_op039">
-  </data>
-  <data id="form_dungeon_editor_room_name_op040">
-  </data>
+  <data id="form_dungeon_editor_room_name_op034"></data>
+  <data id="form_dungeon_editor_room_name_op035"></data>
+  <data id="form_dungeon_editor_room_name_op036"></data>
+  <data id="form_dungeon_editor_room_name_op037"></data>
+  <data id="form_dungeon_editor_room_name_op038"></data>
+  <data id="form_dungeon_editor_room_name_op039"></data>
+  <data id="form_dungeon_editor_room_name_op040"></data>
   <data id="form_dungeon_editor_room_name_op041">Mothula Boss Room</data>
-  <data id="form_dungeon_editor_room_name_op042">
-  </data>
-  <data id="form_dungeon_editor_room_name_op043">
-  </data>
-  <data id="form_dungeon_editor_room_name_op044">
-  </data>
-  <data id="form_dungeon_editor_room_name_op045">
-  </data>
-  <data id="form_dungeon_editor_room_name_op046">
-  </data>
-  <data id="form_dungeon_editor_room_name_op047">
-  </data>
+  <data id="form_dungeon_editor_room_name_op042"></data>
+  <data id="form_dungeon_editor_room_name_op043"></data>
+  <data id="form_dungeon_editor_room_name_op044"></data>
+  <data id="form_dungeon_editor_room_name_op045"></data>
+  <data id="form_dungeon_editor_room_name_op046"></data>
+  <data id="form_dungeon_editor_room_name_op047"></data>
   <data id="form_dungeon_editor_room_name_op048">Agahnim Chamber</data>
-  <data id="form_dungeon_editor_room_name_op049">
-  </data>
-  <data id="form_dungeon_editor_room_name_op050">
-  </data>
+  <data id="form_dungeon_editor_room_name_op049"></data>
+  <data id="form_dungeon_editor_room_name_op050"></data>
   <data id="form_dungeon_editor_room_name_op051">Lanmolas Boss Room</data>
-  <data id="form_dungeon_editor_room_name_op052">
-  </data>
-  <data id="form_dungeon_editor_room_name_op053">
-  </data>
-  <data id="form_dungeon_editor_room_name_op054">
-  </data>
-  <data id="form_dungeon_editor_room_name_op055">
-  </data>
-  <data id="form_dungeon_editor_room_name_op056">
-  </data>
-  <data id="form_dungeon_editor_room_name_op057">
-  </data>
-  <data id="form_dungeon_editor_room_name_op058">
-  </data>
-  <data id="form_dungeon_editor_room_name_op059">
-  </data>
-  <data id="form_dungeon_editor_room_name_op060">
-  </data>
-  <data id="form_dungeon_editor_room_name_op061">
-  </data>
-  <data id="form_dungeon_editor_room_name_op062">
-  </data>
-  <data id="form_dungeon_editor_room_name_op063">
-  </data>
-  <data id="form_dungeon_editor_room_name_op064">
-  </data>
-  <data id="form_dungeon_editor_room_name_op065">
-  </data>
-  <data id="form_dungeon_editor_room_name_op066">
-  </data>
-  <data id="form_dungeon_editor_room_name_op067">
-  </data>
-  <data id="form_dungeon_editor_room_name_op068">
-  </data>
-  <data id="form_dungeon_editor_room_name_op069">
-  </data>
-  <data id="form_dungeon_editor_room_name_op070">
-  </data>
-  <data id="form_dungeon_editor_room_name_op071">
-  </data>
-  <data id="form_dungeon_editor_room_name_op072">
-  </data>
-  <data id="form_dungeon_editor_room_name_op073">
-  </data>
-  <data id="form_dungeon_editor_room_name_op074">
-  </data>
-  <data id="form_dungeon_editor_room_name_op075">
-  </data>
-  <data id="form_dungeon_editor_room_name_op076">
-  </data>
+  <data id="form_dungeon_editor_room_name_op052"></data>
+  <data id="form_dungeon_editor_room_name_op053"></data>
+  <data id="form_dungeon_editor_room_name_op054"></data>
+  <data id="form_dungeon_editor_room_name_op055"></data>
+  <data id="form_dungeon_editor_room_name_op056"></data>
+  <data id="form_dungeon_editor_room_name_op057"></data>
+  <data id="form_dungeon_editor_room_name_op058"></data>
+  <data id="form_dungeon_editor_room_name_op059"></data>
+  <data id="form_dungeon_editor_room_name_op060"></data>
+  <data id="form_dungeon_editor_room_name_op061"></data>
+  <data id="form_dungeon_editor_room_name_op062"></data>
+  <data id="form_dungeon_editor_room_name_op063"></data>
+  <data id="form_dungeon_editor_room_name_op064"></data>
+  <data id="form_dungeon_editor_room_name_op065"></data>
+  <data id="form_dungeon_editor_room_name_op066"></data>
+  <data id="form_dungeon_editor_room_name_op067"></data>
+  <data id="form_dungeon_editor_room_name_op068"></data>
+  <data id="form_dungeon_editor_room_name_op069"></data>
+  <data id="form_dungeon_editor_room_name_op070"></data>
+  <data id="form_dungeon_editor_room_name_op071"></data>
+  <data id="form_dungeon_editor_room_name_op072"></data>
+  <data id="form_dungeon_editor_room_name_op073"></data>
+  <data id="form_dungeon_editor_room_name_op074"></data>
+  <data id="form_dungeon_editor_room_name_op075"></data>
+  <data id="form_dungeon_editor_room_name_op076"></data>
   <data id="form_dungeon_editor_room_name_op077">Mouldrum Boss Room</data>
-  <data id="form_dungeon_editor_room_name_op078">
-  </data>
-  <data id="form_dungeon_editor_room_name_op079">
-  </data>
-  <data id="form_dungeon_editor_room_name_op080">
-  </data>
+  <data id="form_dungeon_editor_room_name_op078"></data>
+  <data id="form_dungeon_editor_room_name_op079"></data>
+  <data id="form_dungeon_editor_room_name_op080"></data>
   <data id="form_dungeon_editor_room_name_op081">Hyrule Castle King's Throne</data>
-  <data id="form_dungeon_editor_room_name_op082">
-  </data>
-  <data id="form_dungeon_editor_room_name_op083">
-  </data>
-  <data id="form_dungeon_editor_room_name_op084">
-  </data>
+  <data id="form_dungeon_editor_room_name_op082"></data>
+  <data id="form_dungeon_editor_room_name_op083"></data>
+  <data id="form_dungeon_editor_room_name_op084"></data>
   <data id="form_dungeon_editor_room_name_op085">R.I.P. Link's Uncle</data>
-  <data id="form_dungeon_editor_room_name_op086">
-  </data>
-  <data id="form_dungeon_editor_room_name_op087">
-  </data>
-  <data id="form_dungeon_editor_room_name_op088">
-  </data>
-  <data id="form_dungeon_editor_room_name_op089">
-  </data>
+  <data id="form_dungeon_editor_room_name_op086"></data>
+  <data id="form_dungeon_editor_room_name_op087"></data>
+  <data id="form_dungeon_editor_room_name_op088"></data>
+  <data id="form_dungeon_editor_room_name_op089"></data>
   <data id="form_dungeon_editor_room_name_op090">Helmasaur's Boss Room</data>
-  <data id="form_dungeon_editor_room_name_op091">
-  </data>
-  <data id="form_dungeon_editor_room_name_op092">
-  </data>
-  <data id="form_dungeon_editor_room_name_op093">
-  </data>
-  <data id="form_dungeon_editor_room_name_op094">
-  </data>
-  <data id="form_dungeon_editor_room_name_op095">
-  </data>
+  <data id="form_dungeon_editor_room_name_op091"></data>
+  <data id="form_dungeon_editor_room_name_op092"></data>
+  <data id="form_dungeon_editor_room_name_op093"></data>
+  <data id="form_dungeon_editor_room_name_op094"></data>
+  <data id="form_dungeon_editor_room_name_op095"></data>
   <data id="form_dungeon_editor_room_name_op096">Hyrule Castle's Entrance</data>
   <data id="form_dungeon_editor_room_name_op097">Hyrule Castle's Entrance</data>
   <data id="form_dungeon_editor_room_name_op098">Hyrule Castle's Entrance</data>
-  <data id="form_dungeon_editor_room_name_op099">
-  </data>
+  <data id="form_dungeon_editor_room_name_op099"></data>
   <data id="form_dungeon_editor_room_name_op100">Blind's Hideout</data>
   <data id="form_dungeon_editor_room_name_op101">Blind's Hideout</data>
-  <data id="form_dungeon_editor_room_name_op102">
-  </data>
-  <data id="form_dungeon_editor_room_name_op103">
-  </data>
-  <data id="form_dungeon_editor_room_name_op104">
-  </data>
-  <data id="form_dungeon_editor_room_name_op105">
-  </data>
-  <data id="form_dungeon_editor_room_name_op106">
-  </data>
-  <data id="form_dungeon_editor_room_name_op107">
-  </data>
-  <data id="form_dungeon_editor_room_name_op108">
-  </data>
-  <data id="form_dungeon_editor_room_name_op109">
-  </data>
+  <data id="form_dungeon_editor_room_name_op102"></data>
+  <data id="form_dungeon_editor_room_name_op103"></data>
+  <data id="form_dungeon_editor_room_name_op104"></data>
+  <data id="form_dungeon_editor_room_name_op105"></data>
+  <data id="form_dungeon_editor_room_name_op106"></data>
+  <data id="form_dungeon_editor_room_name_op107"></data>
+  <data id="form_dungeon_editor_room_name_op108"></data>
+  <data id="form_dungeon_editor_room_name_op109"></data>
   <data id="form_dungeon_editor_room_name_op110">Ice Temple</data>
-  <data id="form_dungeon_editor_room_name_op111">
-  </data>
-  <data id="form_dungeon_editor_room_name_op112">
-  </data>
-  <data id="form_dungeon_editor_room_name_op113">
-  </data>
-  <data id="form_dungeon_editor_room_name_op114">
-  </data>
+  <data id="form_dungeon_editor_room_name_op111"></data>
+  <data id="form_dungeon_editor_room_name_op112"></data>
+  <data id="form_dungeon_editor_room_name_op113"></data>
+  <data id="form_dungeon_editor_room_name_op114"></data>
   <data id="form_dungeon_editor_room_name_op115">Sand Temple</data>
-  <data id="form_dungeon_editor_room_name_op116">
-  </data>
-  <data id="form_dungeon_editor_room_name_op117">
-  </data>
-  <data id="form_dungeon_editor_room_name_op118">
-  </data>
-  <data id="form_dungeon_editor_room_name_op119">
-  </data>
-  <data id="form_dungeon_editor_room_name_op120">
-  </data>
-  <data id="form_dungeon_editor_room_name_op121">
-  </data>
-  <data id="form_dungeon_editor_room_name_op122">
-  </data>
-  <data id="form_dungeon_editor_room_name_op123">
-  </data>
-  <data id="form_dungeon_editor_room_name_op124">
-  </data>
-  <data id="form_dungeon_editor_room_name_op125">
-  </data>
-  <data id="form_dungeon_editor_room_name_op126">
-  </data>
-  <data id="form_dungeon_editor_room_name_op127">
-  </data>
+  <data id="form_dungeon_editor_room_name_op116"></data>
+  <data id="form_dungeon_editor_room_name_op117"></data>
+  <data id="form_dungeon_editor_room_name_op118"></data>
+  <data id="form_dungeon_editor_room_name_op119"></data>
+  <data id="form_dungeon_editor_room_name_op120"></data>
+  <data id="form_dungeon_editor_room_name_op121"></data>
+  <data id="form_dungeon_editor_room_name_op122"></data>
+  <data id="form_dungeon_editor_room_name_op123"></data>
+  <data id="form_dungeon_editor_room_name_op124"></data>
+  <data id="form_dungeon_editor_room_name_op125"></data>
+  <data id="form_dungeon_editor_room_name_op126"></data>
+  <data id="form_dungeon_editor_room_name_op127"></data>
   <data id="form_dungeon_editor_room_name_op128">Zelda's Prison Cell</data>
-  <data id="form_dungeon_editor_room_name_op129">
-  </data>
-  <data id="form_dungeon_editor_room_name_op130">
-  </data>
+  <data id="form_dungeon_editor_room_name_op129"></data>
+  <data id="form_dungeon_editor_room_name_op130"></data>
   <data id="form_dungeon_editor_room_name_op131">Entrance to Sand Temple</data>
   <data id="form_dungeon_editor_room_name_op132">Entrance to Sand Temple</data>
   <data id="form_dungeon_editor_room_name_op133">Entrance to Sand Temple</data>
-  <data id="form_dungeon_editor_room_name_op134">
-  </data>
-  <data id="form_dungeon_editor_room_name_op135">
-  </data>
-  <data id="form_dungeon_editor_room_name_op136">
-  </data>
-  <data id="form_dungeon_editor_room_name_op137">
-  </data>
-  <data id="form_dungeon_editor_room_name_op138">
-  </data>
-  <data id="form_dungeon_editor_room_name_op139">
-  </data>
-  <data id="form_dungeon_editor_room_name_op140">
-  </data>
-  <data id="form_dungeon_editor_room_name_op141">
-  </data>
-  <data id="form_dungeon_editor_room_name_op142">
-  </data>
-  <data id="form_dungeon_editor_room_name_op143">
-  </data>
+  <data id="form_dungeon_editor_room_name_op134"></data>
+  <data id="form_dungeon_editor_room_name_op135"></data>
+  <data id="form_dungeon_editor_room_name_op136"></data>
+  <data id="form_dungeon_editor_room_name_op137"></data>
+  <data id="form_dungeon_editor_room_name_op138"></data>
+  <data id="form_dungeon_editor_room_name_op139"></data>
+  <data id="form_dungeon_editor_room_name_op140"></data>
+  <data id="form_dungeon_editor_room_name_op141"></data>
+  <data id="form_dungeon_editor_room_name_op142"></data>
+  <data id="form_dungeon_editor_room_name_op143"></data>
   <data id="form_dungeon_editor_room_name_op144">Viterous's Boss Room</data>
-  <data id="form_dungeon_editor_room_name_op145">
-  </data>
-  <data id="form_dungeon_editor_room_name_op146">
-  </data>
-  <data id="form_dungeon_editor_room_name_op147">
-  </data>
-  <data id="form_dungeon_editor_room_name_op148">
-  </data>
-  <data id="form_dungeon_editor_room_name_op149">
-  </data>
-  <data id="form_dungeon_editor_room_name_op150">
-  </data>
-  <data id="form_dungeon_editor_room_name_op151">
-  </data>
-  <data id="form_dungeon_editor_room_name_op152">
-  </data>
-  <data id="form_dungeon_editor_room_name_op153">
-  </data>
-  <data id="form_dungeon_editor_room_name_op154">
-  </data>
-  <data id="form_dungeon_editor_room_name_op155">
-  </data>
-  <data id="form_dungeon_editor_room_name_op156">
-  </data>
-  <data id="form_dungeon_editor_room_name_op157">
-  </data>
+  <data id="form_dungeon_editor_room_name_op145"></data>
+  <data id="form_dungeon_editor_room_name_op146"></data>
+  <data id="form_dungeon_editor_room_name_op147"></data>
+  <data id="form_dungeon_editor_room_name_op148"></data>
+  <data id="form_dungeon_editor_room_name_op149"></data>
+  <data id="form_dungeon_editor_room_name_op150"></data>
+  <data id="form_dungeon_editor_room_name_op151"></data>
+  <data id="form_dungeon_editor_room_name_op152"></data>
+  <data id="form_dungeon_editor_room_name_op153"></data>
+  <data id="form_dungeon_editor_room_name_op154"></data>
+  <data id="form_dungeon_editor_room_name_op155"></data>
+  <data id="form_dungeon_editor_room_name_op156"></data>
+  <data id="form_dungeon_editor_room_name_op157"></data>
   <data id="form_dungeon_editor_room_name_op158">Ice Temple Big Chest Location</data>
-  <data id="form_dungeon_editor_room_name_op159">
-  </data>
-  <data id="form_dungeon_editor_room_name_op160">
-  </data>
-  <data id="form_dungeon_editor_room_name_op161">
-  </data>
-  <data id="form_dungeon_editor_room_name_op162">
-  </data>
-  <data id="form_dungeon_editor_room_name_op163">
-  </data>
+  <data id="form_dungeon_editor_room_name_op159"></data>
+  <data id="form_dungeon_editor_room_name_op160"></data>
+  <data id="form_dungeon_editor_room_name_op161"></data>
+  <data id="form_dungeon_editor_room_name_op162"></data>
+  <data id="form_dungeon_editor_room_name_op163"></data>
   <data id="form_dungeon_editor_room_name_op164">TriNexxB's Boss Room</data>
-  <data id="form_dungeon_editor_room_name_op165">
-  </data>
-  <data id="form_dungeon_editor_room_name_op166">
-  </data>
-  <data id="form_dungeon_editor_room_name_op167">
-  </data>
-  <data id="form_dungeon_editor_room_name_op168">
-  </data>
+  <data id="form_dungeon_editor_room_name_op165"></data>
+  <data id="form_dungeon_editor_room_name_op166"></data>
+  <data id="form_dungeon_editor_room_name_op167"></data>
+  <data id="form_dungeon_editor_room_name_op168"></data>
   <data id="form_dungeon_editor_room_name_op169">Green Temple Big Chest Room</data>
-  <data id="form_dungeon_editor_room_name_op170">
-  </data>
-  <data id="form_dungeon_editor_room_name_op171">
-  </data>
+  <data id="form_dungeon_editor_room_name_op170"></data>
+  <data id="form_dungeon_editor_room_name_op171"></data>
   <data id="form_dungeon_editor_room_name_op172">Blind's Boss Room</data>
-  <data id="form_dungeon_editor_room_name_op173">
-  </data>
-  <data id="form_dungeon_editor_room_name_op174">
-  </data>
-  <data id="form_dungeon_editor_room_name_op175">
-  </data>
-  <data id="form_dungeon_editor_room_name_op176">
-  </data>
-  <data id="form_dungeon_editor_room_name_op177">
-  </data>
-  <data id="form_dungeon_editor_room_name_op178">
-  </data>
-  <data id="form_dungeon_editor_room_name_op179">
-  </data>
-  <data id="form_dungeon_editor_room_name_op180">
-  </data>
-  <data id="form_dungeon_editor_room_name_op181">
-  </data>
-  <data id="form_dungeon_editor_room_name_op182">
-  </data>
-  <data id="form_dungeon_editor_room_name_op183">
-  </data>
-  <data id="form_dungeon_editor_room_name_op184">
-  </data>
-  <data id="form_dungeon_editor_room_name_op185">
-  </data>
-  <data id="form_dungeon_editor_room_name_op186">
-  </data>
-  <data id="form_dungeon_editor_room_name_op187">
-  </data>
-  <data id="form_dungeon_editor_room_name_op188">
-  </data>
-  <data id="form_dungeon_editor_room_name_op189">
-  </data>
-  <data id="form_dungeon_editor_room_name_op190">
-  </data>
-  <data id="form_dungeon_editor_room_name_op191">
-  </data>
-  <data id="form_dungeon_editor_room_name_op192">
-  </data>
-  <data id="form_dungeon_editor_room_name_op193">
-  </data>
-  <data id="form_dungeon_editor_room_name_op194">
-  </data>
+  <data id="form_dungeon_editor_room_name_op173"></data>
+  <data id="form_dungeon_editor_room_name_op174"></data>
+  <data id="form_dungeon_editor_room_name_op175"></data>
+  <data id="form_dungeon_editor_room_name_op176"></data>
+  <data id="form_dungeon_editor_room_name_op177"></data>
+  <data id="form_dungeon_editor_room_name_op178"></data>
+  <data id="form_dungeon_editor_room_name_op179"></data>
+  <data id="form_dungeon_editor_room_name_op180"></data>
+  <data id="form_dungeon_editor_room_name_op181"></data>
+  <data id="form_dungeon_editor_room_name_op182"></data>
+  <data id="form_dungeon_editor_room_name_op183"></data>
+  <data id="form_dungeon_editor_room_name_op184"></data>
+  <data id="form_dungeon_editor_room_name_op185"></data>
+  <data id="form_dungeon_editor_room_name_op186"></data>
+  <data id="form_dungeon_editor_room_name_op187"></data>
+  <data id="form_dungeon_editor_room_name_op188"></data>
+  <data id="form_dungeon_editor_room_name_op189"></data>
+  <data id="form_dungeon_editor_room_name_op190"></data>
+  <data id="form_dungeon_editor_room_name_op191"></data>
+  <data id="form_dungeon_editor_room_name_op192"></data>
+  <data id="form_dungeon_editor_room_name_op193"></data>
+  <data id="form_dungeon_editor_room_name_op194"></data>
   <data id="form_dungeon_editor_room_name_op195">Green Temple Big Chest Room</data>
-  <data id="form_dungeon_editor_room_name_op196">
-  </data>
-  <data id="form_dungeon_editor_room_name_op197">
-  </data>
-  <data id="form_dungeon_editor_room_name_op198">
-  </data>
-  <data id="form_dungeon_editor_room_name_op199">
-  </data>
-  <data id="form_dungeon_editor_room_name_op200">
-  </data>
+  <data id="form_dungeon_editor_room_name_op196"></data>
+  <data id="form_dungeon_editor_room_name_op197"></data>
+  <data id="form_dungeon_editor_room_name_op198"></data>
+  <data id="form_dungeon_editor_room_name_op199"></data>
+  <data id="form_dungeon_editor_room_name_op200"></data>
   <data id="form_dungeon_editor_room_name_op201">Green Temple Entrance</data>
-  <data id="form_dungeon_editor_room_name_op203">
-  </data>
-  <data id="form_dungeon_editor_room_name_op204">
-  </data>
-  <data id="form_dungeon_editor_room_name_op205">
-  </data>
-  <data id="form_dungeon_editor_room_name_op206">
-  </data>
-  <data id="form_dungeon_editor_room_name_op207">
-  </data>
-  <data id="form_dungeon_editor_room_name_op208">
-  </data>
-  <data id="form_dungeon_editor_room_name_op209">
-  </data>
-  <data id="form_dungeon_editor_room_name_op210">
-  </data>
-  <data id="form_dungeon_editor_room_name_op211">
-  </data>
-  <data id="form_dungeon_editor_room_name_op212">
-  </data>
-  <data id="form_dungeon_editor_room_name_op213">
-  </data>
-  <data id="form_dungeon_editor_room_name_op214">
-  </data>
-  <data id="form_dungeon_editor_room_name_op215">
-  </data>
-  <data id="form_dungeon_editor_room_name_op216">
-  </data>
-  <data id="form_dungeon_editor_room_name_op217">
-  </data>
-  <data id="form_dungeon_editor_room_name_op218">
-  </data>
-  <data id="form_dungeon_editor_room_name_op219">
-  </data>
-  <data id="form_dungeon_editor_room_name_op220">
-  </data>
-  <data id="form_dungeon_editor_room_name_op221">
-  </data>
+  <data id="form_dungeon_editor_room_name_op203"></data>
+  <data id="form_dungeon_editor_room_name_op204"></data>
+  <data id="form_dungeon_editor_room_name_op205"></data>
+  <data id="form_dungeon_editor_room_name_op206"></data>
+  <data id="form_dungeon_editor_room_name_op207"></data>
+  <data id="form_dungeon_editor_room_name_op208"></data>
+  <data id="form_dungeon_editor_room_name_op209"></data>
+  <data id="form_dungeon_editor_room_name_op210"></data>
+  <data id="form_dungeon_editor_room_name_op211"></data>
+  <data id="form_dungeon_editor_room_name_op212"></data>
+  <data id="form_dungeon_editor_room_name_op213"></data>
+  <data id="form_dungeon_editor_room_name_op214"></data>
+  <data id="form_dungeon_editor_room_name_op215"></data>
+  <data id="form_dungeon_editor_room_name_op216"></data>
+  <data id="form_dungeon_editor_room_name_op217"></data>
+  <data id="form_dungeon_editor_room_name_op218"></data>
+  <data id="form_dungeon_editor_room_name_op219"></data>
+  <data id="form_dungeon_editor_room_name_op220"></data>
+  <data id="form_dungeon_editor_room_name_op221"></data>
   <data id="form_dungeon_editor_room_name_op222">KholdStare's Boss Room</data>
-  <data id="form_dungeon_editor_room_name_op223">
-  </data>
-  <data id="form_dungeon_editor_room_name_op224">
-  </data>
-  <data id="form_dungeon_editor_room_name_op225">
-  </data>
-  <data id="form_dungeon_editor_room_name_op226">
-  </data>
-  <data id="form_dungeon_editor_room_name_op227">
-  </data>
-  <data id="form_dungeon_editor_room_name_op228">
-  </data>
-  <data id="form_dungeon_editor_room_name_op229">
-  </data>
-  <data id="form_dungeon_editor_room_name_op230">
-  </data>
-  <data id="form_dungeon_editor_room_name_op231">
-  </data>
-  <data id="form_dungeon_editor_room_name_op232">
-  </data>
-  <data id="form_dungeon_editor_room_name_op233">
-  </data>
-  <data id="form_dungeon_editor_room_name_op234">
-  </data>
-  <data id="form_dungeon_editor_room_name_op235">
-  </data>
-  <data id="form_dungeon_editor_room_name_op236">
-  </data>
-  <data id="form_dungeon_editor_room_name_op237">
-  </data>
-  <data id="form_dungeon_editor_room_name_op238">
-  </data>
-  <data id="form_dungeon_editor_room_name_op239">
-  </data>
+  <data id="form_dungeon_editor_room_name_op223"></data>
+  <data id="form_dungeon_editor_room_name_op224"></data>
+  <data id="form_dungeon_editor_room_name_op225"></data>
+  <data id="form_dungeon_editor_room_name_op226"></data>
+  <data id="form_dungeon_editor_room_name_op227"></data>
+  <data id="form_dungeon_editor_room_name_op228"></data>
+  <data id="form_dungeon_editor_room_name_op229"></data>
+  <data id="form_dungeon_editor_room_name_op230"></data>
+  <data id="form_dungeon_editor_room_name_op231"></data>
+  <data id="form_dungeon_editor_room_name_op232"></data>
+  <data id="form_dungeon_editor_room_name_op233"></data>
+  <data id="form_dungeon_editor_room_name_op234"></data>
+  <data id="form_dungeon_editor_room_name_op235"></data>
+  <data id="form_dungeon_editor_room_name_op236"></data>
+  <data id="form_dungeon_editor_room_name_op237"></data>
+  <data id="form_dungeon_editor_room_name_op238"></data>
+  <data id="form_dungeon_editor_room_name_op239"></data>
   <data id="form_dungeon_editor_room_name_op240">Cave Entrance</data>
   <data id="form_dungeon_editor_room_name_op241">Cave</data>
-  <data id="form_dungeon_editor_room_name_op242">
-  </data>
-  <data id="form_dungeon_editor_room_name_op243">
-  </data>
-  <data id="form_dungeon_editor_room_name_op244">
-  </data>
-  <data id="form_dungeon_editor_room_name_op245">
-  </data>
-  <data id="form_dungeon_editor_room_name_op246">
-  </data>
-  <data id="form_dungeon_editor_room_name_op247">
-  </data>
-  <data id="form_dungeon_editor_room_name_op248">
-  </data>
-  <data id="form_dungeon_editor_room_name_op249">
-  </data>
-  <data id="form_dungeon_editor_room_name_op250">
-  </data>
-  <data id="form_dungeon_editor_room_name_op251">
-  </data>
-  <data id="form_dungeon_editor_room_name_op252">
-  </data>
-  <data id="form_dungeon_editor_room_name_op253">
-  </data>
-  <data id="form_dungeon_editor_room_name_op254">
-  </data>
-  <data id="form_dungeon_editor_room_name_op255">
-  </data>
-  <data id="form_dungeon_editor_room_name_op256">
-  </data>
-  <data id="form_dungeon_editor_room_name_op257">
-  </data>
-  <data id="form_dungeon_editor_room_name_op258">
-  </data>
-  <data id="form_dungeon_editor_room_name_op259">
-  </data>
+  <data id="form_dungeon_editor_room_name_op242"></data>
+  <data id="form_dungeon_editor_room_name_op243"></data>
+  <data id="form_dungeon_editor_room_name_op244"></data>
+  <data id="form_dungeon_editor_room_name_op245"></data>
+  <data id="form_dungeon_editor_room_name_op246"></data>
+  <data id="form_dungeon_editor_room_name_op247"></data>
+  <data id="form_dungeon_editor_room_name_op248"></data>
+  <data id="form_dungeon_editor_room_name_op249"></data>
+  <data id="form_dungeon_editor_room_name_op250"></data>
+  <data id="form_dungeon_editor_room_name_op251"></data>
+  <data id="form_dungeon_editor_room_name_op252"></data>
+  <data id="form_dungeon_editor_room_name_op253"></data>
+  <data id="form_dungeon_editor_room_name_op254"></data>
+  <data id="form_dungeon_editor_room_name_op255"></data>
+  <data id="form_dungeon_editor_room_name_op256"></data>
+  <data id="form_dungeon_editor_room_name_op257"></data>
+  <data id="form_dungeon_editor_room_name_op258"></data>
+  <data id="form_dungeon_editor_room_name_op259"></data>
   <data id="form_dungeon_editor_room_name_op260">Link's House</data>
-  <data id="form_dungeon_editor_room_name_op261">
-  </data>
-  <data id="form_dungeon_editor_room_name_op262">
-  </data>
-  <data id="form_dungeon_editor_room_name_op263">
-  </data>
-  <data id="form_dungeon_editor_room_name_op264">
-  </data>
-  <data id="form_dungeon_editor_room_name_op265">
-  </data>
-  <data id="form_dungeon_editor_room_name_op266">
-  </data>
-  <data id="form_dungeon_editor_room_name_op267">
-  </data>
-  <data id="form_dungeon_editor_room_name_op268">
-  </data>
-  <data id="form_dungeon_editor_room_name_op269">
-  </data>
-  <data id="form_dungeon_editor_room_name_op270">
-  </data>
-  <data id="form_dungeon_editor_room_name_op271">
-  </data>
-  <data id="form_dungeon_editor_room_name_op272">
-  </data>
-  <data id="form_dungeon_editor_room_name_op273">
-  </data>
-  <data id="form_dungeon_editor_room_name_op274">
-  </data>
-  <data id="form_dungeon_editor_room_name_op275">
-  </data>
-  <data id="form_dungeon_editor_room_name_op276">
-  </data>
-  <data id="form_dungeon_editor_room_name_op277">
-  </data>
-  <data id="form_dungeon_editor_room_name_op278">
-  </data>
-  <data id="form_dungeon_editor_room_name_op279">
-  </data>
-  <data id="form_dungeon_editor_room_name_op280">
-  </data>
-  <data id="form_dungeon_editor_room_name_op281">
-  </data>
-  <data id="form_dungeon_editor_room_name_op282">
-  </data>
-  <data id="form_dungeon_editor_room_name_op283">
-  </data>
-  <data id="form_dungeon_editor_room_name_op284">
-  </data>
-  <data id="form_dungeon_editor_room_name_op285">
-  </data>
-  <data id="form_dungeon_editor_room_name_op286">
-  </data>
-  <data id="form_dungeon_editor_room_name_op287">
-  </data>
+  <data id="form_dungeon_editor_room_name_op261"></data>
+  <data id="form_dungeon_editor_room_name_op262"></data>
+  <data id="form_dungeon_editor_room_name_op263"></data>
+  <data id="form_dungeon_editor_room_name_op264"></data>
+  <data id="form_dungeon_editor_room_name_op265"></data>
+  <data id="form_dungeon_editor_room_name_op266"></data>
+  <data id="form_dungeon_editor_room_name_op267"></data>
+  <data id="form_dungeon_editor_room_name_op268"></data>
+  <data id="form_dungeon_editor_room_name_op269"></data>
+  <data id="form_dungeon_editor_room_name_op270"></data>
+  <data id="form_dungeon_editor_room_name_op271"></data>
+  <data id="form_dungeon_editor_room_name_op272"></data>
+  <data id="form_dungeon_editor_room_name_op273"></data>
+  <data id="form_dungeon_editor_room_name_op274"></data>
+  <data id="form_dungeon_editor_room_name_op275"></data>
+  <data id="form_dungeon_editor_room_name_op276"></data>
+  <data id="form_dungeon_editor_room_name_op277"></data>
+  <data id="form_dungeon_editor_room_name_op278"></data>
+  <data id="form_dungeon_editor_room_name_op279"></data>
+  <data id="form_dungeon_editor_room_name_op280"></data>
+  <data id="form_dungeon_editor_room_name_op281"></data>
+  <data id="form_dungeon_editor_room_name_op282"></data>
+  <data id="form_dungeon_editor_room_name_op283"></data>
+  <data id="form_dungeon_editor_room_name_op284"></data>
+  <data id="form_dungeon_editor_room_name_op285"></data>
+  <data id="form_dungeon_editor_room_name_op286"></data>
+  <data id="form_dungeon_editor_room_name_op287"></data>
   <data id="form_dungeon_editor_room_name_op288">Fountain</data>
-  <data id="form_dungeon_editor_room_name_op289">
-  </data>
-  <data id="form_dungeon_editor_room_name_op290">
-  </data>
-  <data id="form_dungeon_editor_room_name_op291">
-  </data>
-  <data id="form_dungeon_editor_room_name_op292">
-  </data>
-  <data id="form_dungeon_editor_room_name_op293">
-  </data>
-  <data id="form_dungeon_editor_room_name_op294">
-  </data>
-  <data id="form_dungeon_editor_room_name_op295">
-  </data>
+  <data id="form_dungeon_editor_room_name_op289"></data>
+  <data id="form_dungeon_editor_room_name_op290"></data>
+  <data id="form_dungeon_editor_room_name_op291"></data>
+  <data id="form_dungeon_editor_room_name_op292"></data>
+  <data id="form_dungeon_editor_room_name_op293"></data>
+  <data id="form_dungeon_editor_room_name_op294"></data>
+  <data id="form_dungeon_editor_room_name_op295"></data>
   <data id="form_dungeon_editor_effects_op0">Nothing</data>
   <data id="form_dungeon_editor_effects_op1">01</data>
   <data id="form_dungeon_editor_effects_op2">Moving floor</data>
@@ -1025,588 +786,297 @@ The table on the right is the gameÓ³ DTE table and is used for compression.}</
   <data id="form_dungeon_editor_room_name_op019">Turtle Rock (Hokku-Bokku Key 2)</data>
   <data id="form_dungeon_editor_room_name_op020">Turtle Rock (Big Key)</data>
   <data id="form_dungeon_editor_room_name_op021">Turtle Rock</data>
-  <data id="form_monologue_op017">
-  </data>
-  <data id="form_monologue_op018">
-  </data>
-  <data id="form_monologue_op019">
-  </data>
-  <data id="form_monologue_op020">
-  </data>
-  <data id="form_monologue_op021">
-  </data>
-  <data id="form_monologue_op022">
-  </data>
-  <data id="form_monologue_op023">
-  </data>
-  <data id="form_monologue_op024">
-  </data>
-  <data id="form_monologue_op025">
-  </data>
-  <data id="form_monologue_op026">
-  </data>
-  <data id="form_monologue_op027">
-  </data>
-  <data id="form_monologue_op028">
-  </data>
-  <data id="form_monologue_op029">
-  </data>
-  <data id="form_monologue_op030">
-  </data>
-  <data id="form_monologue_op032">
-  </data>
-  <data id="form_monologue_op033">
-  </data>
-  <data id="form_monologue_op034">
-  </data>
-  <data id="form_monologue_op035">
-  </data>
-  <data id="form_monologue_op036">
-  </data>
-  <data id="form_monologue_op037">
-  </data>
-  <data id="form_monologue_op038">
-  </data>
-  <data id="form_monologue_op039">
-  </data>
-  <data id="form_monologue_op040">
-  </data>
-  <data id="form_monologue_op041">
-  </data>
-  <data id="form_monologue_op042">
-  </data>
-  <data id="form_monologue_op043">
-  </data>
-  <data id="form_monologue_op044">
-  </data>
-  <data id="form_monologue_op045">
-  </data>
-  <data id="form_monologue_op046">
-  </data>
-  <data id="form_monologue_op047">
-  </data>
-  <data id="form_monologue_op048">
-  </data>
-  <data id="form_monologue_op049">
-  </data>
-  <data id="form_monologue_op050">
-  </data>
-  <data id="form_monologue_op051">
-  </data>
-  <data id="form_monologue_op052">
-  </data>
-  <data id="form_monologue_op053">
-  </data>
-  <data id="form_monologue_op054">
-  </data>
-  <data id="form_monologue_op055">
-  </data>
-  <data id="form_monologue_op056">
-  </data>
-  <data id="form_monologue_op057">
-  </data>
-  <data id="form_monologue_op058">
-  </data>
-  <data id="form_monologue_op059">
-  </data>
-  <data id="form_monologue_op060">
-  </data>
-  <data id="form_monologue_op061">
-  </data>
-  <data id="form_monologue_op062">
-  </data>
-  <data id="form_monologue_op063">
-  </data>
-  <data id="form_monologue_op064">
-  </data>
-  <data id="form_monologue_op065">
-  </data>
-  <data id="form_monologue_op066">
-  </data>
-  <data id="form_monologue_op067">
-  </data>
-  <data id="form_monologue_op068">
-  </data>
-  <data id="form_monologue_op069">
-  </data>
-  <data id="form_monologue_op070">
-  </data>
-  <data id="form_monologue_op071">
-  </data>
-  <data id="form_monologue_op072">
-  </data>
-  <data id="form_monologue_op122">
-  </data>
-  <data id="form_monologue_op123">
-  </data>
-  <data id="form_monologue_op124">
-  </data>
-  <data id="form_monologue_op125">
-  </data>
-  <data id="form_monologue_op126">
-  </data>
-  <data id="form_monologue_op127">
-  </data>
-  <data id="form_monologue_op128">
-  </data>
-  <data id="form_monologue_op129">
-  </data>
-  <data id="form_monologue_op130">
-  </data>
-  <data id="form_monologue_op131">
-  </data>
-  <data id="form_monologue_op132">
-  </data>
-  <data id="form_monologue_op133">
-  </data>
-  <data id="form_monologue_op134">
-  </data>
-  <data id="form_monologue_op135">
-  </data>
-  <data id="form_monologue_op136">
-  </data>
-  <data id="form_monologue_op137">
-  </data>
-  <data id="form_monologue_op138">
-  </data>
-  <data id="form_monologue_op139">
-  </data>
-  <data id="form_monologue_op140">
-  </data>
-  <data id="form_monologue_op141">
-  </data>
-  <data id="form_monologue_op142">
-  </data>
-  <data id="form_monologue_op143">
-  </data>
-  <data id="form_monologue_op144">
-  </data>
-  <data id="form_monologue_op145">
-  </data>
-  <data id="form_monologue_op146">
-  </data>
-  <data id="form_monologue_op147">
-  </data>
-  <data id="form_monologue_op148">
-  </data>
-  <data id="form_monologue_op149">
-  </data>
-  <data id="form_monologue_op150">
-  </data>
-  <data id="form_monologue_op151">
-  </data>
-  <data id="form_monologue_op152">
-  </data>
-  <data id="form_monologue_op153">
-  </data>
-  <data id="form_monologue_op154">
-  </data>
-  <data id="form_monologue_op155">
-  </data>
-  <data id="form_monologue_op156">
-  </data>
-  <data id="form_monologue_op157">
-  </data>
-  <data id="form_monologue_op158">
-  </data>
-  <data id="form_monologue_op159">
-  </data>
-  <data id="form_monologue_op160">
-  </data>
-  <data id="form_monologue_op161">
-  </data>
-  <data id="form_monologue_op162">
-  </data>
-  <data id="form_monologue_op163">
-  </data>
-  <data id="form_monologue_op164">
-  </data>
-  <data id="form_monologue_op165">
-  </data>
-  <data id="form_monologue_op166">
-  </data>
-  <data id="form_monologue_op167">
-  </data>
-  <data id="form_monologue_op168">
-  </data>
-  <data id="form_monologue_op169">
-  </data>
-  <data id="form_monologue_op170">
-  </data>
-  <data id="form_monologue_op171">
-  </data>
-  <data id="form_monologue_op172">
-  </data>
-  <data id="form_monologue_op173">
-  </data>
-  <data id="form_monologue_op174">
-  </data>
-  <data id="form_monologue_op175">
-  </data>
-  <data id="form_monologue_op176">
-  </data>
-  <data id="form_monologue_op177">
-  </data>
-  <data id="form_monologue_op178">
-  </data>
-  <data id="form_monologue_op179">
-  </data>
-  <data id="form_monologue_op180">
-  </data>
-  <data id="form_monologue_op181">
-  </data>
-  <data id="form_monologue_op182">
-  </data>
-  <data id="form_monologue_op183">
-  </data>
-  <data id="form_monologue_op184">
-  </data>
-  <data id="form_monologue_op185">
-  </data>
-  <data id="form_monologue_op186">
-  </data>
-  <data id="form_monologue_op187">
-  </data>
-  <data id="form_monologue_op188">
-  </data>
-  <data id="form_monologue_op189">
-  </data>
-  <data id="form_monologue_op190">
-  </data>
-  <data id="form_monologue_op191">
-  </data>
-  <data id="form_monologue_op192">
-  </data>
-  <data id="form_monologue_op193">
-  </data>
-  <data id="form_monologue_op194">
-  </data>
-  <data id="form_monologue_op195">
-  </data>
-  <data id="form_monologue_op196">
-  </data>
-  <data id="form_monologue_op197">
-  </data>
-  <data id="form_monologue_op198">
-  </data>
-  <data id="form_monologue_op199">
-  </data>
-  <data id="form_monologue_op200">
-  </data>
-  <data id="form_monologue_op201">
-  </data>
-  <data id="form_monologue_op202">
-  </data>
-  <data id="form_monologue_op203">
-  </data>
-  <data id="form_monologue_op204">
-  </data>
-  <data id="form_monologue_op205">
-  </data>
-  <data id="form_monologue_op206">
-  </data>
-  <data id="form_monologue_op207">
-  </data>
-  <data id="form_monologue_op208">
-  </data>
-  <data id="form_monologue_op209">
-  </data>
-  <data id="form_monologue_op210">
-  </data>
-  <data id="form_monologue_op211">
-  </data>
-  <data id="form_monologue_op212">
-  </data>
-  <data id="form_monologue_op213">
-  </data>
-  <data id="form_monologue_op214">
-  </data>
-  <data id="form_monologue_op215">
-  </data>
-  <data id="form_monologue_op216">
-  </data>
-  <data id="form_monologue_op217">
-  </data>
-  <data id="form_monologue_op218">
-  </data>
-  <data id="form_monologue_op219">
-  </data>
-  <data id="form_monologue_op220">
-  </data>
-  <data id="form_monologue_op221">
-  </data>
-  <data id="form_monologue_op222">
-  </data>
-  <data id="form_monologue_op226">
-  </data>
-  <data id="form_monologue_op227">
-  </data>
-  <data id="form_monologue_op228">
-  </data>
-  <data id="form_monologue_op254">
-  </data>
-  <data id="form_monologue_op255">
-  </data>
-  <data id="form_monologue_op256">
-  </data>
-  <data id="form_monologue_op257">
-  </data>
-  <data id="form_monologue_op258">
-  </data>
-  <data id="form_monologue_op259">
-  </data>
-  <data id="form_monologue_op260">
-  </data>
-  <data id="form_monologue_op261">
-  </data>
-  <data id="form_monologue_op262">
-  </data>
-  <data id="form_monologue_op263">
-  </data>
-  <data id="form_monologue_op264">
-  </data>
-  <data id="form_monologue_op265">
-  </data>
-  <data id="form_monologue_op266">
-  </data>
-  <data id="form_monologue_op267">
-  </data>
-  <data id="form_monologue_op268">
-  </data>
-  <data id="form_monologue_op269">
-  </data>
-  <data id="form_monologue_op270">
-  </data>
-  <data id="form_monologue_op271">
-  </data>
-  <data id="form_monologue_op272">
-  </data>
-  <data id="form_monologue_op273">
-  </data>
-  <data id="form_monologue_op274">
-  </data>
-  <data id="form_monologue_op275">
-  </data>
-  <data id="form_monologue_op276">
-  </data>
-  <data id="form_monologue_op277">
-  </data>
-  <data id="form_monologue_op278">
-  </data>
-  <data id="form_monologue_op279">
-  </data>
-  <data id="form_monologue_op280">
-  </data>
-  <data id="form_monologue_op281">
-  </data>
-  <data id="form_monologue_op282">
-  </data>
-  <data id="form_monologue_op283">
-  </data>
-  <data id="form_monologue_op284">
-  </data>
-  <data id="form_monologue_op285">
-  </data>
-  <data id="form_monologue_op286">
-  </data>
-  <data id="form_monologue_op287">
-  </data>
-  <data id="form_monologue_op288">
-  </data>
-  <data id="form_monologue_op289">
-  </data>
-  <data id="form_monologue_op290">
-  </data>
-  <data id="form_monologue_op291">
-  </data>
-  <data id="form_monologue_op292">
-  </data>
-  <data id="form_monologue_op293">
-  </data>
-  <data id="form_monologue_op294">
-  </data>
-  <data id="form_monologue_op295">
-  </data>
-  <data id="form_monologue_op296">
-  </data>
-  <data id="form_monologue_op297">
-  </data>
-  <data id="form_monologue_op298">
-  </data>
-  <data id="form_monologue_op299">
-  </data>
-  <data id="form_monologue_op300">
-  </data>
-  <data id="form_monologue_op301">
-  </data>
-  <data id="form_monologue_op302">
-  </data>
-  <data id="form_monologue_op303">
-  </data>
-  <data id="form_monologue_op304">
-  </data>
-  <data id="form_monologue_op305">
-  </data>
-  <data id="form_monologue_op306">
-  </data>
-  <data id="form_monologue_op307">
-  </data>
-  <data id="form_monologue_op308">
-  </data>
-  <data id="form_monologue_op309">
-  </data>
-  <data id="form_monologue_op310">
-  </data>
-  <data id="form_monologue_op311">
-  </data>
-  <data id="form_monologue_op312">
-  </data>
-  <data id="form_monologue_op313">
-  </data>
-  <data id="form_monologue_op314">
-  </data>
-  <data id="form_monologue_op315">
-  </data>
-  <data id="form_monologue_op316">
-  </data>
-  <data id="form_monologue_op317">
-  </data>
-  <data id="form_monologue_op318">
-  </data>
-  <data id="form_monologue_op319">
-  </data>
-  <data id="form_monologue_op320">
-  </data>
-  <data id="form_monologue_op321">
-  </data>
-  <data id="form_monologue_op322">
-  </data>
-  <data id="form_monologue_op323">
-  </data>
-  <data id="form_monologue_op324">
-  </data>
-  <data id="form_monologue_op325">
-  </data>
-  <data id="form_monologue_op326">
-  </data>
-  <data id="form_monologue_op327">
-  </data>
-  <data id="form_monologue_op328">
-  </data>
-  <data id="form_monologue_op329">
-  </data>
-  <data id="form_monologue_op330">
-  </data>
-  <data id="form_monologue_op331">
-  </data>
-  <data id="form_monologue_op332">
-  </data>
-  <data id="form_monologue_op333">
-  </data>
-  <data id="form_monologue_op334">
-  </data>
-  <data id="form_monologue_op335">
-  </data>
-  <data id="form_monologue_op336">
-  </data>
-  <data id="form_monologue_op337">
-  </data>
-  <data id="form_monologue_op338">
-  </data>
-  <data id="form_monologue_op339">
-  </data>
-  <data id="form_monologue_op340">
-  </data>
-  <data id="form_monologue_op347">
-  </data>
-  <data id="form_monologue_op348">
-  </data>
-  <data id="form_monologue_op349">
-  </data>
-  <data id="form_monologue_op350">
-  </data>
-  <data id="form_monologue_op351">
-  </data>
-  <data id="form_monologue_op352">
-  </data>
-  <data id="form_monologue_op353">
-  </data>
-  <data id="form_monologue_op354">
-  </data>
-  <data id="form_monologue_op355">
-  </data>
-  <data id="form_monologue_op356">
-  </data>
-  <data id="form_monologue_op357">
-  </data>
-  <data id="form_monologue_op358">
-  </data>
-  <data id="form_monologue_op359">
-  </data>
-  <data id="form_monologue_op360">
-  </data>
-  <data id="form_monologue_op361">
-  </data>
-  <data id="form_monologue_op362">
-  </data>
-  <data id="form_monologue_op363">
-  </data>
-  <data id="form_monologue_op364">
-  </data>
-  <data id="form_monologue_op365">
-  </data>
-  <data id="form_monologue_op366">
-  </data>
-  <data id="form_monologue_op367">
-  </data>
-  <data id="form_monologue_op368">
-  </data>
-  <data id="form_monologue_op369">
-  </data>
-  <data id="form_monologue_op370">
-  </data>
-  <data id="form_monologue_op371">
-  </data>
-  <data id="form_monologue_op372">
-  </data>
-  <data id="form_monologue_op373">
-  </data>
-  <data id="form_monologue_op374">
-  </data>
-  <data id="form_monologue_op375">
-  </data>
-  <data id="form_monologue_op376">
-  </data>
-  <data id="form_monologue_op377">
-  </data>
-  <data id="form_monologue_op378">
-  </data>
-  <data id="form_monologue_op379">
-  </data>
-  <data id="form_monologue_op380">
-  </data>
-  <data id="form_monologue_op381">
-  </data>
-  <data id="form_monologue_op382">
-  </data>
-  <data id="form_monologue_op383">
-  </data>
-  <data id="form_monologue_op384">
-  </data>
-  <data id="form_monologue_op385">
-  </data>
-  <data id="form_monologue_op386">
-  </data>
-  <data id="form_monologue_op387">
-  </data>
-  <data id="form_monologue_op393">
-  </data>
-  <data id="form_monologue_op394">
-  </data>
-  <data id="form_monologue_op395">
-  </data>
-  <data id="form_monologue_op396">
-  </data>
+  <data id="form_monologue_op017"></data>
+  <data id="form_monologue_op018"></data>
+  <data id="form_monologue_op019"></data>
+  <data id="form_monologue_op020"></data>
+  <data id="form_monologue_op021"></data>
+  <data id="form_monologue_op022"></data>
+  <data id="form_monologue_op023"></data>
+  <data id="form_monologue_op024"></data>
+  <data id="form_monologue_op025"></data>
+  <data id="form_monologue_op026"></data>
+  <data id="form_monologue_op027"></data>
+  <data id="form_monologue_op028"></data>
+  <data id="form_monologue_op029"></data>
+  <data id="form_monologue_op030"></data>
+  <data id="form_monologue_op032"></data>
+  <data id="form_monologue_op033"></data>
+  <data id="form_monologue_op034"></data>
+  <data id="form_monologue_op035"></data>
+  <data id="form_monologue_op036"></data>
+  <data id="form_monologue_op037"></data>
+  <data id="form_monologue_op038"></data>
+  <data id="form_monologue_op039"></data>
+  <data id="form_monologue_op040"></data>
+  <data id="form_monologue_op041"></data>
+  <data id="form_monologue_op042"></data>
+  <data id="form_monologue_op043"></data>
+  <data id="form_monologue_op044"></data>
+  <data id="form_monologue_op045"></data>
+  <data id="form_monologue_op046"></data>
+  <data id="form_monologue_op047"></data>
+  <data id="form_monologue_op048"></data>
+  <data id="form_monologue_op049"></data>
+  <data id="form_monologue_op050"></data>
+  <data id="form_monologue_op051"></data>
+  <data id="form_monologue_op052"></data>
+  <data id="form_monologue_op053"></data>
+  <data id="form_monologue_op054"></data>
+  <data id="form_monologue_op055"></data>
+  <data id="form_monologue_op056"></data>
+  <data id="form_monologue_op057"></data>
+  <data id="form_monologue_op058"></data>
+  <data id="form_monologue_op059"></data>
+  <data id="form_monologue_op060"></data>
+  <data id="form_monologue_op061"></data>
+  <data id="form_monologue_op062"></data>
+  <data id="form_monologue_op063"></data>
+  <data id="form_monologue_op064"></data>
+  <data id="form_monologue_op065"></data>
+  <data id="form_monologue_op066"></data>
+  <data id="form_monologue_op067"></data>
+  <data id="form_monologue_op068"></data>
+  <data id="form_monologue_op069"></data>
+  <data id="form_monologue_op070"></data>
+  <data id="form_monologue_op071"></data>
+  <data id="form_monologue_op072"></data>
+  <data id="form_monologue_op122"></data>
+  <data id="form_monologue_op123"></data>
+  <data id="form_monologue_op124"></data>
+  <data id="form_monologue_op125"></data>
+  <data id="form_monologue_op126"></data>
+  <data id="form_monologue_op127"></data>
+  <data id="form_monologue_op128"></data>
+  <data id="form_monologue_op129"></data>
+  <data id="form_monologue_op130"></data>
+  <data id="form_monologue_op131"></data>
+  <data id="form_monologue_op132"></data>
+  <data id="form_monologue_op133"></data>
+  <data id="form_monologue_op134"></data>
+  <data id="form_monologue_op135"></data>
+  <data id="form_monologue_op136"></data>
+  <data id="form_monologue_op137"></data>
+  <data id="form_monologue_op138"></data>
+  <data id="form_monologue_op139"></data>
+  <data id="form_monologue_op140"></data>
+  <data id="form_monologue_op141"></data>
+  <data id="form_monologue_op142"></data>
+  <data id="form_monologue_op143"></data>
+  <data id="form_monologue_op144"></data>
+  <data id="form_monologue_op145"></data>
+  <data id="form_monologue_op146"></data>
+  <data id="form_monologue_op147"></data>
+  <data id="form_monologue_op148"></data>
+  <data id="form_monologue_op149"></data>
+  <data id="form_monologue_op150"></data>
+  <data id="form_monologue_op151"></data>
+  <data id="form_monologue_op152"></data>
+  <data id="form_monologue_op153"></data>
+  <data id="form_monologue_op154"></data>
+  <data id="form_monologue_op155"></data>
+  <data id="form_monologue_op156"></data>
+  <data id="form_monologue_op157"></data>
+  <data id="form_monologue_op158"></data>
+  <data id="form_monologue_op159"></data>
+  <data id="form_monologue_op160"></data>
+  <data id="form_monologue_op161"></data>
+  <data id="form_monologue_op162"></data>
+  <data id="form_monologue_op163"></data>
+  <data id="form_monologue_op164"></data>
+  <data id="form_monologue_op165"></data>
+  <data id="form_monologue_op166"></data>
+  <data id="form_monologue_op167"></data>
+  <data id="form_monologue_op168"></data>
+  <data id="form_monologue_op169"></data>
+  <data id="form_monologue_op170"></data>
+  <data id="form_monologue_op171"></data>
+  <data id="form_monologue_op172"></data>
+  <data id="form_monologue_op173"></data>
+  <data id="form_monologue_op174"></data>
+  <data id="form_monologue_op175"></data>
+  <data id="form_monologue_op176"></data>
+  <data id="form_monologue_op177"></data>
+  <data id="form_monologue_op178"></data>
+  <data id="form_monologue_op179"></data>
+  <data id="form_monologue_op180"></data>
+  <data id="form_monologue_op181"></data>
+  <data id="form_monologue_op182"></data>
+  <data id="form_monologue_op183"></data>
+  <data id="form_monologue_op184"></data>
+  <data id="form_monologue_op185"></data>
+  <data id="form_monologue_op186"></data>
+  <data id="form_monologue_op187"></data>
+  <data id="form_monologue_op188"></data>
+  <data id="form_monologue_op189"></data>
+  <data id="form_monologue_op190"></data>
+  <data id="form_monologue_op191"></data>
+  <data id="form_monologue_op192"></data>
+  <data id="form_monologue_op193"></data>
+  <data id="form_monologue_op194"></data>
+  <data id="form_monologue_op195"></data>
+  <data id="form_monologue_op196"></data>
+  <data id="form_monologue_op197"></data>
+  <data id="form_monologue_op198"></data>
+  <data id="form_monologue_op199"></data>
+  <data id="form_monologue_op200"></data>
+  <data id="form_monologue_op201"></data>
+  <data id="form_monologue_op202"></data>
+  <data id="form_monologue_op203"></data>
+  <data id="form_monologue_op204"></data>
+  <data id="form_monologue_op205"></data>
+  <data id="form_monologue_op206"></data>
+  <data id="form_monologue_op207"></data>
+  <data id="form_monologue_op208"></data>
+  <data id="form_monologue_op209"></data>
+  <data id="form_monologue_op210"></data>
+  <data id="form_monologue_op211"></data>
+  <data id="form_monologue_op212"></data>
+  <data id="form_monologue_op213"></data>
+  <data id="form_monologue_op214"></data>
+  <data id="form_monologue_op215"></data>
+  <data id="form_monologue_op216"></data>
+  <data id="form_monologue_op217"></data>
+  <data id="form_monologue_op218"></data>
+  <data id="form_monologue_op219"></data>
+  <data id="form_monologue_op220"></data>
+  <data id="form_monologue_op221"></data>
+  <data id="form_monologue_op222"></data>
+  <data id="form_monologue_op226"></data>
+  <data id="form_monologue_op227"></data>
+  <data id="form_monologue_op228"></data>
+  <data id="form_monologue_op254"></data>
+  <data id="form_monologue_op255"></data>
+  <data id="form_monologue_op256"></data>
+  <data id="form_monologue_op257"></data>
+  <data id="form_monologue_op258"></data>
+  <data id="form_monologue_op259"></data>
+  <data id="form_monologue_op260"></data>
+  <data id="form_monologue_op261"></data>
+  <data id="form_monologue_op262"></data>
+  <data id="form_monologue_op263"></data>
+  <data id="form_monologue_op264"></data>
+  <data id="form_monologue_op265"></data>
+  <data id="form_monologue_op266"></data>
+  <data id="form_monologue_op267"></data>
+  <data id="form_monologue_op268"></data>
+  <data id="form_monologue_op269"></data>
+  <data id="form_monologue_op270"></data>
+  <data id="form_monologue_op271"></data>
+  <data id="form_monologue_op272"></data>
+  <data id="form_monologue_op273"></data>
+  <data id="form_monologue_op274"></data>
+  <data id="form_monologue_op275"></data>
+  <data id="form_monologue_op276"></data>
+  <data id="form_monologue_op277"></data>
+  <data id="form_monologue_op278"></data>
+  <data id="form_monologue_op279"></data>
+  <data id="form_monologue_op280"></data>
+  <data id="form_monologue_op281"></data>
+  <data id="form_monologue_op282"></data>
+  <data id="form_monologue_op283"></data>
+  <data id="form_monologue_op284"></data>
+  <data id="form_monologue_op285"></data>
+  <data id="form_monologue_op286"></data>
+  <data id="form_monologue_op287"></data>
+  <data id="form_monologue_op288"></data>
+  <data id="form_monologue_op289"></data>
+  <data id="form_monologue_op290"></data>
+  <data id="form_monologue_op291"></data>
+  <data id="form_monologue_op292"></data>
+  <data id="form_monologue_op293"></data>
+  <data id="form_monologue_op294"></data>
+  <data id="form_monologue_op295"></data>
+  <data id="form_monologue_op296"></data>
+  <data id="form_monologue_op297"></data>
+  <data id="form_monologue_op298"></data>
+  <data id="form_monologue_op299"></data>
+  <data id="form_monologue_op300"></data>
+  <data id="form_monologue_op301"></data>
+  <data id="form_monologue_op302"></data>
+  <data id="form_monologue_op303"></data>
+  <data id="form_monologue_op304"></data>
+  <data id="form_monologue_op305"></data>
+  <data id="form_monologue_op306"></data>
+  <data id="form_monologue_op307"></data>
+  <data id="form_monologue_op308"></data>
+  <data id="form_monologue_op309"></data>
+  <data id="form_monologue_op310"></data>
+  <data id="form_monologue_op311"></data>
+  <data id="form_monologue_op312"></data>
+  <data id="form_monologue_op313"></data>
+  <data id="form_monologue_op314"></data>
+  <data id="form_monologue_op315"></data>
+  <data id="form_monologue_op316"></data>
+  <data id="form_monologue_op317"></data>
+  <data id="form_monologue_op318"></data>
+  <data id="form_monologue_op319"></data>
+  <data id="form_monologue_op320"></data>
+  <data id="form_monologue_op321"></data>
+  <data id="form_monologue_op322"></data>
+  <data id="form_monologue_op323"></data>
+  <data id="form_monologue_op324"></data>
+  <data id="form_monologue_op325"></data>
+  <data id="form_monologue_op326"></data>
+  <data id="form_monologue_op327"></data>
+  <data id="form_monologue_op328"></data>
+  <data id="form_monologue_op329"></data>
+  <data id="form_monologue_op330"></data>
+  <data id="form_monologue_op331"></data>
+  <data id="form_monologue_op332"></data>
+  <data id="form_monologue_op333"></data>
+  <data id="form_monologue_op334"></data>
+  <data id="form_monologue_op335"></data>
+  <data id="form_monologue_op336"></data>
+  <data id="form_monologue_op337"></data>
+  <data id="form_monologue_op338"></data>
+  <data id="form_monologue_op339"></data>
+  <data id="form_monologue_op340"></data>
+  <data id="form_monologue_op347"></data>
+  <data id="form_monologue_op348"></data>
+  <data id="form_monologue_op349"></data>
+  <data id="form_monologue_op350"></data>
+  <data id="form_monologue_op351"></data>
+  <data id="form_monologue_op352"></data>
+  <data id="form_monologue_op353"></data>
+  <data id="form_monologue_op354"></data>
+  <data id="form_monologue_op355"></data>
+  <data id="form_monologue_op356"></data>
+  <data id="form_monologue_op357"></data>
+  <data id="form_monologue_op358"></data>
+  <data id="form_monologue_op359"></data>
+  <data id="form_monologue_op360"></data>
+  <data id="form_monologue_op361"></data>
+  <data id="form_monologue_op362"></data>
+  <data id="form_monologue_op363"></data>
+  <data id="form_monologue_op364"></data>
+  <data id="form_monologue_op365"></data>
+  <data id="form_monologue_op366"></data>
+  <data id="form_monologue_op367"></data>
+  <data id="form_monologue_op368"></data>
+  <data id="form_monologue_op369"></data>
+  <data id="form_monologue_op370"></data>
+  <data id="form_monologue_op371"></data>
+  <data id="form_monologue_op372"></data>
+  <data id="form_monologue_op373"></data>
+  <data id="form_monologue_op374"></data>
+  <data id="form_monologue_op375"></data>
+  <data id="form_monologue_op376"></data>
+  <data id="form_monologue_op377"></data>
+  <data id="form_monologue_op378"></data>
+  <data id="form_monologue_op379"></data>
+  <data id="form_monologue_op380"></data>
+  <data id="form_monologue_op381"></data>
+  <data id="form_monologue_op382"></data>
+  <data id="form_monologue_op383"></data>
+  <data id="form_monologue_op384"></data>
+  <data id="form_monologue_op385"></data>
+  <data id="form_monologue_op386"></data>
+  <data id="form_monologue_op387"></data>
+  <data id="form_monologue_op393"></data>
+  <data id="form_monologue_op394"></data>
+  <data id="form_monologue_op395"></data>
+  <data id="form_monologue_op396"></data>
   <data id="form_monologue_op000">Empty</data>
   <data id="form_monologue_op074">Witch</data>
   <data id="form_monologue_op094">Moon Pearl</data>

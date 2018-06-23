@@ -46,11 +46,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.logPanel = new System.Windows.Forms.Panel();
             this.projectPanel = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.labelbytesInfos = new System.Windows.Forms.Label();
             this.labelInfos = new System.Windows.Forms.Label();
             this.projectinfoLabel = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.propertyGridexportSetting = new System.Windows.Forms.PropertyGrid();
             this.menuStrip1.SuspendLayout();
@@ -209,6 +209,33 @@
             this.projectPanel.Size = new System.Drawing.Size(312, 278);
             this.projectPanel.TabIndex = 7;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(312, 278);
+            this.tabControl1.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.AutoScrollMinSize = new System.Drawing.Size(0, 280);
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.labelbytesInfos);
+            this.tabPage1.Controls.Add(this.labelInfos);
+            this.tabPage1.Controls.Add(this.projectinfoLabel);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(304, 252);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Project Infos.";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // labelbytesInfos
             // 
             this.labelbytesInfos.AutoSize = true;
@@ -238,33 +265,6 @@
             this.projectinfoLabel.Size = new System.Drawing.Size(91, 273);
             this.projectinfoLabel.TabIndex = 6;
             this.projectinfoLabel.Text = resources.GetString("projectinfoLabel.Text");
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(312, 278);
-            this.tabControl1.TabIndex = 8;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.AutoScrollMinSize = new System.Drawing.Size(0, 280);
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.labelbytesInfos);
-            this.tabPage1.Controls.Add(this.labelInfos);
-            this.tabPage1.Controls.Add(this.projectinfoLabel);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(304, 252);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Project Infos.";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 

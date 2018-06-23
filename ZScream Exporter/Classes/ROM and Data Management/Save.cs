@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
 using System.Drawing;
+using System.Collections.Generic;
 
 /// <summary>
 /// Writes the ROM's data to JSON files.
@@ -48,6 +49,8 @@ class SaveJson
         writeOverworldMaps(ProjectDirectorySlash);
         writeOverworldConfig(ProjectDirectorySlash);
         writeOverworldGroups(ProjectDirectorySlash);
+        writeOverworldGroups2(ProjectDirectorySlash);
+        writeOverworldSpriteset(ProjectDirectorySlash);
     }
 
     public void writeOverworldGroups(string path)
@@ -60,6 +63,32 @@ class SaveJson
         for (int i = 0; i < dim; i++)
             owblocksetgroups[i] = ROM.DATA[Constants.overworldgfxGroups + i];
         File.WriteAllText(path + "Overworld//BlocksetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
+    }
+
+    public void writeOverworldSpriteset(string path)
+    {
+        if (!Directory.Exists(path + "Overworld"))
+            Directory.CreateDirectory(path + "Overworld");
+
+        const int dim = 143 * 4;
+        byte[] owblocksetgroups = new byte[dim];
+        for (int i = 0; i < dim; i++)
+            owblocksetgroups[i] = ROM.DATA[Constants.sprite_blockset_pointer + i];
+        File.WriteAllText(path + "Overworld//SpritesetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
+    }
+
+    
+
+    public void writeOverworldGroups2(string path)
+    {
+        if (!Directory.Exists(path + "Overworld"))
+            Directory.CreateDirectory(path + "Overworld");
+
+        const int dim = 80 * 8;
+        byte[] owblocksetgroups = new byte[dim];
+        for (int i = 0; i < dim; i++)
+            owblocksetgroups[i] = ROM.DATA[Constants.overworldgfxGroups2 + i];
+        File.WriteAllText(path + "Overworld//BlocksetGroups2.json", JsonConvert.SerializeObject(owblocksetgroups));
     }
 
     public void writeOverworldConfig(string path)
@@ -219,8 +248,7 @@ class SaveJson
             Directory.CreateDirectory(path + "Texts");
         }
 
-        TextSave ts = new TextSave(TextData.messages.ToArray());
-        File.WriteAllText(path + "Texts//AllTexts.json", JsonConvert.SerializeObject(ts));
+        File.WriteAllText(path + "Texts//AllTexts.json", JsonConvert.SerializeObject(TextData.messages.ToArray()));
     }
 
 
@@ -418,6 +446,8 @@ public class roomPotSave
     }
 }
 
+
+
 public class configSave
 {
     public string ProjectName = "";
@@ -454,7 +484,8 @@ public struct MapSave
     public byte blockset;
     public short msgid;
     public string name;
-
+    public List<Room_Sprite> sprites;
+    public List<roomPotSave> items;
     public MapSave(short id, Overworld overworld)
     {
         tiles = new ushort[32, 32];
@@ -468,8 +499,65 @@ public struct MapSave
             if (index <= 150)
                 if (ROM.DATA[Constants.overworldMapSize + (index & 0x3F)] != 0)
                     largeMap = true;
+
         this.spriteset = ROM.DATA[Constants.overworldSpriteset + index];
         this.name = ROMStructure.mapsNames[index];
+
+        sprites = new List<Room_Sprite>();
+        int address = 0;
+            if (index < 0x40)
+            {
+                address = Constants.overworldSpritesLW;
+            }
+            else
+            {
+                address = Constants.overworldSpritesDW;
+            }
+            //09 bank ? Need to check if HM change that
+            int sprite_address_snes = (09 << 16) +
+            (ROM.DATA[address + (index * 2) + 1] << 8) +
+            ROM.DATA[address + (index * 2)];
+            int sprite_address = Addresses.snestopc(sprite_address_snes);
+
+            while (true)
+            {
+                byte b1 = ROM.DATA[sprite_address];
+                byte b2 = ROM.DATA[sprite_address + 1];
+                byte b3 = ROM.DATA[sprite_address + 2];
+
+                if (b1 == 0xFF) { break; }
+
+                sprites.Add(new Room_Sprite(b3, (byte)(b2 & 0x3F), (byte)(b1 & 0x3F), Sprites_Names.name[b3], 0, 0, 0, 0));
+                sprite_address += 3;
+            }
+
+
+        items = new List<roomPotSave>();
+
+            int addr = (Constants.overworldItemsBank << 16) +
+                        (ROM.DATA[Constants.overworldItemsPointers + (index * 2) + 1] << 8) +
+                        (ROM.DATA[Constants.overworldItemsPointers + (index * 2)]);
+            addr = Addresses.snestopc(addr);
+
+            while (true)
+            {
+                byte b1 = ROM.DATA[addr];
+                byte b2 = ROM.DATA[addr + 1];
+                byte b3 = ROM.DATA[addr + 2];
+                if (b1 == 0xFF && b2 == 0xFF)
+                {
+                    break;
+                }
+
+                int p = (((b2 & 0x1F) << 8) + b1) >> 1;
+
+                int x = p % 64;
+                int y = p >> 6;
+
+                items.Add(new roomPotSave(b3, (byte)x, (byte)y, false));
+                addr += 3;
+            }
+        
 
         int t = index * 256;
         for (int y = 0; y < 16; y++)

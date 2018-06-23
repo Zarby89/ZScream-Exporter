@@ -11,6 +11,7 @@ using System.Linq;
 /// </summary>
 public class Exporter
 {
+    
     RichTextBox logTextbox;
     ProgressBar progressBar;
     Overworld overworld = new Overworld();

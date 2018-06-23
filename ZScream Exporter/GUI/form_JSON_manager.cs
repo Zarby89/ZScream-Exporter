@@ -17,6 +17,7 @@ namespace ZScream_Exporter.GUI
         private void Form1_Load(object sender, EventArgs e)
         {
             updateStatistics();
+            TextAndTranslationManager.SetupLanguage(TextAndTranslationManager.XLanguage.English_US,"");
         }
         byte[] romData;
         private void openROMToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace ZScream_Exporter.GUI
                     {
                         romData[i - 0x200] = temp[i];
                     }
-                    writeLog("Header ROM detected", Color.Orange);
+                    writeLog(TextAndTranslationManager.GetString("form_parent_notice_headered"), Color.Orange);
                 }
                 else
                 {
@@ -94,7 +95,7 @@ namespace ZScream_Exporter.GUI
                     {
                         romData[i - 0x200] = temp[i];
                     }
-                    writeLog("Header ROM detected", Color.Orange);
+                    writeLog(TextAndTranslationManager.GetString("form_parent_notice_headered"), Color.Orange);
                 }
                 else romData = (byte[])temp.Clone();
 

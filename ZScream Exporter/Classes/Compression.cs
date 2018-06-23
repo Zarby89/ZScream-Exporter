@@ -3,7 +3,7 @@
  */
 
 using System;
-
+using ZScream_Exporter.ZCompressLibrary;
 /// <summary>
 /// Decompresses and compresses data
 /// </summary>
@@ -30,7 +30,7 @@ public static class Compression
             int addr = BitConverter.ToInt32(b, 0);
             addresses[i] = Addresses.snestopc(addr);
             //Console.WriteLine(Addresses.snestopc(addr).ToString("X6"));
-            byte[] tbufferBlock = ZCompressLibrary.Decompress.ALTTPDecompressGraphics(ROM.DATA, Addresses.snestopc(addr), 0x800, ref blockSize[i]);
+            byte[] tbufferBlock = Decompress.ALTTPDecompressGraphics(ROM.DATA, Addresses.snestopc(addr), 0x800, ref blockSize[i]);
             bufferBlock = tbufferBlock;
             if (tbufferBlock.Length != 0x600)
             {
@@ -60,7 +60,7 @@ public static class Compression
                 byte[] b = new byte[] { ROM.DATA[gfxPointer3 + i], ROM.DATA[gfxPointer2 + i], ROM.DATA[gfxPointer1 + i], 0 };
                 int addr = BitConverter.ToInt32(b, 0);
                 addresses[i] = Addresses.snestopc(addr);
-                byte[] tbufferBlock = ZCompressLibrary.Decompress.ALTTPDecompressGraphics(ROM.DATA, Addresses.snestopc(addr), 0x800, ref blockSize[i]);
+                byte[] tbufferBlock = Decompress.ALTTPDecompressGraphics(ROM.DATA, Addresses.snestopc(addr), 0x800, ref blockSize[i]);
                 bufferBlock = tbufferBlock;
                 if (tbufferBlock.Length != 0x600)
                 {
