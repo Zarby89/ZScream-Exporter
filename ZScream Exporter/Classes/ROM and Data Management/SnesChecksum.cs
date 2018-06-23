@@ -46,9 +46,9 @@ public static class SNESChecksum
     {
         if (!RomIO.IsHeaderless())
         {
-            int size = RomIO.size - RomIO.getHeaderOffset();
+            int size = RomIO.Size - RomIO.GetHeaderOffset();
             ROM = new byte[size];
-            Array.Copy(rom, RomIO.getHeaderOffset(), ROM, 0, size);
+            Array.Copy(rom, RomIO.GetHeaderOffset(), ROM, 0, size);
         }
         else ROM = rom;
 
@@ -62,13 +62,13 @@ public static class SNESChecksum
 
         if (!RomIO.IsHeaderless())
         {
-            int size = RomIO.size - RomIO.getHeaderOffset();
+            int size = RomIO.Size - RomIO.GetHeaderOffset();
             ROM = new byte[size];
-            Array.Copy(indata, RomIO.getHeaderOffset(), ROM, 0, size);
+            Array.Copy(indata, RomIO.GetHeaderOffset(), ROM, 0, size);
 
             if (FixROM())
             {
-                Array.Copy(ROM, 0, indata, RomIO.getHeaderOffset(), size);
+                Array.Copy(ROM, 0, indata, RomIO.GetHeaderOffset(), size);
                 return indata;
             }
             else return indata;

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using ZScream_Exporter.ZCompressLibrary;
 
 /// <summary>
@@ -95,6 +96,8 @@ public class Overworld
             bl = (ushort)(ROM.DATA[Constants.map32TilesBL + 3 + (i)] + (((ROM.DATA[Constants.map32TilesBL + (i) + 5]) & 0x0f) * 256));
             br = (ushort)(ROM.DATA[Constants.map32TilesBR + 3 + (i)] + (((ROM.DATA[Constants.map32TilesBR + (i) + 5]) & 0x0f) * 256));
             tiles32.Add(new Tile32(tl, tr, bl, br));
+            Thread.Yield();
+
         }
 
     }
@@ -147,6 +150,7 @@ public class Overworld
                     }
                     npos++;
                     ttpos += 1;
+                    Thread.Yield();
 
                 }
             }
@@ -285,6 +289,8 @@ public class Overworld
 
             index += 4;
             c += 2;
+            Thread.Yield();
+
         }
 
     }
