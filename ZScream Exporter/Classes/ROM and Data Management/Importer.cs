@@ -36,7 +36,7 @@ public class Importer
         CheckGameTitle();
         LoadOverworldTiles();
         progressBar.Value = progressBar.Maximum;
-        writeLog("All 'Overworld' data saved in ROM successfuly.", Color.Green, FontStyle.Bold);
+        WriteLog("All 'Overworld' data saved in ROM successfuly.", Color.Green, FontStyle.Bold);
     }
 
     public byte[] getLargeMaps()
@@ -111,37 +111,48 @@ public class Importer
         }
         catch (Exception e)
         {
-            writeLog("Error : " + e.Message.ToString(), Color.Red);
+            WriteLog("Error : " + e.Message.ToString(), Color.Red);
             return;
         }
-        writeLog("Overworld tiles data loaded properly", Color.Green);
+        WriteLog("Overworld tiles data loaded properly", Color.Green);
     }
 
     public void CheckGameTitle()
     {
-        //Search for "THE LEGEND OF ZELDA" - US 1.2
-        if (compareBytes(0x7FC0, new byte[] { 0x54, 0x48, 0x45, 0x20, 0x4C, 0x45, 0x47, 0x45, 0x4E, 0x44, 0x20, 0x4F, 0x46, 0x20, 0x5A, 0x45, 0x4C, 0x44, 0x41 }))
+        RegionId.GenerateRegion();
+
+        string output = "";
+        switch (RegionId.myRegion)
         {
-            //US 1.2 detected
-            writeLog("Version Detected : US 1.2", Color.Green);
+            case (int)RegionId.Region.Japan:
+                output = "Japan";
+                goto PrintRegion;
+            case (int)RegionId.Region.USA:
+                output = "US";
+                goto PrintRegion;
+            case (int)RegionId.Region.German:
+                output = "German";
+                goto PrintRegion;
+            case (int)RegionId.Region.France:
+                output = "France";
+                goto PrintRegion;
+            case (int)RegionId.Region.Europe:
+                output = "Europe";
+                goto PrintRegion;
+            case (int)RegionId.Region.Canada:
+                output = "Canada";
+                goto PrintRegion;
+            default:
+                WriteLog("Unknown Game Title : Using US as default", Color.Orange);
+                break;
+
+                PrintRegion:
+                WriteLog("Region Detected : " + output, Color.Green);
+                break;
         }
-        //Search for "ZELDANODENSETSU" - JP 1.0
-        else if (compareBytes(0x7FC0, new byte[] { 0x5A, 0x45, 0x4C, 0x44, 0x41, 0x4E, 0x4F, 0x44, 0x45, 0x4E, 0x53, 0x45, 0x54, 0x53, 0x55 }))
-        {
-            //JP 1.0 detected
-            writeLog("Version Detected : JP 1.0", Color.Green);
-            Constants.Init_Jp(); //use JP Constants
-        }
-        else
-        {
-            //Unknown Title
-            writeLog("Unknown Game Title : Using US 1.2 as default", Color.Orange);
-        }
-        //progressBar.Value++;
     }
 
-
-    public void writeLog(string line, Color col, FontStyle fs = FontStyle.Regular)
+    public void WriteLog(string line, Color col, FontStyle fs = FontStyle.Regular)
     {
         Font f = new Font(logTextbox.Font, fs);
         string text = line + "\r\n";
@@ -150,13 +161,5 @@ public class Importer
         logTextbox.SelectionColor = col;
         logTextbox.SelectionFont = f;
         logTextbox.Refresh();
-    }
-
-    public bool compareBytes(int location, byte[] array)
-    {
-        for (int i = 0; i < array.Length; i++)
-            if (romData[location + i] != array[i])
-                return false;
-        return true;
     }
 }

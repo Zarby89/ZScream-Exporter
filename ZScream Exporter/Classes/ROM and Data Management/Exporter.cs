@@ -42,11 +42,11 @@ public class Exporter
         TextData.readAllText();
         LoadedProjectStatistics.texts = TextData.messages.Count;
         progressBar.Value++;
-        writeLog("All data loaded successfuly.", Color.Green, FontStyle.Bold);
+        WriteLog("All data loaded successfuly.", Color.Green, FontStyle.Bold);
 
         SaveJson s = new SaveJson(all_rooms, all_maps, null, TextData.messages.ToArray(), overworld);
         progressBar.Value = progressBar.Maximum;
-        writeLog("All data exported successfuly.", Color.Green, FontStyle.Bold);
+        WriteLog("All data exported successfuly.", Color.Green, FontStyle.Bold);
     }
 
     public void LoadDungeonsRooms()
@@ -83,7 +83,7 @@ public class Exporter
             }
             catch (Exception e)
             {
-                writeLog("Error : " + e.Message.ToString(), Color.Red);
+                WriteLog("Error : " + e.Message.ToString(), Color.Red);
                 return;
             }
         }
@@ -100,7 +100,7 @@ public class Exporter
         LoadedProjectStatistics.usedRooms = roomCount;
         LoadedProjectStatistics.spritesRooms = spritesCount;
         LoadedProjectStatistics.objectsRooms = objCount;
-        writeLog("All dungeon rooms data loaded properly : ", Color.Green);
+        WriteLog("All dungeon rooms data loaded properly : ", Color.Green);
     }
 
     public void LoadOverworldTiles()
@@ -113,11 +113,11 @@ public class Exporter
 
             overworld.DecompressAllMapTiles(); //need to change
             overworld.createMap32TilesFrom16(); //need to change
-            writeLog("Overworld tiles data loaded properly", Color.Green);
+            WriteLog("Overworld tiles data loaded properly", Color.Green);
         }
         catch (Exception e)
         {
-            writeLog("Error : " + e.Message.ToString(), Color.Red);
+            WriteLog("Error : " + e.Message.ToString(), Color.Red);
         }
     }
 
@@ -138,7 +138,7 @@ public class Exporter
             }
             catch (Exception e)
             {
-                writeLog("Error : " + e.Message.ToString(), Color.Red);
+                WriteLog("Error : " + e.Message.ToString(), Color.Red);
                 return;
             }
         }
@@ -151,33 +151,47 @@ public class Exporter
         LoadedProjectStatistics.exitsMaps = -1;
         LoadedProjectStatistics.holesMaps = -1;
         LoadedProjectStatistics.whirlpoolMaps = -1;
-        writeLog("Overworld maps data loaded properly", Color.Green);
+        WriteLog("Overworld maps data loaded properly", Color.Green);
     }
 
     public void CheckGameTitle()
     {
-        //Search for "THE LEGEND OF ZELDA" - US 1.2
-        if (compareBytes(0x7FC0, new byte[] { 0x54, 0x48, 0x45, 0x20, 0x4C, 0x45, 0x47, 0x45, 0x4E, 0x44, 0x20, 0x4F, 0x46, 0x20, 0x5A, 0x45, 0x4C, 0x44, 0x41 }))
+        RegionId.GenerateRegion();
+
+        string output = "";
+        switch (RegionId.myRegion)
         {
-            //US 1.2 detected
-            writeLog("Version Detected : US 1.2", Color.Green);
-        }
-        //Search for "ZELDANODENSETSU" - JP 1.0
-        else if (compareBytes(0x7FC0, new byte[] { 0x5A, 0x45, 0x4C, 0x44, 0x41, 0x4E, 0x4F, 0x44, 0x45, 0x4E, 0x53, 0x45, 0x54, 0x53, 0x55 }))
-        {
-            //JP 1.0 detected
-            writeLog("Version Detected : JP 1.0", Color.Green);
-            Constants.Init_Jp(); //use JP Constants
-        }
-        else
-        {
-            //Unknown Title
-            writeLog("Unknown Game Title : Using US 1.2 as default", Color.Orange);
+            case (int)RegionId.Region.Japan:
+                output = "Japan";
+                Constants.Init_Jp();
+                goto PrintRegion;
+            case (int)RegionId.Region.USA:
+                output = "US";
+                goto PrintRegion;
+            case (int)RegionId.Region.German:
+                output = "German";
+                goto PrintRegion;
+            case (int)RegionId.Region.France:
+                output = "France";
+                goto PrintRegion;
+            case (int)RegionId.Region.Europe:
+                output = "Europe";
+                goto PrintRegion;
+            case (int)RegionId.Region.Canada:
+                output = "Canada";
+                goto PrintRegion;
+            default:
+                WriteLog("Unknown Game Title : Using US as default", Color.Orange);
+                break;
+
+                PrintRegion:
+                WriteLog("Region Detected : " + output, Color.Green);
+                break;
         }
         progressBar.Value++;
     }
 
-    public void writeLog(string line, Color col, FontStyle fs = FontStyle.Regular)
+    public void WriteLog(string line, Color col, FontStyle fs = FontStyle.Regular)
     {
         Font f = new Font(logTextbox.Font, fs);
         string text = line + "\r\n";
@@ -186,13 +200,5 @@ public class Exporter
         logTextbox.SelectionColor = col;
         logTextbox.SelectionFont = f;
         logTextbox.Refresh();
-    }
-
-    public bool compareBytes(int location, byte[] array)
-    {
-        for (int i = 0; i < array.Length; i++)
-            if (romData[location + i] != array[i])
-                return false;
-        return true;
     }
 }

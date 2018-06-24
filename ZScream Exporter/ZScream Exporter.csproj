@@ -61,8 +61,10 @@
     <Compile Include="Classes\Entrance.cs" />
     <Compile Include="Classes\Overworld\EntranceOW.cs" />
     <Compile Include="Classes\Overworld\ExitOW.cs" />
+    <Compile Include="Classes\ROM and Data Management\AddressLoROM.cs" />
     <Compile Include="Classes\ROM and Data Management\Exporter.cs" />
     <Compile Include="Classes\GFX.cs" />
+    <Compile Include="Classes\ROM and Data Management\PointerRead.cs" />
     <Compile Include="Classes\TextAndTranslationManager.cs" />
     <Compile Include="Classes\XMLManager.cs" />
     <Compile Include="GUI\form_JSON_manager.cs">
@@ -78,7 +80,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\ROM and Data Management\RegionId.cs" />
     <Compile Include="Classes\ROM and Data Management\ROM.cs" />
-    <Compile Include="Classes\ROM and Data Management\RomIO.cs" />
     <Compile Include="Classes\ROM and Data Management\ROMStructure.cs" />
     <Compile Include="Classes\Dungeon\RoomSave.cs" />
     <Compile Include="Classes\Dungeon\Room_Object.cs" />

@@ -20,11 +20,6 @@ namespace ZScream_Exporter.GUI
             UpdateStatistics();
             TextAndTranslationManager.SetupLanguage(TextAndTranslationManager.XLanguage.English_US, "");
         }
-        byte[] romData;
-        private void OpenROMToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         public void writeLog(string line, Color col, FontStyle fs = FontStyle.Regular)
         {
@@ -56,21 +51,21 @@ namespace ZScream_Exporter.GUI
                 byte[] temp = new byte[fs.Length];
                 fs.Read(temp, 0, (int)fs.Length);
                 fs.Close();
-                romData = new byte[temp.Length];
-                if ((temp.Length & 0x200) == 0x200)
-                {
-                    //Rom is headered, remove header
-                    romData = new byte[temp.Length - 0x200];
-                    for (int i = 0x200; i < temp.Length; i++)
-                        romData[i - 0x200] = temp[i];
+
+                ROM.SetRom(temp, out bool isHeadered);
+
+                if (isHeadered)
                     writeLog(TextAndTranslationManager.GetString("form_parent_notice_headered"), Color.Orange);
-                }
-                else romData = (byte[])temp.Clone();
 
                 temp = null;
 
+                /*
+                 * Reset the progress bar if the user exports again.
+                 * This prevents crashing.
+                 */
+                progressBar1.Value = 0;
                 //read the ROM if you selected OK
-                exporter = new Exporter(romData, progressBar1, logTextbox);
+                exporter = new Exporter(ROM.DATA, progressBar1, logTextbox);
                 UpdateStatistics();
             }
         }
@@ -84,20 +79,21 @@ namespace ZScream_Exporter.GUI
                 byte[] temp = new byte[fs.Length];
                 fs.Read(temp, 0, (int)fs.Length);
                 fs.Close();
-                romData = new byte[temp.Length];
-                if ((temp.Length & 0x200) == 0x200)
-                {
-                    //Rom is headered, remove header
-                    romData = new byte[temp.Length - 0x200];
-                    for (int i = 0x200; i < temp.Length; i++)
-                        romData[i - 0x200] = temp[i];
+
+                ROM.SetRom(temp, out bool isHeadered);
+
+                if (isHeadered)
                     writeLog(TextAndTranslationManager.GetString("form_parent_notice_headered"), Color.Orange);
-                }
-                else romData = (byte[])temp.Clone();
 
                 temp = null;
 
-                importer = new Importer(romData, progressBar1, logTextbox);
+                /*
+                 * Reset the progress bar if the user exports again.
+                 * This prevents crashing.
+                 */
+                progressBar1.Value = 0;
+
+                importer = new Importer(ROM.DATA, progressBar1, logTextbox);
                 UpdateStatistics();
             }
         }

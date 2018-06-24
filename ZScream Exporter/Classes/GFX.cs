@@ -164,7 +164,6 @@ public static class GFX
                     ypos = 0;
 
                 }
-
             }
 
             int n = 0;
@@ -211,7 +210,6 @@ public static class GFX
     {
         b.UnlockBits(currentbmpData);
     }
-
 
     public static Bitmap singleGrayscaletobmp(int index)
     {
@@ -266,7 +264,6 @@ public static class GFX
         }
         //128 = 4
 
-
         return b;
     }
 
@@ -294,21 +291,8 @@ public static class GFX
         return b;
     }
 
-
-
-
-
-
     public static Color getColor(short c)
     {
         return Color.FromArgb(((c & 0x1F) * 8), ((c & 0x3E0) >> 5) * 8, ((c & 0x7C00) >> 10) * 8);
     }
-
-
-
-
-
-
-
 }
-
