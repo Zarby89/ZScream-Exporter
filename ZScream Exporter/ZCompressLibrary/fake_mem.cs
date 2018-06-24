@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ZScream_Exporter.ZCompressLibrary
+﻿namespace ZScream_Exporter.ZCompressLibrary
 {
     internal static class fake_mem
     {

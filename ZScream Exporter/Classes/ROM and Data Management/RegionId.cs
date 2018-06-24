@@ -2,6 +2,7 @@
  * Author:  Trovsky
  */
 
+using System;
 using System.Linq;
 
 /// <summary>
@@ -14,11 +15,10 @@ public static class RegionId
     /// </summary>
     public static int myRegion;
 
-
     /// <summary>
     /// Public enum for the region.
     /// </summary>
-    public enum region
+    public enum Region
     {
         Invalid = -1,
         Japan,
@@ -27,7 +27,6 @@ public static class RegionId
         France,
         Europe,
         Canada
-
     }
 
     private static byte[] dialogueCode = new byte[] { 0xF3, 0x68, 0xC8, 0x28, 0x7F, 0x38 }; //F368C8287F38
@@ -43,11 +42,10 @@ public static class RegionId
         0x670FB
     };
 
-
     /// <summary>
     /// Determine the ROM region. The result is stored in the variable "myRegion".
     /// </summary>
-    public static void generateRegion()
+    public static void GenerateRegion()
     {
 
         /*
@@ -59,10 +57,12 @@ public static class RegionId
          * Conker's High Rule Tail is one example.
          */
 
-        myRegion = (int)region.Invalid;
+        myRegion = (int)Region.Invalid;
         for (int i = 0; i < dialogueCode.Length; i++)
         {
-            byte[] b = RomIO.Read(location[i], dialogueCode.Length);
+            byte[] b = new byte[dialogueCode.Length];
+            Array.Copy(ROM.DATA, location[i], b, 0, dialogueCode.Length);
+
             if (b.SequenceEqual(dialogueCode))
             {
                 //The region was found! Assign the variable and exit.
@@ -70,8 +70,5 @@ public static class RegionId
                 break;
             }
         }
-        
-        //if (myRegion == (int)region.Invalid)
-            //throw new Exception();
     }
 }

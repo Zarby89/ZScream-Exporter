@@ -44,14 +44,7 @@ public static class SNESChecksum
 
     public static bool isHeaderBad(byte[] rom)
     {
-        if (!RomIO.IsHeaderless())
-        {
-            int size = RomIO.Size - RomIO.GetHeaderOffset();
-            ROM = new byte[size];
-            Array.Copy(rom, RomIO.GetHeaderOffset(), ROM, 0, size);
-        }
-        else ROM = rom;
-
+        ROM = rom;
         return FixROM();
     }
 
@@ -60,27 +53,12 @@ public static class SNESChecksum
 
         ROM = new byte[indata.Length];
 
-        if (!RomIO.IsHeaderless())
-        {
-            int size = RomIO.Size - RomIO.GetHeaderOffset();
-            ROM = new byte[size];
-            Array.Copy(indata, RomIO.GetHeaderOffset(), ROM, 0, size);
 
-            if (FixROM())
-            {
-                Array.Copy(ROM, 0, indata, RomIO.GetHeaderOffset(), size);
-                return indata;
-            }
-            else return indata;
+        Array.Copy(indata, ROM, indata.Length);
+        if (FixROM())
+            return ROM;
+        else return indata;
 
-        }
-        else
-        {
-            Array.Copy(indata, ROM, indata.Length);
-            if (FixROM())
-                return ROM;
-            else return indata;
-        }
     }
 
     //the mother method-- currently just used for correcting checksums... 

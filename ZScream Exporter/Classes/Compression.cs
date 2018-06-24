@@ -16,6 +16,10 @@ public static class Compression
 
     public static byte[] DecompressTiles() //to gfx.bin
     {
+        int gfxPointer1 = Addresses.snestopc((ROM.DATA[Constants.gfx_1_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_1_pointer])),
+                gfxPointer2 = Addresses.snestopc((ROM.DATA[Constants.gfx_2_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_2_pointer])),
+                gfxPointer3 = Addresses.snestopc((ROM.DATA[Constants.gfx_3_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_3_pointer]));
+
         byte[]
             buffer = new byte[0x6F800],// (185)
             bufferBlock;
@@ -23,9 +27,6 @@ public static class Compression
         int bufferPos = 0;
         for (int i = 0; i < 96; i++)
         {
-            int gfxPointer1 = Addresses.snestopc((ROM.DATA[Constants.gfx_1_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_1_pointer])),
-                gfxPointer2 = Addresses.snestopc((ROM.DATA[Constants.gfx_2_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_2_pointer])),
-                gfxPointer3 = Addresses.snestopc((ROM.DATA[Constants.gfx_3_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_3_pointer]));
             byte[] b = new byte[] { ROM.DATA[gfxPointer3 + i], ROM.DATA[gfxPointer2 + i], ROM.DATA[gfxPointer1 + i], 0 };
             int addr = BitConverter.ToInt32(b, 0);
             addresses[i] = Addresses.snestopc(addr);
@@ -53,10 +54,6 @@ public static class Compression
             bpp[i] = 3;
             if (i < 115 || i > 126) //not compressed
             {
-
-                int gfxPointer1 = Addresses.snestopc((ROM.DATA[Constants.gfx_1_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_1_pointer]));
-                int gfxPointer2 = Addresses.snestopc((ROM.DATA[Constants.gfx_2_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_2_pointer]));
-                int gfxPointer3 = Addresses.snestopc((ROM.DATA[Constants.gfx_3_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_3_pointer]));
                 byte[] b = new byte[] { ROM.DATA[gfxPointer3 + i], ROM.DATA[gfxPointer2 + i], ROM.DATA[gfxPointer1 + i], 0 };
                 int addr = BitConverter.ToInt32(b, 0);
                 addresses[i] = Addresses.snestopc(addr);
@@ -80,9 +77,6 @@ public static class Compression
             }
             else
             {
-                int gfxPointer1 = Addresses.snestopc((ROM.DATA[Constants.gfx_1_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_1_pointer])),
-                    gfxPointer2 = Addresses.snestopc((ROM.DATA[Constants.gfx_2_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_2_pointer])),
-                    gfxPointer3 = Addresses.snestopc((ROM.DATA[Constants.gfx_3_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_3_pointer]));
                 byte[] b = new byte[] { ROM.DATA[gfxPointer3 + i], ROM.DATA[gfxPointer2 + i], ROM.DATA[gfxPointer1 + i], 0 };
                 int addr = BitConverter.ToInt32(b, 0);
                 addr = Addresses.snestopc(addr);
