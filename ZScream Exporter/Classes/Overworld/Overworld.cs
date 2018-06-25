@@ -1,7 +1,6 @@
 ﻿/*
- * Author:  Zarby89
+ * Author:  Zarby89, Trovsky (cleanup)
  */
-
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,35 +14,50 @@ using ZScream_Exporter.ZCompressLibrary;
 /// </summary>
 public class Overworld
 {
-    public Overworld() { }
+    public List<Tile16> tiles16;
+    public List<Tile32> tiles32;
+    private int[] map32address;
 
-    delegate int Thing(int address, int i);
+    public Tile32[] map16tiles;
+    public List<Size> posSize;
 
-    public List<Tile16> tiles16 = new List<Tile16>();
-    public List<Tile32> tiles32 = new List<Tile32>();
-    public void AssembleMap16Tiles(bool fromJson = false)
+
+    public Tile32[] t32Unique;
+    public List<ushort> t32;
+
+    public Overworld()
     {
-        if (fromJson)
-        {
-            tiles16 = JsonConvert.DeserializeObject<Tile16[]>(File.ReadAllText("ProjectDirectory//Overworld//Tiles16.json")).ToList();
-            return;
-        }
-        int tpos = Constants.map16Tiles;
-        for (int i = 0; i < 3760; i += 1)
-        {
-            Tile8 t0 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
-            tpos += 2;
-            Tile8 t1 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
-            tpos += 2;
-            Tile8 t2 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
-            tpos += 2;
-            Tile8 t3 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
-            tpos += 2;
-            tiles16.Add(new Tile16(t0, t1, t2, t3));
-        }
+        tiles16 = new List<Tile16>();
+        tiles32 = new List<Tile32>();
+
+        map16tiles = new Tile32[40960];
+        posSize = new List<Size>();
+
+        t32Unique = new Tile32[10000];
+        t32 = new List<ushort>();
     }
 
-    private int[] map32address;
+
+    public void AssembleMap16Tiles(bool fromJson = false)
+    {
+        if (!fromJson)
+        {
+            int tpos = Constants.map16Tiles;
+            for (int i = 0; i < 3760; i += 1)
+            {
+                Tile8 t0 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
+                tpos += 2;
+                Tile8 t1 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
+                tpos += 2;
+                Tile8 t2 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
+                tpos += 2;
+                Tile8 t3 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
+                tpos += 2;
+                tiles16.Add(new Tile16(t0, t1, t2, t3));
+            }
+        }
+        else tiles16 = JsonConvert.DeserializeObject<Tile16[]>(File.ReadAllText("ProjectDirectory//Overworld//Tiles16.json")).ToList();
+    }
 
     public void AssembleMap32Tiles()
     {
@@ -60,9 +74,7 @@ public class Overworld
         for (int i = 0; i < 0x33F0; i += 6)
         {
             ushort[,] b = new ushort[dim, dim];
-
             ushort tl, tr, bl, br;
-
             for (int k = 0; k < 4; k++)
             {
                 tl = generate(i, k, (int)Dimension.map32TilesTL);
@@ -84,32 +96,33 @@ public class Overworld
 
     private ushort generate(int i, int k, int dimension)
     {
-        return (ushort)(ROM.DATA[map32address[dimension] + k + (i)] + (((ROM.DATA[map32address[dimension] + (i) + (k <= 1 ? 4 : 5)] >> (k % 2 == 0 ? 4 : 0)) & 0x0F) * 256));
+        return (ushort)(ROM.DATA[map32address[dimension] + k + (i)]
+            + (((ROM.DATA[map32address[dimension] + (i) + (k <= 1 ? 4 : 5)] >> (k % 2 == 0 ? 4 : 0)) & 0x0F) * 256));
     }
 
-    public Tile32[] map16tiles = new Tile32[40960];
-    public List<Size> posSize = new List<Size>();
     public void DecompressAllMapTiles()
     {
-        Thing thing = delegate (int address, int i)
-        { return PointerRead.LongRead_LoHiBank(address + i * 3); };
+        //locat functions
+        int genPointer(int address, int i) => PointerRead.LongRead_LoHiBank(address + i * 3);
+        byte[] Decomp(int pointer, ref int compressedSize)
+            => Decompress.ALTTPDecompressOverworld(ROM.DATA, pointer, 1000, ref compressedSize);
 
         int npos = 0;
         for (int i = 0; i < 160; i++)
         {
-            int p1 = thing(Constants.compressedAllMap32PointersHigh, i),
-                p2 = thing(Constants.compressedAllMap32PointersLow, i);
+            int p1 = genPointer(Constants.compressedAllMap32PointersHigh, i),
+                p2 = genPointer(Constants.compressedAllMap32PointersLow, i);
 
             int ttpos = 0, compressedSize1 = 0, compressedSize2 = 0;
 
             byte[]
-                bytes = Decompress.ALTTPDecompressOverworld(ROM.DATA, p2, 1000, ref compressedSize1),
-                bytes2 = Decompress.ALTTPDecompressOverworld(ROM.DATA, p1, 1000, ref compressedSize2);
+                bytes = Decomp(p2, ref compressedSize1),
+                bytes2 = Decomp(p1, ref compressedSize2);
 
             for (int y = 0; y < 16; y++)
-                for (int x = 0; x < 16; x++, npos++, ttpos++)
+                for (int x = 0, tpos; x < 16; x++, npos++, ttpos++)
                 {
-                    int tpos = (ushort)((bytes2[ttpos] << 8) + bytes[ttpos]);
+                    tpos = (ushort)((bytes2[ttpos] << 8) + bytes[ttpos]);
                     if (tpos < tiles32.Count)
                         map16tiles[npos] = new Tile32(tiles32[tpos].tile0, tiles32[tpos].tile1, tiles32[tpos].tile2, tiles32[tpos].tile3);
                     else
@@ -121,8 +134,6 @@ public class Overworld
         }
     }
 
-    public Tile32[] t32Unique = new Tile32[10000];
-    public List<ushort> t32 = new List<ushort>();
     public int tiles32count = 0;
     public void createMap32TilesFrom16()
     {
@@ -178,7 +189,6 @@ public class Overworld
         File.WriteAllText("TileDebug.txt", s);
 
     }
-
 
     public void Save32Tiles()
     {
