@@ -11,6 +11,10 @@ namespace ZScream_Exporter.GUI
         public ZscreamForm()
         {
             InitializeComponent();
+
+            ConstantsReader.SetupRegion(RegionId.Region.Japan, "../../");
+
+            string s = ConstantsReader.GetAddress("tile_address").ToString("X2");
         }
 
         public Exporter exporter;

@@ -62,11 +62,12 @@
     <Compile Include="Classes\Overworld\EntranceOW.cs" />
     <Compile Include="Classes\Overworld\ExitOW.cs" />
     <Compile Include="Classes\ROM and Data Management\AddressLoROM.cs" />
+    <Compile Include="Classes\XML Management\ConstantsReader.cs" />
     <Compile Include="Classes\ROM and Data Management\Exporter.cs" />
     <Compile Include="Classes\GFX.cs" />
     <Compile Include="Classes\ROM and Data Management\PointerRead.cs" />
-    <Compile Include="Classes\TextAndTranslationManager.cs" />
-    <Compile Include="Classes\XMLManager.cs" />
+    <Compile Include="Classes\XML Management\TextAndTranslationManager.cs" />
+    <Compile Include="Classes\XML Management\XMLManager.cs" />
     <Compile Include="GUI\form_JSON_manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +127,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Constants.JP.xml" />
+    <Content Include="Constants.US.xml" />
     <Content Include="Resource.en-US.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

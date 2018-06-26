@@ -88,7 +88,7 @@
             this.fromROMToolStripMenuItem,
             this.fromJsonFilesToolStripMenuItem});
             this.openROMToolStripMenuItem.Name = "openROMToolStripMenuItem";
-            this.openROMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openROMToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.openROMToolStripMenuItem.Text = "Load Project";
             // 
             // fromROMToolStripMenuItem
@@ -111,7 +111,7 @@
             this.toJsonToolStripMenuItem,
             this.toROMToolStripMenuItem});
             this.exportLoadedProjectToROMToolStripMenuItem.Name = "exportLoadedProjectToROMToolStripMenuItem";
-            this.exportLoadedProjectToROMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportLoadedProjectToROMToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exportLoadedProjectToROMToolStripMenuItem.Text = "Export Project";
             // 
             // toJsonToolStripMenuItem
