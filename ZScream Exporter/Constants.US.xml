@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--===========================================================================================-->
+    <!--GFX Related Variables-->
+    <!--===========================================================================================-->
+    <data id="tile_address">0x1B52</data><!--JP">Same</data>i don't think that need a pointer-->
+    <data id="tile_address_floor">0x1B5A</data><!--JP">Same</data>i don't think that need a pointer-->
+    <data id="subtype1_tiles">0x8000</data><!--JP">Same</data>i don't think that need a pointer-->
+    <data id="subtype2_tiles">0x83F0</data><!--JP">Same</data>i don't think that need a pointer-->
+    <data id="subtype3_tiles">0x84F0</data><!--JP">Same</data>i don't think that need a pointer-->
+    <data id="gfx_animated_pointer">0x10275</data><!--JP 0x10624 long pointer-->
+
+    <data id="gfx_1_pointer">0x6790</data><!--2byte pointer bank 00 pc -> 0x4320-->
+    <data id="gfx_2_pointer">0x6795</data>
+    <data id="gfx_3_pointer">0x679A</data>
+    <data id="hud_palettes">0xDD660</data>
+
+    <!--===========================================================================================-->
+    <!--Overworld Related Variables-->
+    <!--===========================================================================================-->
+    <data id="compressedAllMap32PointersHigh">0x1794D</data>
+    <data id="compressedAllMap32PointersLow">0x17B2D</data>
+    <data id="overworldgfxGroups">0x05D97</data><!--contain 4blockset by id-->
+    <data id="overworldgfxGroups2">0x6073</data><!--contain 8 blockset by id (lw is 0x20,dw is 0x21)-->
+    <data id="map16Tiles">0x78000</data>
+	
+    <data id="map32TilesTL">0x18000</data>
+    <data id="map32TilesTR">0x1B400</data>
+    <data id="map32TilesBL">0x20000</data>
+    <data id="map32TilesBR">0x23400</data>
+	
+    <data id="overworldPalGroup1">0xDE6C8</data>
+    <data id="overworldPalGroup2">0xDE86C</data>
+    <data id="overworldPalGroup3">0xDE604</data>
+	
+    <data id="overworldMapPalette">0x7D1C</data>
+    <data id="overworldSpritePalette">0x7B81</data>
+    <data id="overworldMapPaletteGroup">0x75504</data>
+    <data id="overworldSpriteset">0x7A81</data>
+    <data id="overworldSpritesBegining">0x4C881</data>
+    <data id="overworldSpritesLW">0x4C901</data>
+    <data id="overworldSpritesDW">0x4CA21</data>
+    <data id="overworldItemsPointers">0xDC2F9</data>
+    <data id="overworldItemsBank">0x1B</data>
+    <data id="overworldMapSize">0x12844</data>
+    <data id="hardcodedGrassLW">0x75645</data>
+    <data id="hardcodedGrassDW">0x7564F</data>
+    <data id="hardcodedGrassSpecial">0x75640</data>
+    <data id="mapGfx">0x7C9C</data>
+    <data id="overlayPointers">0x77664</data>
+    <data id="overlayPointersBank">0x0E</data>
+    <data id="overworldTilesType">0x71459</data>
+    <data id="overworldMessages">0x3F51D</data><!--short value-->
+    <!--===========================================================================================-->
+    <!--Overworld Exits/Entrances Variables-->
+    <!--===========================================================================================-->
+    <data id="OWExitRoomId">0x15D8A</data>
+    <data id="OWExitMapId">0x15E28</data>
+    <data id="OWExitVram">0x15E77</data>
+    <data id="OWExitYScroll">0x15F15</data>
+    <data id="OWExitXScroll">0x15FB3</data>
+    <data id="OWExitYPlayer">0x16051</data>
+    <data id="OWExitXPlayer">0x160EF</data>
+    <data id="OWExitYCamera">0x1618D</data>
+    <data id="OWExitXCamera">0x1622B</data>
+    <data id="OWExitUnk1">0x162C9</data>
+    <data id="OWExitUnk2">0x16318</data>
+    <data id="OWExitDoorType1">0x16367</data>
+    <data id="OWExitDoorType2">0x16405</data>
+    <data id="OWEntranceMap">0xDB96F</data>
+    <data id="OWEntrancePos">0xDBA71</data>
+    <data id="OWEntranceEntranceId">0xDBB73</data>
+    <data id="OWHolePos">0xDB800</data><!--(0x13 entries, 2 bytes each) modified(less 0x400) map16 coordinates for each hole-->
+    <data id="OWHoleArea">0xDB826</data><!--(0x13 entries, 2 bytes each) corresponding area numbers for each hole-->
+    <data id="OWHoleEntrance">0xDB84C</data><!--(0x13 entries, 1 byte each)  corresponding entrance numbers-->
+
+    <!--===========================================================================================-->
+    <!--Dungeon Related Variables-->
+    <!--===========================================================================================-->
+    <!--That could be turned into a pointer : -->
+    <data id="dungeons_palettes_groups">0x75460</data><!--JP 0x67DD0-->
+    <data id="dungeons_main_bg_palette_pointers">0xDEC4B</data><!--JP Same-->
+    <data id="dungeons_palettes">0xDD734</data><!--JP Same (where all dungeons palettes are) -->
+
+    <!--That could be turned into a pointer : -->
+    <data id="room_items_pointers">0xDB69</data><!--JP 0xDB67-->
+
+    <data id="rooms_sprite_pointer">0x4C298</data><!--JP Same : 2byte bank 04-->
+    <data id="room_header_pointer">0xB5DD</data><!--LONG-->
+    <data id="room_header_pointers_bank">0xB5E7</data><!--JP Same-->
+
+
+    <data id="gfx_groups_pointer">0x6237</data>
+    <data id="room_object_layout_pointer">0x882D</data>
+
+    <data id="room_object_pointer">0x874C</data><!--Long pointer-->
+
+    <data id="chests_length_pointer">0xEBF6</data><!--nbr of bytes "Chests / 3"-->
+    <data id="chests_data_pointer1">0xEBFB</data>
+
+    <data id="room_objects_section1">0x50000</data>
+    <data id="room_objects_section2">0xF8780</data>
+    <data id="room_objects_section3">0x1EB06</data>
+
+    <data id="room_objects_section1_max">0x53730</data>
+    <data id="room_objects_section2_max">0xFFFFF</data>
+    <data id="room_objects_section3_max">0x1FFFF</data>
+
+
+    <!--<data id="chests_data_pointer2">0xEC0A</data> Disabled for now could be used for expansion-->
+    <!--<data id="chests_data_pointer3">0xEC10</data> Disabled for now could be used for expansion-->
+
+    <data id="blocks_length">0x8896</data><!--word value -->
+    <data id="blocks_pointer1">0x15AFA</data>
+    <data id="blocks_pointer2">0x15B01</data>
+    <data id="blocks_pointer3">0x15B08</data>
+    <data id="blocks_pointer4">0x15B0F</data>
+
+    <data id="torch_data">0x2736A</data><!--JP 0x2704A-->
+    <data id="torches_length_pointer">0x88C1</data>
+
+
+    <data id="sprite_blockset_pointer">0x5B57</data>
+    <data id="sprites_data">0x4D880</data><!--JP : It use the unused pointers to have more space : Save purpose-->
+    <data id="sprites_data_empty_room">0x4D87E</data>
+
+    <data id="pit_pointer">0x394AB</data>
+    <data id="pit_count">0x394A6</data>
+
+    <data id="doorPointers">0xF83C0</data>
+
+    <!--doors-->
+    <data id="door_gfx_up">0x4D9E</data>
+    <!---->
+    <data id="door_gfx_down">0x4E06</data>
+    <data id="door_gfx_cavexit_down">0x4E06</data>
+    <data id="door_gfx_left">0x4E66</data>
+    <data id="door_gfx_right">0x4EC6</data>
+
+    <data id="door_pos_up">0x197E</data>
+    <data id="door_pos_down">0x1996</data>
+    <data id="door_pos_left">0x19AE</data>
+    <data id="door_pos_right">0x19C6</data>
+
+
+    <!--===========================================================================================-->
+    <!--Dungeon Entrances Related Variables-->
+    <!--===========================================================================================-->
+    <data id="entrance_room">0x14813</data><!--0x14577  : word value for each room-->
+    <data id="entrance_scrolledge">0x1491D</data><!--0x14681 : 8 bytes per room, HU, FU, HD, FD, HL, FL, HR, FR-->
+    <data id="entrance_yscroll">0x14D45</data><!--0x14AA9 : 2bytes each room-->
+    <data id="entrance_xscroll">0x14E4F</data><!--0x14BB3 : 2bytes-->
+    <data id="entrance_yposition">0x14F59</data><!--0x14CBD 2bytes-->
+    <data id="entrance_xposition">0x15063</data><!--0x14DC7 2bytes-->
+    <data id="entrance_camerayposition">0x1516D</data><!--0x14ED1 2bytes-->
+    <data id="entrance_cameraxposition">0x15277</data><!--0x14FDB 2bytes-->
+
+    <data id="entrance_gfx_group">0x5D97</data>
+    
+	<data id="entrance_blockset">0x15381</data><!--0x150E5 1byte-->
+    <data id="entrance_floor">0x15406</data><!--0x1516A 1byte-->
+    <data id="entrance_dungeon">0x1548B</data><!--0x151EF 1byte (dungeon id)-->
+    <data id="entrance_door">0x15510</data><!--0x15274 1byte-->
+    <data id="entrance_ladderbg">0x15595</data>
+    <data id="entrance_scrolling">0x1561A</data><!--0x1537E <!- 0x152F9  1 byte, - - - b - - -a b">bg2, a">need to check -_- - -> -1byte - -h- - -v- -->
+    <data id="entrance_scrollquadrant">0x1569F</data><!--0x15403 1byte-->
+    <data id="entrance_exit">0x15724</data><!--0x15488 "2byte word-->
+    <data id="entrance_music">0x1582E</data><!--0x15592-->
+
+    <data id="startingentrance_room">0x15B6E</data><!--0x158D2 "word value for each room-->
+    <data id="startingentrance_scrolledge">0x15B7C</data><!--0x158E0 "8 bytes per room, HU, FU, HD, FD, HL, FL, HR, FR-->
+    <data id="startingentrance_yscroll">0x15BB4</data><!--0x14AA9 "2bytes each room-->
+    <data id="startingentrance_xscroll">0x15BC2</data><!--0x14BB3 "2bytes-->
+    <data id="startingentrance_yposition">0x15BD0</data><!--0x14CBD 2bytes-->
+    <data id="startingentrance_xposition">0x15BDE</data><!--0x14DC7 2bytes-->
+    <data id="startingentrance_camerayposition">0x15BEC</data><!--0x14ED1 2bytes-->
+    <data id="startingentrance_cameraxposition">0x15BFA</data><!--0x14FDB 2bytes-->
+
+    <data id="startingentrance_blockset">0x15C08</data><!--0x150E5 1byte-->
+    <data id="startingentrance_floor">0x15C0F</data><!--0x1516A 1byte-->
+    <data id="startingentrance_dungeon">0x15C16</data><!--0x151EF 1byte (dungeon id)-->
+
+    <data id="startingentrance_door">0x15C2B</data><!--0x15274 1byte-->
+
+    <data id="startingentrance_ladderbg">0x15C1D</data><!--0x152F9 : 1 byte, - - - b - - -a b">bg2, a">need to check -_- -->
+    <data id="startingentrance_scrolling">0x1561A</data><!--0x1537E : 1byte - - h- - - v- -->
+    <data id="startingentrance_scrollquadrant">0x1569F</data><!--0x15403 1byte-->
+    <data id="startingentrance_exit">0x15C32</data><!--0x15488 : 2byte word-->
+    <data id="startingentrance_music">0x15C4E</data><!--0x15592-->
+    <data id="startingentrance_entrance">0x15C40</data>
+
+    <data id="items_data_start">0xDDE9</data><!--save purpose-->
+    <data id="items_data_end">0xE6B2</data><!--save purpose-->
+    <data id="initial_equipement">0x271A6</data>
+    <data id="messages_id_dungeon">0x3F61D</data>
+</root>

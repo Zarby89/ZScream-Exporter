@@ -20,9 +20,9 @@ public static class RegionId
     /// </summary>
     public enum Region
     {
-        Invalid = -1,
-        Japan,
-        USA,
+        Invalid =-1,
+        Japan = 0,
+        USA = 1,
         German,
         France,
         Europe,
