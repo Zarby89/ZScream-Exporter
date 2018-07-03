@@ -30,13 +30,33 @@ public class Importer
     }
 
     public MapSave[] all_maps = new MapSave[160];
+    public EntranceOW[] all_entrancesOW = new EntranceOW[129];
     public void Import()
     {
         all_maps = new MapSave[160];
         CheckGameTitle();
         LoadOverworldTiles();
+        LoadOverworldEntrances();
         progressBar.Value = progressBar.Maximum;
         WriteLog("All 'Overworld' data saved in ROM successfuly.", Color.Green, FontStyle.Bold);
+
+        try
+        {
+            //GFX.gfxdata = Compression.DecompressTiles();
+            SaveFileDialog sf = new SaveFileDialog();
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fs = new FileStream(sf.FileName, FileMode.OpenOrCreate, FileAccess.Write);
+                fs.Write(ROM.DATA, 0, ROM.DATA.Length);
+                fs.Close();
+            }
+
+        }
+        catch (Exception e)
+        {
+            WriteLog("Error : " + e.Message.ToString(), Color.Red);
+            return;
+        }
     }
 
     public byte[] getLargeMaps()
@@ -97,24 +117,25 @@ public class Importer
         overworld.createMap32TilesFrom16();
         overworld.savemapstorom();
 
-        try
-        {
-            //GFX.gfxdata = Compression.DecompressTiles();
-            SaveFileDialog sf = new SaveFileDialog();
-            if (sf.ShowDialog() == DialogResult.OK)
-            {
-                FileStream fs = new FileStream(sf.FileName, FileMode.OpenOrCreate, FileAccess.Write);
-                fs.Write(ROM.DATA, 0, ROM.DATA.Length);
-                fs.Close();
-            }
-
-        }
-        catch (Exception e)
-        {
-            WriteLog("Error : " + e.Message.ToString(), Color.Red);
-            return;
-        }
+ 
         WriteLog("Overworld tiles data loaded properly", Color.Green);
+    }
+
+    public void LoadOverworldEntrances()
+    {
+        for (int i = 0; i < 129; i++)
+        {
+            all_entrancesOW[i] = JsonConvert.DeserializeObject<EntranceOW>(File.ReadAllText("ProjectDirectory//Overworld//Entrances//Entrance" + i.ToString("D3") + ".json"));
+
+            ROM.DATA[Constants.OWEntranceMap + (i * 2) + 1] = (byte)((all_entrancesOW[i].mapId >> 8) & 0xFF);
+            ROM.DATA[Constants.OWEntranceMap + (i * 2)] = (byte)((all_entrancesOW[i].mapId) & 0xFF);
+
+            ROM.DATA[Constants.OWEntrancePos + (i * 2) + 1] = (byte)((all_entrancesOW[i].mapPos >> 8) & 0xFF);
+            ROM.DATA[Constants.OWEntrancePos + (i * 2)] = (byte)((all_entrancesOW[i].mapPos) & 0xFF);
+
+            ROM.DATA[Constants.OWEntranceEntranceId + i] = (byte)((all_entrancesOW[i].entranceId) & 0xFF);
+        }
+        WriteLog("Overworld Entrances data loaded properly", Color.Green);
     }
 
     public void CheckGameTitle()

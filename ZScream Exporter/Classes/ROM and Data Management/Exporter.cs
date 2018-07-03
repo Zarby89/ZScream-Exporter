@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 /// <summary>
@@ -22,11 +23,17 @@ public class Exporter
         this.romData = romData;
         ROM.DATA = romData;
         ROMStructure.loadDefaultProject();
+        progressBar.Value = 0;
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
         Export();
+        sw.Stop();
+        WriteLog("Json Elapsed Milliseconds : "+ sw.ElapsedMilliseconds.ToString(), Color.DarkRed, FontStyle.Bold);
     }
 
     public RoomSave[] all_rooms = new RoomSave[296];
     public MapSave[] all_maps = new MapSave[160];
+
     public void Export()
     {
         all_rooms = new RoomSave[296];
@@ -43,7 +50,6 @@ public class Exporter
         LoadedProjectStatistics.texts = TextData.messages.Count;
         progressBar.Value++;
         WriteLog("All data loaded successfuly.", Color.Green, FontStyle.Bold);
-
         SaveJson s = new SaveJson(all_rooms, all_maps, null, TextData.messages.ToArray(), overworld);
         progressBar.Value = progressBar.Maximum;
         WriteLog("All data exported successfuly.", Color.Green, FontStyle.Bold);

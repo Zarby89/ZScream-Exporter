@@ -7,6 +7,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using System.Drawing;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 /// <summary>
 /// Writes the ROM's data to JSON files.
@@ -28,7 +29,7 @@ class SaveJson
         this.texts = texts;
         this.overworld = overworld;
         //TODO : Change Header location to be dynamic instead of static
-
+        
         if (!Directory.Exists("ProjectDirectory"))
             Directory.CreateDirectory("ProjectDirectory");
         //ZipArchive zipfile = new ZipArchive(new FileStream("PROJECTFILE.zip", FileMode.Open), ZipArchiveMode.Create);
@@ -36,21 +37,43 @@ class SaveJson
         const string ProjectDirectorySlash = "ProjectDirectory//";
 
         File.WriteAllText(ProjectDirectorySlash + "Main.cfg", writeProjectConfig());
-        writeRooms(ProjectDirectorySlash);
-        writeEntrances(ProjectDirectorySlash);
-        writeOverworldEntrances(ProjectDirectorySlash);
-        writeOverworldExits(ProjectDirectorySlash);
-        writeOverworldHoles(ProjectDirectorySlash);
-        writeText(ProjectDirectorySlash);
-        writePalettes(ProjectDirectorySlash);
+        Task t1 = Task.Run(() => { writeRooms(ProjectDirectorySlash); });
+        Task t2 = Task.Run(() => { writeEntrances(ProjectDirectorySlash); });
+        Task t3 = Task.Run(() => { writeOverworldEntrances(ProjectDirectorySlash); });
+        Task t4 = Task.Run(() => { writeOverworldExits(ProjectDirectorySlash); });
+        Task t5 = Task.Run(() => { writeOverworldHoles(ProjectDirectorySlash); });
+        Task t6 = Task.Run(() => { writeText(ProjectDirectorySlash); });
+        Task t7 = Task.Run(() => { writePalettes(ProjectDirectorySlash); });
+        Task t8 = Task.Run(() => { writeGfx(ProjectDirectorySlash); });
+        Task t9 = Task.Run(() => { writeOverworldTiles16(ProjectDirectorySlash); });
+        Task t10 = Task.Run(() => { writeOverworldMaps(ProjectDirectorySlash); });
+        Task t11 = Task.Run(() => { writeOverworldConfig(ProjectDirectorySlash); });
+        Task t12 = Task.Run(() => { writeOverworldGroups(ProjectDirectorySlash); });
+        Task t13 = Task.Run(() => { writeOverworldGroups2(ProjectDirectorySlash); });
+        Task t14 = Task.Run(() => { writeOverworldSpriteset(ProjectDirectorySlash); });
 
-        writeGfx(ProjectDirectorySlash);
-        writeOverworldTiles16(ProjectDirectorySlash);
-        writeOverworldMaps(ProjectDirectorySlash);
-        writeOverworldConfig(ProjectDirectorySlash);
-        writeOverworldGroups(ProjectDirectorySlash);
-        writeOverworldGroups2(ProjectDirectorySlash);
-        writeOverworldSpriteset(ProjectDirectorySlash);
+        t1.Wait();
+        t2.Wait();
+        t3.Wait();
+        t4.Wait();
+        t5.Wait();
+        t6.Wait();
+        t7.Wait();
+        t8.Wait();
+        t9.Wait();
+        t10.Wait();
+        t11.Wait();
+        t12.Wait();
+        t13.Wait();
+        t14.Wait();
+
+
+
+
+
+
+
+
     }
 
     public void writeOverworldGroups(string path)
@@ -211,33 +234,10 @@ class SaveJson
         {
             Directory.CreateDirectory(path + "Graphics");
         }
-        if (!Directory.Exists(path + "Graphics//Tilesets 3bpp"))
-        {
-            Directory.CreateDirectory(path + "Graphics//Tilesets 3bpp");
-        }
-        if (!Directory.Exists(path + "Graphics//Hud 2bpp"))
-        {
-            Directory.CreateDirectory(path + "Graphics//Hud 2bpp");
-        }
-        if (!Directory.Exists(path + "Graphics//Sprites 3bpp"))
-        {
-            Directory.CreateDirectory(path + "Graphics//Sprites 3bpp");
-        }
-        for (int i = 0; i < 113; i++)
+
+        for (int i = 0; i < 223; i++)
         {
             GFX.singleGrayscaletobmp(i).Save(path + "Graphics//Tilesets 3bpp//blockset" + i.ToString("D3") + ".png");
-        }
-        for (int i = 113; i < 115; i++)
-        {
-            GFX.singleGrayscaletobmp(i).Save(path + "Graphics//Hud 2bpp//blockset" + i.ToString("D3") + ".png");
-        }
-        for (int i = 115; i < 218; i++)
-        {
-            GFX.singleGrayscaletobmp(i).Save(path + "Graphics//Sprites 3bpp//blockset" + i.ToString("D3") + ".png");
-        }
-        for (int i = 218; i < 223; i++)
-        {
-            GFX.singleGrayscaletobmp(i).Save(path + "Graphics//Hud 2bpp//blockset" + i.ToString("D3") + ".png");
         }
     }
 
