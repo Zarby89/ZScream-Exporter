@@ -21,6 +21,7 @@ class SaveJson
     Entrance[] entrances;
     string[] texts;
     Overworld overworld;
+    string jsonString = "";
     public SaveJson(RoomSave[] all_rooms, MapSave[] all_maps, Entrance[] entrances, string[] texts, Overworld overworld)
     {
         this.all_rooms = all_rooms;
@@ -68,7 +69,7 @@ class SaveJson
         t14.Wait();
 
 
-
+        File.WriteAllText(ProjectDirectorySlash + "AllData.json",jsonString);
 
 
 
@@ -85,7 +86,8 @@ class SaveJson
         byte[] owblocksetgroups = new byte[dim];
         for (int i = 0; i < dim; i++)
             owblocksetgroups[i] = ROM.DATA[Constants.overworldgfxGroups + i];
-        File.WriteAllText(path + "Overworld//BlocksetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
+        //File.WriteAllText(path + "Overworld//BlocksetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
+        jsonString += JsonConvert.SerializeObject(owblocksetgroups);
     }
 
     public void writeOverworldSpriteset(string path)
@@ -97,7 +99,8 @@ class SaveJson
         byte[] owblocksetgroups = new byte[dim];
         for (int i = 0; i < dim; i++)
             owblocksetgroups[i] = ROM.DATA[Constants.sprite_blockset_pointer + i];
-        File.WriteAllText(path + "Overworld//SpritesetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
+        //File.WriteAllText(path + "Overworld//SpritesetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
+        jsonString += JsonConvert.SerializeObject(owblocksetgroups);
     }
 
     
@@ -111,7 +114,8 @@ class SaveJson
         byte[] owblocksetgroups = new byte[dim];
         for (int i = 0; i < dim; i++)
             owblocksetgroups[i] = ROM.DATA[Constants.overworldgfxGroups2 + i];
-        File.WriteAllText(path + "Overworld//BlocksetGroups2.json", JsonConvert.SerializeObject(owblocksetgroups));
+        //File.WriteAllText(path + "Overworld//BlocksetGroups2.json", JsonConvert.SerializeObject(owblocksetgroups));
+        jsonString += JsonConvert.SerializeObject(owblocksetgroups);
     }
 
     public void writeOverworldConfig(string path)
@@ -119,13 +123,15 @@ class SaveJson
         if (!Directory.Exists(path + "Overworld"))
             Directory.CreateDirectory(path + "Overworld");
         OverworldConfig c = new OverworldConfig();
-        File.WriteAllText(path + "Overworld//Config.json", JsonConvert.SerializeObject(c));
+        //File.WriteAllText(path + "Overworld//Config.json", JsonConvert.SerializeObject(c));
+        jsonString += JsonConvert.SerializeObject(c);
 
         byte[] owpalettesgroups = new byte[0xA6];
         for (int i = 0; i < 0xA6; i++)
             owpalettesgroups[i] = ROM.DATA[Constants.overworldMapPaletteGroup + i];
 
-        File.WriteAllText(path + "Overworld//PalettesGroups.json", JsonConvert.SerializeObject(owpalettesgroups));
+        //File.WriteAllText(path + "Overworld//PalettesGroups.json", JsonConvert.SerializeObject(owpalettesgroups));
+        jsonString += JsonConvert.SerializeObject(owpalettesgroups);
     }
 
     public void writeOverworldTiles16(string path)
@@ -134,7 +140,8 @@ class SaveJson
         {
             Directory.CreateDirectory(path + "Overworld");
         }
-        File.WriteAllText(path + "Overworld//Tiles16.json", JsonConvert.SerializeObject(overworld.tiles16));
+        //File.WriteAllText(path + "Overworld//Tiles16.json", JsonConvert.SerializeObject(overworld.tiles16));
+        jsonString += JsonConvert.SerializeObject(overworld.tiles16);
     }
 
     public void writeOverworldHoles(string path)
@@ -153,8 +160,8 @@ class SaveJson
             short mapPos = (short)((ROM.DATA[Constants.OWHolePos + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWHolePos + (i * 2)]));
             byte entranceId = (byte)((ROM.DATA[Constants.OWHoleEntrance + i]));
             EntranceOW eo = new EntranceOW(mapId, mapPos, entranceId);
-
-            File.WriteAllText(path + "Overworld//Holes//Hole" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
+            //File.WriteAllText(path + "Overworld//Holes//Hole" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
+            jsonString += JsonConvert.SerializeObject(eo);
         }
     }
 
@@ -176,7 +183,8 @@ class SaveJson
             short mapPos = (short)((ROM.DATA[Constants.OWEntrancePos + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWEntrancePos + (i * 2)]));
             byte entranceId = (byte)((ROM.DATA[Constants.OWEntranceEntranceId + i]));
             EntranceOW eo = new EntranceOW(mapId, mapPos, entranceId);
-            File.WriteAllText(path + "Overworld//Entrances//Entrance" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
+            //File.WriteAllText(path + "Overworld//Entrances//Entrance" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
+            jsonString += JsonConvert.SerializeObject(eo);
         }
     }
 
@@ -207,7 +215,8 @@ class SaveJson
             e[11] = (byte)((ROM.DATA[Constants.OWExitDoorType1 + i]));
             e[12] = (byte)((ROM.DATA[Constants.OWExitDoorType2 + i]));
             ExitOW eo = (new ExitOW(e[0], (byte)e[1], e[2], e[3], e[4], e[5], e[6], e[7], e[8], (byte)e[9], (byte)e[10], (byte)e[11], (byte)e[12]));
-            File.WriteAllText(path + "Overworld//Exits//Exit" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
+            //File.WriteAllText(path + "Overworld//Exits//Exit" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
+            jsonString += JsonConvert.SerializeObject(eo);
         }
     }
 
@@ -224,7 +233,8 @@ class SaveJson
         for (int i = 0; i < 160; i++)
         {
 
-            File.WriteAllText(path + "Overworld//Maps//Map" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(all_maps[i]));
+            //File.WriteAllText(path + "Overworld//Maps//Map" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(all_maps[i]));
+            jsonString += JsonConvert.SerializeObject(all_maps[i]);
         }
     }
 
@@ -237,7 +247,7 @@ class SaveJson
 
         for (int i = 0; i < 223; i++)
         {
-            GFX.singleGrayscaletobmp(i).Save(path + "Graphics//Tilesets 3bpp//blockset" + i.ToString("D3") + ".png");
+            GFX.singleGrayscaletobmp(i).Save(path + "Graphics//blockset" + i.ToString("D3") + ".png");
         }
     }
 
@@ -248,7 +258,8 @@ class SaveJson
             Directory.CreateDirectory(path + "Texts");
         }
 
-        File.WriteAllText(path + "Texts//AllTexts.json", JsonConvert.SerializeObject(TextData.messages.ToArray()));
+        //File.WriteAllText(path + "Texts//AllTexts.json", JsonConvert.SerializeObject(TextData.messages.ToArray()));
+        jsonString += JsonConvert.SerializeObject(TextData.messages.ToArray());
     }
 
 
@@ -348,7 +359,8 @@ class SaveJson
                 ppos++;
             }
         }
-        File.WriteAllText(path + "Palettes//" + dir + "//" + name + ".json", JsonConvert.SerializeObject(palettes));
+        //File.WriteAllText(path + "Palettes//" + dir + "//" + name + ".json", JsonConvert.SerializeObject(palettes));
+        jsonString += JsonConvert.SerializeObject(palettes);
         /*
         //path = ProjectDirectory//
         paletteBitmap.Save(path + "Palettes//" + dir + "//" + name + ".png");
@@ -376,19 +388,31 @@ class SaveJson
         for (int i = 0; i < 133; i++)
         {
             Entrance e = new Entrance((byte)i);
-            File.WriteAllText(path + "Dungeons//Entrances//Entrance " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
+            /*File.WriteAllText(path + "Dungeons//Entrances//Entrance " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            }));
+            }));*/
+
+            jsonString += JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
 
         }
         for (int i = 0; i < 7; i++)
         {
+
             Entrance e = new Entrance((byte)i, true);
-            File.WriteAllText(path + "Dungeons//StartingEntrances//Entrance " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
+            /*File.WriteAllText(path + "Dungeons//StartingEntrances//Entrance " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            }));
+            }));*/
+
+            jsonString += JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+
 
         }
 
@@ -407,11 +431,18 @@ class SaveJson
         }
         for (int i = 0; i < 296; i++)
         {
+            
             RoomSave rs = new RoomSave((short)i);
-            File.WriteAllText(path + "Dungeons//Rooms//Room " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(rs, Formatting.None, new JsonSerializerSettings()
+            
+            /*File.WriteAllText(path + "Dungeons//Rooms//Room " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(rs, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            }));
+            }));*/
+
+            jsonString += JsonConvert.SerializeObject(rs, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
 
         }
     }
