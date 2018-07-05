@@ -117,19 +117,19 @@
             // toJsonToolStripMenuItem
             // 
             this.toJsonToolStripMenuItem.Name = "toJsonToolStripMenuItem";
-            this.toJsonToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.toJsonToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.toJsonToolStripMenuItem.Text = "To Json Files";
             // 
             // toROMToolStripMenuItem
             // 
             this.toROMToolStripMenuItem.Name = "toROMToolStripMenuItem";
-            this.toROMToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.toROMToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.toROMToolStripMenuItem.Text = "To ROM";
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // helpToolStripMenuItem

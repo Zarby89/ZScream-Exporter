@@ -28,7 +28,7 @@ public class Exporter
         sw.Start();
         Export();
         sw.Stop();
-        WriteLog("Json Elapsed Milliseconds : "+ sw.ElapsedMilliseconds.ToString(), Color.DarkRed, FontStyle.Bold);
+        WriteLog("Json Elapsed Milliseconds : " + sw.ElapsedMilliseconds.ToString(), Color.DarkRed, FontStyle.Bold);
     }
 
     public RoomSave[] all_rooms = new RoomSave[296];
@@ -36,6 +36,14 @@ public class Exporter
 
     public void Export()
     {
+        RegionId.GenerateRegion();
+        ConstantsReader.SetupRegion(RegionId.myRegion, "../../");
+
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+;
+        
+
         all_rooms = new RoomSave[296];
         all_maps = new MapSave[160];
         CheckGameTitle();
@@ -50,6 +58,11 @@ public class Exporter
         LoadedProjectStatistics.texts = TextData.messages.Count;
         progressBar.Value++;
         WriteLog("All data loaded successfuly.", Color.Green, FontStyle.Bold);
+
+        sw.Stop();
+
+        WriteLog("Elapsed Milliseconds : " + sw.ElapsedMilliseconds.ToString(), Color.DarkRed, FontStyle.Bold);
+
         SaveJson s = new SaveJson(all_rooms, all_maps, null, TextData.messages.ToArray(), overworld);
         progressBar.Value = progressBar.Maximum;
         WriteLog("All data exported successfuly.", Color.Green, FontStyle.Bold);
@@ -95,13 +108,13 @@ public class Exporter
         }
         LoadedProjectStatistics.blocksRooms = blockCount;
         LoadedProjectStatistics.chestsRooms = chestCount;
-        LoadedProjectStatistics.chestsRoomsLength = ((ROM.DATA[Constants.chests_length_pointer + 1] << 8) + (ROM.DATA[Constants.chests_length_pointer])) / 3;
-        LoadedProjectStatistics.blocksRoomsLength = ((short)((ROM.DATA[Constants.blocks_length + 1] << 8) + ROM.DATA[Constants.blocks_length])) / 4;
-        LoadedProjectStatistics.torchesRoomsLength = 86;//(ROM.DATA[Constants.torches_length_pointer + 1] << 8) + ROM.DATA[Constants.torches_length_pointer];
+        LoadedProjectStatistics.chestsRoomsLength = ((ROM.DATA[ConstantsReader.GetAddress("chests_length_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("chests_length_pointer")])) / 3;
+        LoadedProjectStatistics.blocksRoomsLength = ((short)((ROM.DATA[ConstantsReader.GetAddress("blocks_length") + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("blocks_length")])) / 4;
+        LoadedProjectStatistics.torchesRoomsLength = 86;//(ROM.DATA[ConstantsReader.GetAddress("torches_length_pointer + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("torches_length_pointer];
         LoadedProjectStatistics.entrancesRooms = 132;
         LoadedProjectStatistics.itemsRooms = itemCount;
         LoadedProjectStatistics.pitsRooms = pitsCount;
-        LoadedProjectStatistics.pitsRoomsLength = (ROM.DATA[Constants.pit_count] / 2);
+        LoadedProjectStatistics.pitsRoomsLength = (ROM.DATA[ConstantsReader.GetAddress("pit_count")] / 2);
         LoadedProjectStatistics.torchesRooms = torchCount;
         LoadedProjectStatistics.usedRooms = roomCount;
         LoadedProjectStatistics.spritesRooms = spritesCount;
@@ -169,7 +182,6 @@ public class Exporter
         {
             case (int)RegionId.Region.Japan:
                 output = "Japan";
-                Constants.Init_Jp();
                 goto PrintRegion;
             case (int)RegionId.Region.USA:
                 output = "US";

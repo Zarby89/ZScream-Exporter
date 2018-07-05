@@ -16,9 +16,9 @@ public static class Compression
 
     public static byte[] DecompressTiles() //to gfx.bin
     {
-        int gfxPointer1 = Addresses.snestopc((ROM.DATA[Constants.gfx_1_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_1_pointer])),
-                gfxPointer2 = Addresses.snestopc((ROM.DATA[Constants.gfx_2_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_2_pointer])),
-                gfxPointer3 = Addresses.snestopc((ROM.DATA[Constants.gfx_3_pointer + 1] << 8) + (ROM.DATA[Constants.gfx_3_pointer]));
+        int gfxPointer1 = Addresses.snestopc((ROM.DATA[ConstantsReader.GetAddress("gfx_1_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("gfx_1_pointer")])),
+                gfxPointer2 = Addresses.snestopc((ROM.DATA[ConstantsReader.GetAddress("gfx_2_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("gfx_2_pointer")])),
+                gfxPointer3 = Addresses.snestopc((ROM.DATA[ConstantsReader.GetAddress("gfx_3_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("gfx_3_pointer")]));
 
         byte[]
             buffer = new byte[0x6F800],// (185)
