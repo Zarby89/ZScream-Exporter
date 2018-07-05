@@ -11,7 +11,7 @@ public class RoomSave
 {
     private int header_location;
     public int index;
-    public byte 
+    public byte
         layout,
         floor1,
         floor2,
@@ -54,7 +54,7 @@ public class RoomSave
         sortSprites = false;
         index = roomId;
         this.name = ROMStructure.roomsNames[index];
-        messageid = (short)((ROM.DATA[Constants.messages_id_dungeon + (index * 2) + 1] << 8) + ROM.DATA[Constants.messages_id_dungeon + (index * 2)]);
+        messageid = (short)((ROM.DATA[ConstantsReader.GetAddress("messages_id_dungeon") + (index * 2) + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("messages_id_dungeon") + (index * 2)]);
 
 
         loadHeader();
@@ -69,8 +69,8 @@ public class RoomSave
 
     public void isdamagePit()
     {
-        int pitCount = (ROM.DATA[Constants.pit_count] / 2);
-        int pitPointer = (ROM.DATA[Constants.pit_pointer + 2] << 16) + (ROM.DATA[Constants.pit_pointer + 1] << 8) + (ROM.DATA[Constants.pit_pointer]);
+        int pitCount = (ROM.DATA[ConstantsReader.GetAddress("pit_count")] / 2);
+        int pitPointer = (ROM.DATA[ConstantsReader.GetAddress("pit_pointer") + 2] << 16) + (ROM.DATA[ConstantsReader.GetAddress("pit_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("pit_pointer")]);
         pitPointer = Addresses.snestopc(pitPointer);
         for (int i = 0; i < pitCount; i++)
         {
@@ -84,7 +84,7 @@ public class RoomSave
 
     public void addSprites()
     {
-        int spritePointer = (04 << 16) + (ROM.DATA[Constants.rooms_sprite_pointer + 1] << 8) + (ROM.DATA[Constants.rooms_sprite_pointer]);
+        int spritePointer = (04 << 16) + (ROM.DATA[ConstantsReader.GetAddress("rooms_sprite_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("rooms_sprite_pointer")]);
         //09 bank ? Need to check if HM change that
         int sprite_address_snes = (09 << 16) +
         (ROM.DATA[spritePointer + (index * 2) + 1] << 8) +
@@ -94,7 +94,7 @@ public class RoomSave
         sprite_address += 1;
         while (true)
         {
-            byte 
+            byte
                 b1 = ROM.DATA[sprite_address],
                 b2 = ROM.DATA[sprite_address + 1],
                 b3 = ROM.DATA[sprite_address + 2];
@@ -131,13 +131,13 @@ public class RoomSave
 
     public void addlistBlock(ref byte[] blocksdata, int maxCount)
     {
-        int pos1 = (ROM.DATA[Constants.blocks_pointer1 + 2] << 16) + (ROM.DATA[Constants.blocks_pointer1 + 1] << 8) + (ROM.DATA[Constants.blocks_pointer1]);
+        int pos1 = (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer1") + 2] << 16) + (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer1") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer1")]);
         pos1 = Addresses.snestopc(pos1);
-        int pos2 = (ROM.DATA[Constants.blocks_pointer2 + 2] << 16) + (ROM.DATA[Constants.blocks_pointer2 + 1] << 8) + (ROM.DATA[Constants.blocks_pointer2]);
+        int pos2 = (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer2") + 2] << 16) + (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer2") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer2")]);
         pos2 = Addresses.snestopc(pos2);
-        int pos3 = (ROM.DATA[Constants.blocks_pointer3 + 2] << 16) + (ROM.DATA[Constants.blocks_pointer3 + 1] << 8) + (ROM.DATA[Constants.blocks_pointer3]);
+        int pos3 = (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer3") + 2] << 16) + (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer3") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer3")]);
         pos3 = Addresses.snestopc(pos3);
-        int pos4 = (ROM.DATA[Constants.blocks_pointer4 + 2] << 16) + (ROM.DATA[Constants.blocks_pointer4 + 1] << 8) + (ROM.DATA[Constants.blocks_pointer4]);
+        int pos4 = (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer4") + 2] << 16) + (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer4") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("blocks_pointer4")]);
         pos4 = Addresses.snestopc(pos4);
         for (int i = 0; i < 0x80; i += 1)
         {
@@ -154,13 +154,13 @@ public class RoomSave
     {
         //288
 
-        int blocksCount = (short)((ROM.DATA[Constants.blocks_length + 1] << 8) + ROM.DATA[Constants.blocks_length]);
+        int blocksCount = (short)((ROM.DATA[ConstantsReader.GetAddress("blocks_length") + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("blocks_length")]);
         byte[] blocksdata = new byte[blocksCount];
-        //int blocksCount = (short)((ROM.DATA[Constants.blocks_length + 1] << 8) + ROM.DATA[Constants.blocks_length]);
+        //int blocksCount = (short)((ROM.DATA[ConstantsReader.GetAddress("blocks_length + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("blocks_length]);
         addlistBlock(ref blocksdata, blocksCount);
         for (int i = 0; i < blocksCount; i += 4)
         {
-            byte 
+            byte
                 b1 = blocksdata[i],
                 b2 = blocksdata[i + 1],
                 b3 = blocksdata[i + 2],
@@ -178,12 +178,12 @@ public class RoomSave
     }
     public void addTorches()
     {
-        int bytes_count = (ROM.DATA[Constants.torches_length_pointer + 1] << 8) + ROM.DATA[Constants.torches_length_pointer];
+        int bytes_count = (ROM.DATA[ConstantsReader.GetAddress("torches_length_pointer") + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("torches_length_pointer")];
 
         for (int i = 0; i < bytes_count; i += 2)
         {
-            byte b1 = ROM.DATA[Constants.torch_data + i];
-            byte b2 = ROM.DATA[Constants.torch_data + i + 1];
+            byte b1 = ROM.DATA[ConstantsReader.GetAddress("torch_data") + i];
+            byte b2 = ROM.DATA[ConstantsReader.GetAddress("torch_data") + i + 1];
             if (b1 == 0xFF && b2 == 0xFF) { continue; }
             if (((b2 << 8) + b1) == index) // if roomindex = indexread
             {
@@ -191,8 +191,8 @@ public class RoomSave
                 while (true)
                 {
 
-                    b1 = ROM.DATA[Constants.torch_data + i];
-                    b2 = ROM.DATA[Constants.torch_data + i + 1];
+                    b1 = ROM.DATA[ConstantsReader.GetAddress("torch_data") + i];
+                    b2 = ROM.DATA[ConstantsReader.GetAddress("torch_data") + i + 1];
 
                     if (b1 == 0xFF && b2 == 0xFF) { break; }
                     int address = ((b2 & 0x1F) << 8 | b1) >> 1;
@@ -209,8 +209,8 @@ public class RoomSave
             {
                 while (true)
                 {
-                    b1 = ROM.DATA[Constants.torch_data + i];
-                    b2 = ROM.DATA[Constants.torch_data + i + 1];
+                    b1 = ROM.DATA[ConstantsReader.GetAddress("torch_data") + i];
+                    b2 = ROM.DATA[ConstantsReader.GetAddress("torch_data") + i + 1];
                     if (b1 == 0xFF && b2 == 0xFF) { break; }
                     i += 2;
                 }
@@ -222,8 +222,8 @@ public class RoomSave
     public void addPotsItems()
     {
         int item_address_snes = (01 << 16) +
-        (ROM.DATA[Constants.room_items_pointers + (index * 2) + 1] << 8) +
-        ROM.DATA[Constants.room_items_pointers + (index * 2)];
+        (ROM.DATA[ConstantsReader.GetAddress("room_items_pointers") + (index * 2) + 1] << 8) +
+        ROM.DATA[ConstantsReader.GetAddress("room_items_pointers") + (index * 2)];
         int item_address = Addresses.snestopc(item_address_snes);
 
         while (true)
@@ -250,9 +250,9 @@ public class RoomSave
 
     public void loadChests(ref List<ChestData> chests_in_room)
     {
-        int cpos = (ROM.DATA[Constants.chests_data_pointer1 + 2] << 16) + (ROM.DATA[Constants.chests_data_pointer1 + 1] << 8) + (ROM.DATA[Constants.chests_data_pointer1]);
+        int cpos = (ROM.DATA[ConstantsReader.GetAddress("chests_data_pointer1") + 2] << 16) + (ROM.DATA[ConstantsReader.GetAddress("chests_data_pointer1") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("chests_data_pointer1")]);
         cpos = Addresses.snestopc(cpos);
-        int clength = (ROM.DATA[Constants.chests_length_pointer + 1] << 8) + (ROM.DATA[Constants.chests_length_pointer]);
+        int clength = (ROM.DATA[ConstantsReader.GetAddress("chests_length_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("chests_length_pointer")]);
 
         for (int i = 0; i < (clength); i++)
         {
@@ -275,7 +275,7 @@ public class RoomSave
     public void loadTilesObjects(bool floor = true)
     {
         //adddress of the room objects
-        int objectPointer = (ROM.DATA[Constants.room_object_pointer + 2] << 16) + (ROM.DATA[Constants.room_object_pointer + 1] << 8) + (ROM.DATA[Constants.room_object_pointer]);
+        int objectPointer = (ROM.DATA[ConstantsReader.GetAddress("room_object_pointer") + 2] << 16) + (ROM.DATA[ConstantsReader.GetAddress("room_object_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("room_object_pointer")]);
         objectPointer = Addresses.snestopc(objectPointer);
         int room_address = objectPointer + (index * 3);
         int tile_address = (ROM.DATA[room_address + 2] << 16) +
@@ -401,9 +401,9 @@ public class RoomSave
     public void loadHeader()
     {
         //address of the room header
-        int headerPointer = (ROM.DATA[Constants.room_header_pointer + 2] << 16) + (ROM.DATA[Constants.room_header_pointer + 1] << 8) + (ROM.DATA[Constants.room_header_pointer]);
+        int headerPointer = (ROM.DATA[ConstantsReader.GetAddress("room_header_pointer") + 2] << 16) + (ROM.DATA[ConstantsReader.GetAddress("room_header_pointer") + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("room_header_pointer")]);
         headerPointer = Addresses.snestopc(headerPointer);
-        int address = (ROM.DATA[Constants.room_header_pointers_bank] << 16) +
+        int address = (ROM.DATA[ConstantsReader.GetAddress("room_header_pointers_bank")] << 16) +
                         (ROM.DATA[(headerPointer + 1) + (index * 2)] << 8) +
                         ROM.DATA[(headerPointer) + (index * 2)];
 

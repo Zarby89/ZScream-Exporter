@@ -30,12 +30,12 @@ public class ConstantsReader
     /// </summary>
     /// <param name="region"></param>
     /// <param name="folderLocation"></param>
-    public static void SetupRegion(RegionId.Region region, string folderLocation)
+    public static void SetupRegion(int region, string folderLocation)
     {
         ConstantsReader.folderLocation = folderLocation;
-        if (currentRegion != (int)RegionId.Region.Invalid)
+        if (region != (int)RegionId.Region.Invalid)
         {
-            currentRegion = (int)region;
+            currentRegion = region;
             xml = new XMLManager(folderLocation + XMLFileName);
         }
         else throw new Exception();

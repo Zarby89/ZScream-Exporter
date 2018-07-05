@@ -33,6 +33,9 @@ public class Importer
     public EntranceOW[] all_entrancesOW = new EntranceOW[129];
     public void Import()
     {
+        RegionId.GenerateRegion();
+        ConstantsReader.SetupRegion(RegionId.myRegion, "../../");
+
         all_maps = new MapSave[160];
         CheckGameTitle();
         LoadOverworldTiles();
@@ -117,7 +120,7 @@ public class Importer
         overworld.createMap32TilesFrom16();
         overworld.savemapstorom();
 
- 
+
         WriteLog("Overworld tiles data loaded properly", Color.Green);
     }
 
@@ -127,13 +130,13 @@ public class Importer
         {
             all_entrancesOW[i] = JsonConvert.DeserializeObject<EntranceOW>(File.ReadAllText("ProjectDirectory//Overworld//Entrances//Entrance" + i.ToString("D3") + ".json"));
 
-            ROM.DATA[Constants.OWEntranceMap + (i * 2) + 1] = (byte)((all_entrancesOW[i].mapId >> 8) & 0xFF);
-            ROM.DATA[Constants.OWEntranceMap + (i * 2)] = (byte)((all_entrancesOW[i].mapId) & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("OWEntranceMap") + (i * 2) + 1] = (byte)((all_entrancesOW[i].mapId >> 8) & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("OWEntranceMap") + (i * 2)] = (byte)((all_entrancesOW[i].mapId) & 0xFF);
 
-            ROM.DATA[Constants.OWEntrancePos + (i * 2) + 1] = (byte)((all_entrancesOW[i].mapPos >> 8) & 0xFF);
-            ROM.DATA[Constants.OWEntrancePos + (i * 2)] = (byte)((all_entrancesOW[i].mapPos) & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("OWEntrancePos") + (i * 2) + 1] = (byte)((all_entrancesOW[i].mapPos >> 8) & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("OWEntrancePos") + (i * 2)] = (byte)((all_entrancesOW[i].mapPos) & 0xFF);
 
-            ROM.DATA[Constants.OWEntranceEntranceId + i] = (byte)((all_entrancesOW[i].entranceId) & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("OWEntranceEntranceId") + i] = (byte)((all_entrancesOW[i].entranceId) & 0xFF);
         }
         WriteLog("Overworld Entrances data loaded properly", Color.Green);
     }

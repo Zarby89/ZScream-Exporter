@@ -21,7 +21,6 @@ public class Overworld
     public Tile32[] map16tiles;
     public List<Size> posSize;
 
-
     public Tile32[] t32Unique;
     public List<ushort> t32;
 
@@ -36,13 +35,12 @@ public class Overworld
         t32Unique = new Tile32[10000];
         t32 = new List<ushort>();
     }
-
-
+    
     public void AssembleMap16Tiles(bool fromJson = false)
     {
         if (!fromJson)
         {
-            int tpos = Constants.map16Tiles;
+            int tpos = ConstantsReader.GetAddress("map16Tiles");
             for (int i = 0; i < 3760; i += 1)
             {
                 Tile8 t0 = new Tile8(BitConverter.ToInt16(ROM.DATA, (tpos)));
@@ -63,10 +61,10 @@ public class Overworld
     {
         map32address = new int[]
         {
-            Constants.map32TilesTL,
-            Constants.map32TilesTR,
-            Constants.map32TilesBL,
-            Constants.map32TilesBR
+            ConstantsReader.GetAddress("map32TilesTL"),
+            ConstantsReader.GetAddress("map32TilesTR"),
+            ConstantsReader.GetAddress("map32TilesBL"),
+            ConstantsReader.GetAddress("map32TilesBR")
         };
 
         const int dim = 4;
@@ -110,8 +108,8 @@ public class Overworld
         int npos = 0;
         for (int i = 0; i < 160; i++)
         {
-            int p1 = genPointer(Constants.compressedAllMap32PointersHigh, i),
-                p2 = genPointer(Constants.compressedAllMap32PointersLow, i);
+            int p1 = genPointer(ConstantsReader.GetAddress("compressedAllMap32PointersHigh"), i),
+                p2 = genPointer(ConstantsReader.GetAddress("compressedAllMap32PointersLow"), i);
 
             int ttpos = 0, compressedSize1 = 0, compressedSize2 = 0;
 
@@ -203,40 +201,40 @@ public class Overworld
             }
 
             //Top Left
-            ROM.DATA[Constants.map32TilesTL + (i + 0)] = (byte)(t32Unique[index + 0].tile0 & 0xFF);
-            ROM.DATA[Constants.map32TilesTL + (i + 1)] = (byte)(t32Unique[index + 1].tile0 & 0xFF);
-            ROM.DATA[Constants.map32TilesTL + (i + 2)] = (byte)(t32Unique[index + 2].tile0 & 0xFF);
-            ROM.DATA[Constants.map32TilesTL + (i + 3)] = (byte)(t32Unique[index + 3].tile0 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTL") + (i + 0)] = (byte)(t32Unique[index + 0].tile0 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTL") + (i + 1)] = (byte)(t32Unique[index + 1].tile0 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTL") + (i + 2)] = (byte)(t32Unique[index + 2].tile0 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTL") + (i + 3)] = (byte)(t32Unique[index + 3].tile0 & 0xFF);
 
-            ROM.DATA[Constants.map32TilesTL + (i + 4)] = (byte)(((t32Unique[index].tile0 >> 4) & 0xF0) + ((t32Unique[index + 1].tile0 >> 8) & 0x0F));
-            ROM.DATA[Constants.map32TilesTL + (i + 5)] = (byte)(((t32Unique[index + 2].tile0 >> 4) & 0xF0) + ((t32Unique[index + 3].tile0 >> 8) & 0x0F));
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTL") + (i + 4)] = (byte)(((t32Unique[index].tile0 >> 4) & 0xF0) + ((t32Unique[index + 1].tile0 >> 8) & 0x0F));
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTL") + (i + 5)] = (byte)(((t32Unique[index + 2].tile0 >> 4) & 0xF0) + ((t32Unique[index + 3].tile0 >> 8) & 0x0F));
 
             //Top Right
-            ROM.DATA[Constants.map32TilesTR + (i)] = (byte)(t32Unique[index].tile1 & 0xFF);
-            ROM.DATA[Constants.map32TilesTR + (i + 1)] = (byte)(t32Unique[index + 1].tile1 & 0xFF);
-            ROM.DATA[Constants.map32TilesTR + (i + 2)] = (byte)(t32Unique[index + 2].tile1 & 0xFF);
-            ROM.DATA[Constants.map32TilesTR + (i + 3)] = (byte)(t32Unique[index + 3].tile1 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTR") + (i)] = (byte)(t32Unique[index].tile1 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTR") + (i + 1)] = (byte)(t32Unique[index + 1].tile1 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTR") + (i + 2)] = (byte)(t32Unique[index + 2].tile1 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTR") + (i + 3)] = (byte)(t32Unique[index + 3].tile1 & 0xFF);
 
-            ROM.DATA[Constants.map32TilesTR + (i + 4)] = (byte)(((t32Unique[index].tile1 >> 4) & 0xF0) | ((t32Unique[index + 1].tile1 >> 8) & 0x0F));
-            ROM.DATA[Constants.map32TilesTR + (i + 5)] = (byte)(((t32Unique[index + 2].tile1 >> 4) & 0xF0) | ((t32Unique[index + 3].tile1 >> 8) & 0x0F));
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTR") + (i + 4)] = (byte)(((t32Unique[index].tile1 >> 4) & 0xF0) | ((t32Unique[index + 1].tile1 >> 8) & 0x0F));
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesTR") + (i + 5)] = (byte)(((t32Unique[index + 2].tile1 >> 4) & 0xF0) | ((t32Unique[index + 3].tile1 >> 8) & 0x0F));
 
             //Bottom Left
-            ROM.DATA[Constants.map32TilesBL + (i)] = (byte)(t32Unique[index].tile2 & 0xFF);
-            ROM.DATA[Constants.map32TilesBL + (i + 1)] = (byte)(t32Unique[index + 1].tile2 & 0xFF);
-            ROM.DATA[Constants.map32TilesBL + (i + 2)] = (byte)(t32Unique[index + 2].tile2 & 0xFF);
-            ROM.DATA[Constants.map32TilesBL + (i + 3)] = (byte)(t32Unique[index + 3].tile2 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBL") + (i)] = (byte)(t32Unique[index].tile2 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBL") + (i + 1)] = (byte)(t32Unique[index + 1].tile2 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBL") + (i + 2)] = (byte)(t32Unique[index + 2].tile2 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBL") + (i + 3)] = (byte)(t32Unique[index + 3].tile2 & 0xFF);
 
-            ROM.DATA[Constants.map32TilesBL + (i + 4)] = (byte)(((t32Unique[index].tile2 >> 4) & 0xF0) | ((t32Unique[index + 1].tile2 >> 8) & 0x0F));
-            ROM.DATA[Constants.map32TilesBL + (i + 5)] = (byte)(((t32Unique[index + 2].tile2 >> 4) & 0xF0) | ((t32Unique[index + 3].tile2 >> 8) & 0x0F));
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBL") + (i + 4)] = (byte)(((t32Unique[index].tile2 >> 4) & 0xF0) | ((t32Unique[index + 1].tile2 >> 8) & 0x0F));
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBL") + (i + 5)] = (byte)(((t32Unique[index + 2].tile2 >> 4) & 0xF0) | ((t32Unique[index + 3].tile2 >> 8) & 0x0F));
 
             //Bottom Right
-            ROM.DATA[Constants.map32TilesBR + (i)] = (byte)(t32Unique[index].tile3 & 0xFF);
-            ROM.DATA[Constants.map32TilesBR + (i + 1)] = (byte)(t32Unique[index + 1].tile3 & 0xFF);
-            ROM.DATA[Constants.map32TilesBR + (i + 2)] = (byte)(t32Unique[index + 2].tile3 & 0xFF);
-            ROM.DATA[Constants.map32TilesBR + (i + 3)] = (byte)(t32Unique[index + 3].tile3 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBR") + (i)] = (byte)(t32Unique[index].tile3 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBR") + (i + 1)] = (byte)(t32Unique[index + 1].tile3 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBR") + (i + 2)] = (byte)(t32Unique[index + 2].tile3 & 0xFF);
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBR") + (i + 3)] = (byte)(t32Unique[index + 3].tile3 & 0xFF);
 
-            ROM.DATA[Constants.map32TilesBR + (i + 4)] = (byte)(((t32Unique[index].tile3 >> 4) & 0xF0) | ((t32Unique[index + 1].tile3 >> 8) & 0x0F));
-            ROM.DATA[Constants.map32TilesBR + (i + 5)] = (byte)(((t32Unique[index + 2].tile3 >> 4) & 0xF0) | ((t32Unique[index + 3].tile3 >> 8) & 0x0F));
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBR") + (i + 4)] = (byte)(((t32Unique[index].tile3 >> 4) & 0xF0) | ((t32Unique[index + 1].tile3 >> 8) & 0x0F));
+            ROM.DATA[ConstantsReader.GetAddress("map32TilesBR") + (i + 5)] = (byte)(((t32Unique[index + 2].tile3 >> 4) & 0xF0) | ((t32Unique[index + 3].tile3 >> 8) & 0x0F));
 
             index += 4;
             c += 2;
@@ -263,9 +261,9 @@ public class Overworld
             }
 
             int snesPos = Addresses.pctosnes(pos);
-            ROM.DATA[(Constants.compressedAllMap32PointersHigh) + 0 + (int)(3 * i)] = (byte)(snesPos & 0xFF);
-            ROM.DATA[(Constants.compressedAllMap32PointersHigh) + 1 + (int)(3 * i)] = (byte)((snesPos >> 8) & 0xFF);
-            ROM.DATA[(Constants.compressedAllMap32PointersHigh) + 2 + (int)(3 * i)] = (byte)((snesPos >> 16) & 0xFF);
+            ROM.DATA[(ConstantsReader.GetAddress("compressedAllMap32PointersHigh")) + 0 + (int)(3 * i)] = (byte)(snesPos & 0xFF);
+            ROM.DATA[(ConstantsReader.GetAddress("compressedAllMap32PointersHigh")) + 1 + (int)(3 * i)] = (byte)((snesPos >> 8) & 0xFF);
+            ROM.DATA[(ConstantsReader.GetAddress("compressedAllMap32PointersHigh")) + 2 + (int)(3 * i)] = (byte)((snesPos >> 16) & 0xFF);
 
             ROM.DATA[pos] = 0xE0;
             ROM.DATA[pos + 1] = 0xFF;
@@ -278,9 +276,9 @@ public class Overworld
             ROM.DATA[pos] = 0xFF;
             pos += 1;
             snesPos = Addresses.pctosnes(pos);
-            ROM.DATA[(Constants.compressedAllMap32PointersLow) + 0 + (int)(3 * i)] = (byte)((snesPos >> 00) & 0xFF);
-            ROM.DATA[(Constants.compressedAllMap32PointersLow) + 1 + (int)(3 * i)] = (byte)((snesPos >> 08) & 0xFF);
-            ROM.DATA[(Constants.compressedAllMap32PointersLow) + 2 + (int)(3 * i)] = (byte)((snesPos >> 16) & 0xFF);
+            ROM.DATA[(ConstantsReader.GetAddress("compressedAllMap32PointersLow")) + 0 + (int)(3 * i)] = (byte)((snesPos >> 00) & 0xFF);
+            ROM.DATA[(ConstantsReader.GetAddress("compressedAllMap32PointersLow")) + 1 + (int)(3 * i)] = (byte)((snesPos >> 08) & 0xFF);
+            ROM.DATA[(ConstantsReader.GetAddress("compressedAllMap32PointersLow")) + 2 + (int)(3 * i)] = (byte)((snesPos >> 16) & 0xFF);
 
             ROM.DATA[pos] = 0xE0;
             ROM.DATA[pos + 1] = 0xFF;

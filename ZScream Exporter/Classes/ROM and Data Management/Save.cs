@@ -21,7 +21,6 @@ class SaveJson
     Entrance[] entrances;
     string[] texts;
     Overworld overworld;
-    string jsonString = "";
     public SaveJson(RoomSave[] all_rooms, MapSave[] all_maps, Entrance[] entrances, string[] texts, Overworld overworld)
     {
         this.all_rooms = all_rooms;
@@ -30,7 +29,7 @@ class SaveJson
         this.texts = texts;
         this.overworld = overworld;
         //TODO : Change Header location to be dynamic instead of static
-        
+
         if (!Directory.Exists("ProjectDirectory"))
             Directory.CreateDirectory("ProjectDirectory");
         //ZipArchive zipfile = new ZipArchive(new FileStream("PROJECTFILE.zip", FileMode.Open), ZipArchiveMode.Create);
@@ -69,7 +68,7 @@ class SaveJson
         t14.Wait();
 
 
-        File.WriteAllText(ProjectDirectorySlash + "AllData.json",jsonString);
+
 
 
 
@@ -85,9 +84,8 @@ class SaveJson
         const int dim = 80 * 4;
         byte[] owblocksetgroups = new byte[dim];
         for (int i = 0; i < dim; i++)
-            owblocksetgroups[i] = ROM.DATA[Constants.overworldgfxGroups + i];
-        //File.WriteAllText(path + "Overworld//BlocksetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
-        jsonString += JsonConvert.SerializeObject(owblocksetgroups);
+            owblocksetgroups[i] = ROM.DATA[ConstantsReader.GetAddress("overworldgfxGroups") + i];
+        File.WriteAllText(path + "Overworld//BlocksetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
     }
 
     public void writeOverworldSpriteset(string path)
@@ -98,12 +96,11 @@ class SaveJson
         const int dim = 143 * 4;
         byte[] owblocksetgroups = new byte[dim];
         for (int i = 0; i < dim; i++)
-            owblocksetgroups[i] = ROM.DATA[Constants.sprite_blockset_pointer + i];
-        //File.WriteAllText(path + "Overworld//SpritesetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
-        jsonString += JsonConvert.SerializeObject(owblocksetgroups);
+            owblocksetgroups[i] = ROM.DATA[ConstantsReader.GetAddress("sprite_blockset_pointer") + i];
+        File.WriteAllText(path + "Overworld//SpritesetGroups.json", JsonConvert.SerializeObject(owblocksetgroups));
     }
 
-    
+
 
     public void writeOverworldGroups2(string path)
     {
@@ -113,25 +110,26 @@ class SaveJson
         const int dim = 80 * 8;
         byte[] owblocksetgroups = new byte[dim];
         for (int i = 0; i < dim; i++)
-            owblocksetgroups[i] = ROM.DATA[Constants.overworldgfxGroups2 + i];
-        //File.WriteAllText(path + "Overworld//BlocksetGroups2.json", JsonConvert.SerializeObject(owblocksetgroups));
-        jsonString += JsonConvert.SerializeObject(owblocksetgroups);
+            owblocksetgroups[i] = ROM.DATA[ConstantsReader.GetAddress("overworldgfxGroups2") + i];
+        File.WriteAllText(path + "Overworld//BlocksetGroups2.json", JsonConvert.SerializeObject(owblocksetgroups));
     }
 
     public void writeOverworldConfig(string path)
     {
         if (!Directory.Exists(path + "Overworld"))
             Directory.CreateDirectory(path + "Overworld");
-        OverworldConfig c = new OverworldConfig();
-        //File.WriteAllText(path + "Overworld//Config.json", JsonConvert.SerializeObject(c));
-        jsonString += JsonConvert.SerializeObject(c);
 
         byte[] owpalettesgroups = new byte[0xA6];
-        for (int i = 0; i < 0xA6; i++)
-            owpalettesgroups[i] = ROM.DATA[Constants.overworldMapPaletteGroup + i];
 
-        //File.WriteAllText(path + "Overworld//PalettesGroups.json", JsonConvert.SerializeObject(owpalettesgroups));
-        jsonString += JsonConvert.SerializeObject(owpalettesgroups);
+        OverworldConfig c = new OverworldConfig();
+
+        File.WriteAllText(path + "Overworld//Config.json", JsonConvert.SerializeObject(c));
+
+        Color[] grasscolors = new Color[3];
+        grasscolors[0] = c.hardCodedLWGrass;
+        grasscolors[1] = c.hardCodedDWGrass;
+        grasscolors[2] = c.hardCodedDMGrass;
+        File.WriteAllText(path + "Overworld//GrassColors.json", JsonConvert.SerializeObject(grasscolors));
     }
 
     public void writeOverworldTiles16(string path)
@@ -140,8 +138,7 @@ class SaveJson
         {
             Directory.CreateDirectory(path + "Overworld");
         }
-        //File.WriteAllText(path + "Overworld//Tiles16.json", JsonConvert.SerializeObject(overworld.tiles16));
-        jsonString += JsonConvert.SerializeObject(overworld.tiles16);
+        File.WriteAllText(path + "Overworld//Tiles16.json", JsonConvert.SerializeObject(overworld.tiles16));
     }
 
     public void writeOverworldHoles(string path)
@@ -156,12 +153,12 @@ class SaveJson
         }
         for (int i = 0; i < 0x13; i++)
         {
-            short mapId = (short)((ROM.DATA[Constants.OWHoleArea + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWHoleArea + (i * 2)]));
-            short mapPos = (short)((ROM.DATA[Constants.OWHolePos + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWHolePos + (i * 2)]));
-            byte entranceId = (byte)((ROM.DATA[Constants.OWHoleEntrance + i]));
+            short mapId = (short)((ROM.DATA[ConstantsReader.GetAddress("OWHoleArea") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWHoleArea") + (i * 2)]));
+            short mapPos = (short)((ROM.DATA[ConstantsReader.GetAddress("OWHolePos") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWHolePos") + (i * 2)]));
+            byte entranceId = (byte)((ROM.DATA[ConstantsReader.GetAddress("OWHoleEntrance") + i]));
             EntranceOW eo = new EntranceOW(mapId, mapPos, entranceId);
-            //File.WriteAllText(path + "Overworld//Holes//Hole" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
-            jsonString += JsonConvert.SerializeObject(eo);
+
+            File.WriteAllText(path + "Overworld//Holes//Hole" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
         }
     }
 
@@ -179,12 +176,11 @@ class SaveJson
         }
         for (int i = 0; i < 129; i++)
         {
-            short mapId = (short)((ROM.DATA[Constants.OWEntranceMap + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWEntranceMap + (i * 2)]));
-            short mapPos = (short)((ROM.DATA[Constants.OWEntrancePos + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWEntrancePos + (i * 2)]));
-            byte entranceId = (byte)((ROM.DATA[Constants.OWEntranceEntranceId + i]));
+            short mapId = (short)((ROM.DATA[ConstantsReader.GetAddress("OWEntranceMap") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWEntranceMap") + (i * 2)]));
+            short mapPos = (short)((ROM.DATA[ConstantsReader.GetAddress("OWEntrancePos") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWEntrancePos") + (i * 2)]));
+            byte entranceId = (byte)((ROM.DATA[ConstantsReader.GetAddress("OWEntranceEntranceId") + i]));
             EntranceOW eo = new EntranceOW(mapId, mapPos, entranceId);
-            //File.WriteAllText(path + "Overworld//Entrances//Entrance" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
-            jsonString += JsonConvert.SerializeObject(eo);
+            File.WriteAllText(path + "Overworld//Entrances//Entrance" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
         }
     }
 
@@ -201,22 +197,21 @@ class SaveJson
         for (int i = 0; i < 0x4F; i++)
         {
             short[] e = new short[13];
-            e[0] = (short)((ROM.DATA[Constants.OWExitRoomId + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWExitRoomId + (i * 2)]));
-            e[1] = (byte)((ROM.DATA[Constants.OWExitMapId + i]));
-            e[2] = (short)((ROM.DATA[Constants.OWExitVram + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWExitVram + (i * 2)]));
-            e[3] = (short)((ROM.DATA[Constants.OWExitYScroll + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWExitYScroll + (i * 2)]));
-            e[4] = (short)((ROM.DATA[Constants.OWExitXScroll + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWExitXScroll + (i * 2)]));
-            e[5] = (short)((ROM.DATA[Constants.OWExitYPlayer + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWExitYPlayer + (i * 2)]));
-            e[6] = (short)((ROM.DATA[Constants.OWExitXPlayer + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWExitXPlayer + (i * 2)]));
-            e[7] = (short)((ROM.DATA[Constants.OWExitYCamera + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWExitYCamera + (i * 2)]));
-            e[8] = (short)((ROM.DATA[Constants.OWExitXCamera + (i * 2) + 1] << 8) + (ROM.DATA[Constants.OWExitXCamera + (i * 2)]));
-            e[9] = (byte)((ROM.DATA[Constants.OWExitUnk1 + i]));
-            e[10] = (byte)((ROM.DATA[Constants.OWExitUnk2 + i]));
-            e[11] = (byte)((ROM.DATA[Constants.OWExitDoorType1 + i]));
-            e[12] = (byte)((ROM.DATA[Constants.OWExitDoorType2 + i]));
+            e[0] = (short)((ROM.DATA[ConstantsReader.GetAddress("OWExitRoomId") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWExitRoomId") + (i * 2)]));
+            e[1] = (byte)((ROM.DATA[ConstantsReader.GetAddress("OWExitMapId") + i]));
+            e[2] = (short)((ROM.DATA[ConstantsReader.GetAddress("OWExitVram") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWExitVram") + (i * 2)]));
+            e[3] = (short)((ROM.DATA[ConstantsReader.GetAddress("OWExitYScroll") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWExitYScroll") + (i * 2)]));
+            e[4] = (short)((ROM.DATA[ConstantsReader.GetAddress("OWExitXScroll") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWExitXScroll") + (i * 2)]));
+            e[5] = (short)((ROM.DATA[ConstantsReader.GetAddress("OWExitYPlayer") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWExitYPlayer") + (i * 2)]));
+            e[6] = (short)((ROM.DATA[ConstantsReader.GetAddress("OWExitXPlayer") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWExitXPlayer") + (i * 2)]));
+            e[7] = (short)((ROM.DATA[ConstantsReader.GetAddress("OWExitYCamera") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWExitYCamera") + (i * 2)]));
+            e[8] = (short)((ROM.DATA[ConstantsReader.GetAddress("OWExitXCamera") + (i * 2) + 1] << 8) + (ROM.DATA[ConstantsReader.GetAddress("OWExitXCamera") + (i * 2)]));
+            e[9] = (byte)((ROM.DATA[ConstantsReader.GetAddress("OWExitUnk1") + i]));
+            e[10] = (byte)((ROM.DATA[ConstantsReader.GetAddress("OWExitUnk2") + i]));
+            e[11] = (byte)((ROM.DATA[ConstantsReader.GetAddress("OWExitDoorType1") + i]));
+            e[12] = (byte)((ROM.DATA[ConstantsReader.GetAddress("OWExitDoorType2") + i]));
             ExitOW eo = (new ExitOW(e[0], (byte)e[1], e[2], e[3], e[4], e[5], e[6], e[7], e[8], (byte)e[9], (byte)e[10], (byte)e[11], (byte)e[12]));
-            //File.WriteAllText(path + "Overworld//Exits//Exit" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
-            jsonString += JsonConvert.SerializeObject(eo);
+            File.WriteAllText(path + "Overworld//Exits//Exit" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(eo));
         }
     }
 
@@ -233,8 +228,7 @@ class SaveJson
         for (int i = 0; i < 160; i++)
         {
 
-            //File.WriteAllText(path + "Overworld//Maps//Map" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(all_maps[i]));
-            jsonString += JsonConvert.SerializeObject(all_maps[i]);
+            File.WriteAllText(path + "Overworld//Maps//Map" + i.ToString("D3") + ".json", JsonConvert.SerializeObject(all_maps[i]));
         }
     }
 
@@ -247,7 +241,7 @@ class SaveJson
 
         for (int i = 0; i < 223; i++)
         {
-            GFX.singleGrayscaletobmp(i).Save(path + "Graphics//blockset" + i.ToString("D3") + ".png");
+            GFX.singleGrayscaletobmp(i).Save(path + "Graphics//" + i.ToString("D3") + ".png");
         }
     }
 
@@ -258,8 +252,7 @@ class SaveJson
             Directory.CreateDirectory(path + "Texts");
         }
 
-        //File.WriteAllText(path + "Texts//AllTexts.json", JsonConvert.SerializeObject(TextData.messages.ToArray()));
-        jsonString += JsonConvert.SerializeObject(TextData.messages.ToArray());
+        File.WriteAllText(path + "Texts//AllTexts.json", JsonConvert.SerializeObject(TextData.messages.ToArray()));
     }
 
 
@@ -359,8 +352,7 @@ class SaveJson
                 ppos++;
             }
         }
-        //File.WriteAllText(path + "Palettes//" + dir + "//" + name + ".json", JsonConvert.SerializeObject(palettes));
-        jsonString += JsonConvert.SerializeObject(palettes);
+        File.WriteAllText(path + "Palettes//" + dir + "//" + name + ".json", JsonConvert.SerializeObject(palettes));
         /*
         //path = ProjectDirectory//
         paletteBitmap.Save(path + "Palettes//" + dir + "//" + name + ".png");
@@ -388,31 +380,19 @@ class SaveJson
         for (int i = 0; i < 133; i++)
         {
             Entrance e = new Entrance((byte)i);
-            /*File.WriteAllText(path + "Dungeons//Entrances//Entrance " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
+            File.WriteAllText(path + "Dungeons//Entrances//Entrance " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            }));*/
-
-            jsonString += JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            });
+            }));
 
         }
         for (int i = 0; i < 7; i++)
         {
-
             Entrance e = new Entrance((byte)i, true);
-            /*File.WriteAllText(path + "Dungeons//StartingEntrances//Entrance " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
+            File.WriteAllText(path + "Dungeons//StartingEntrances//Entrance " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            }));*/
-
-            jsonString += JsonConvert.SerializeObject(e, Formatting.None, new JsonSerializerSettings()
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            });
-
+            }));
 
         }
 
@@ -431,18 +411,11 @@ class SaveJson
         }
         for (int i = 0; i < 296; i++)
         {
-            
             RoomSave rs = new RoomSave((short)i);
-            
-            /*File.WriteAllText(path + "Dungeons//Rooms//Room " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(rs, Formatting.None, new JsonSerializerSettings()
+            File.WriteAllText(path + "Dungeons//Rooms//Room " + i.ToString("D3") + ".json", JsonConvert.SerializeObject(rs, Formatting.None, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            }));*/
-
-            jsonString += JsonConvert.SerializeObject(rs, Formatting.None, new JsonSerializerSettings()
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-            });
+            }));
 
         }
     }
@@ -522,73 +495,74 @@ public struct MapSave
         tiles = new ushort[32, 32];
         largeMap = false;
         this.index = id;
-        this.palette = (byte)(ROM.DATA[Constants.overworldMapPalette + index] << 2);
-        this.blockset = ROM.DATA[Constants.mapGfx + index];
-        this.sprite_palette = (byte)(ROM.DATA[Constants.overworldSpritePalette + index]);
-        this.msgid = (short)((ROM.DATA[(Constants.overworldMessages + index * 2) + 1] << 8) + ROM.DATA[(Constants.overworldMessages + index * 2)]);
+        this.palette = (byte)(ROM.DATA[ConstantsReader.GetAddress("overworldMapPalette") + index] << 2);
+        this.blockset = ROM.DATA[ConstantsReader.GetAddress("mapGfx") + index];
+        this.sprite_palette = (byte)(ROM.DATA[ConstantsReader.GetAddress("overworldSpritePalette") + index]);
+        this.msgid = (short)((ROM.DATA[(ConstantsReader.GetAddress("overworldMessages") + index * 2) + 1] << 8) + ROM.DATA[(ConstantsReader.GetAddress("overworldMessages") + index * 2)]);
         if (index != 0x80)
             if (index <= 150)
-                if (ROM.DATA[Constants.overworldMapSize + (index & 0x3F)] != 0)
+                if (ROM.DATA[ConstantsReader.GetAddress("overworldMapSize") + (index & 0x3F)] != 0)
                     largeMap = true;
 
-        this.spriteset = ROM.DATA[Constants.overworldSpriteset + index];
+        this.spriteset = ROM.DATA[ConstantsReader.GetAddress("overworldSpriteset") + index];
         this.name = ROMStructure.mapsNames[index];
 
         sprites = new List<Room_Sprite>();
         int address = 0;
-            if (index < 0x40)
-            {
-                address = Constants.overworldSpritesLW;
+        if (index < 0x40)
+        {
+            address = ConstantsReader.GetAddress("overworldSpritesLW");
             }
-            else
-            {
-                address = Constants.overworldSpritesDW;
+        else
+        {
+            address = ConstantsReader.GetAddress("overworldSpritesDW");
             }
-            //09 bank ? Need to check if HM change that
-            int sprite_address_snes = (09 << 16) +
-            (ROM.DATA[address + (index * 2) + 1] << 8) +
-            ROM.DATA[address + (index * 2)];
-            int sprite_address = Addresses.snestopc(sprite_address_snes);
+        //09 bank ? Need to check if HM change that
+        int sprite_address_snes = (09 << 16) +
+        (ROM.DATA[address + (index * 2) + 1] << 8) +
+        ROM.DATA[address + (index * 2)];
+        int sprite_address = Addresses.snestopc(sprite_address_snes);
 
-            while (true)
-            {
-                byte b1 = ROM.DATA[sprite_address];
-                byte b2 = ROM.DATA[sprite_address + 1];
-                byte b3 = ROM.DATA[sprite_address + 2];
+        while (true)
+        {
+            byte b1 = ROM.DATA[sprite_address];
+            byte b2 = ROM.DATA[sprite_address + 1];
+            byte b3 = ROM.DATA[sprite_address + 2];
 
-                if (b1 == 0xFF) { break; }
+            if (b1 == 0xFF) { break; }
 
-                sprites.Add(new Room_Sprite(b3, (byte)(b2 & 0x3F), (byte)(b1 & 0x3F), Sprites_Names.name[b3], 0, 0, 0, 0));
-                sprite_address += 3;
-            }
+            sprites.Add(new Room_Sprite(b3, (byte)(b2 & 0x3F), (byte)(b1 & 0x3F), Sprites_Names.name[b3], 0, 0, 0, 0));
+            sprite_address += 3;
+        }
 
 
         items = new List<roomPotSave>();
 
-            int addr = (Constants.overworldItemsBank << 16) +
-                        (ROM.DATA[Constants.overworldItemsPointers + (index * 2) + 1] << 8) +
-                        (ROM.DATA[Constants.overworldItemsPointers + (index * 2)]);
-            addr = Addresses.snestopc(addr);
+        int addr = (ConstantsReader.GetAddress("overworldItemsBank") << 16) +
+                    (ROM.DATA[ConstantsReader.GetAddress("overworldItemsPointers") + (index * 2) + 1] << 8) +
+                    (ROM.DATA[ConstantsReader.GetAddress("overworldItemsPointers") + (index * 2)]);
 
-            while (true)
+        addr = Addresses.snestopc(addr);
+
+        while (true)
+        {
+            byte b1 = ROM.DATA[addr];
+            byte b2 = ROM.DATA[addr + 1];
+            byte b3 = ROM.DATA[addr + 2];
+            if (b1 == 0xFF && b2 == 0xFF)
             {
-                byte b1 = ROM.DATA[addr];
-                byte b2 = ROM.DATA[addr + 1];
-                byte b3 = ROM.DATA[addr + 2];
-                if (b1 == 0xFF && b2 == 0xFF)
-                {
-                    break;
-                }
-
-                int p = (((b2 & 0x1F) << 8) + b1) >> 1;
-
-                int x = p % 64;
-                int y = p >> 6;
-
-                items.Add(new roomPotSave(b3, (byte)x, (byte)y, false));
-                addr += 3;
+                break;
             }
-        
+
+            int p = (((b2 & 0x1F) << 8) + b1) >> 1;
+
+            int x = p % 64;
+            int y = p >> 6;
+
+            items.Add(new roomPotSave(b3, (byte)x, (byte)y, false));
+            addr += 3;
+        }
+
 
         int t = index * 256;
         for (int y = 0; y < 16; y++)
@@ -615,9 +589,9 @@ public class OverworldConfig
 
     public OverworldConfig()
     {
-        hardCodedDWGrass = GFX.getColor((short)((ROM.DATA[Constants.hardcodedGrassDW + 1] << 8) + ROM.DATA[Constants.hardcodedGrassDW]));
-        hardCodedLWGrass = GFX.getColor((short)((ROM.DATA[Constants.hardcodedGrassLW + 1] << 8) + ROM.DATA[Constants.hardcodedGrassLW]));
-        hardCodedDMGrass = GFX.getColor((short)((ROM.DATA[Constants.hardcodedGrassSpecial + 1] << 8) + ROM.DATA[Constants.hardcodedGrassSpecial]));
+        hardCodedDWGrass = GFX.getColor((short)((ROM.DATA[ConstantsReader.GetAddress("hardcodedGrassDW") + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("hardcodedGrassDW")]));
+        hardCodedLWGrass = GFX.getColor((short)((ROM.DATA[ConstantsReader.GetAddress("hardcodedGrassLW") + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("hardcodedGrassLW")]));
+        hardCodedDMGrass = GFX.getColor((short)((ROM.DATA[ConstantsReader.GetAddress("hardcodedGrassSpecial") + 1] << 8) + ROM.DATA[ConstantsReader.GetAddress("hardcodedGrassSpecial")]));
     }
 }
 
